@@ -4,8 +4,6 @@
 #include <chrono>
 #include <iostream>
 
-
-
 #include "engine/system.h"
 #include "utility/data_location.h"
 
@@ -71,7 +69,7 @@ void Engine::Update(float dt)
     text.setFillColor(sf::Color::White);
     text.setCharacterSize(14);
     graphics_.Draw(text);
-    std::cout << 1.0f / dt << " FPS" << std::endl;
+    //std::cout << 1.0f / dt << " FPS" << std::endl;
 	
 }
 void Engine::Destroy()

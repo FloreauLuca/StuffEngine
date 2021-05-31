@@ -13,7 +13,12 @@ Graphics::Graphics(Engine& engine) : engine_(engine)
 
 void Graphics::Init()
 {
-    window_ = std::make_unique<sf::RenderWindow>(sf::VideoMode(1000, 1000), "StuffEngine");
+    if (!penguinLogo_.loadFromFile(dataPath + "penguin.png"))
+    {
+        std::cout << "Sprite fail to load" << std::endl;
+    }
+    window_ = std::make_unique<sf::RenderWindow>(sf::VideoMode(windowSize_.x, windowSize_.y), "StuffEngine");
+    window_->setIcon(penguinLogo_.getSize().x, penguinLogo_.getSize().y, penguinLogo_.copyToImage().getPixelsPtr());
     if (!font_.loadFromFile(dataPath + "sansation.ttf"))
     {
         std::cout << "Error file not loaded" << std::endl;
@@ -29,7 +34,12 @@ void Graphics::Update(float dt)
         {
             engine_.StopEngine();
         }
-    	
+    	if (event.type == sf::Event::Resized)
+    	{
+            windowSize_.x = event.size.width;
+            windowSize_.y = event.size.height;
+            std::cout << "Window resized : " << windowSize_.x << ", " << windowSize_.y << std::endl;
+    	}
         engine_.GetInputSystem().OnEvent(event);
     }
 	
