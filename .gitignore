@@ -1,0 +1,78 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Build directories
+*/build*/**
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Resharper C++ Files
+.idea/*
+*.user
+
+# clion generation files
+**/.vs/**
+**/venv/**
+.vs/*
+CMakeSettings.json
+Folder.DotSettings.user
+[Bb]uild/*
+cmake-build-debug/*
+cmake-build-release/*
+cmake-build-relwithdebinfo/*
+out/*
+web_build/*
+
+# cmake files
+**/CMakeFiles/**
+
+# glsl validator temp files
+**/__pycache__/**
+
+# log files
+/data/logs/*
+ 
+# tmp files
+/tmp
+
+# physx files
+**/PhysX-4.1/**/CMakeCache.txt
+**/PhysX-4.1/**/cmake_install.cmake
+**/PhysX-4.1/**/CTestTestfile.cmake
+**/PhysX-4.1/**/Makefile*
+**/PhysX-4.1/**/PxConfig.h
+**/PhysX-4.1/**/*.cbp
+**/PhysX-4.1/**/*.sln
+**/PhysX-4.1/**/*.vcxproj
+**/PhysX-4.1/**/*.vcxproj.filters
+!**/libGLEW.a
+!**/libGLEWmx.a
+
+.clang-format
