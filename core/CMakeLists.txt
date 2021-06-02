@@ -14,4 +14,4 @@ List(APPEND CORE_SRC
 
 add_library(Core STATIC ${CORE_SRC})
 target_include_directories(Core PUBLIC include/)
-target_link_libraries(Core sfml-graphics)
+target_link_libraries(Core sfml-system sfml-window sfml-network sfml-graphics sfml-audio sfml-main)
