@@ -50,6 +50,7 @@ enable_testing()
 file(GLOB_RECURSE GTEST_SRC ${GTEST_DIR}/*.cpp)
 source_group("GTests" FILES ${GTEST_SRC})
 add_executable(GTests ${GTEST_SRC})
+add_test(NAME GTests COMMAND GTests)
 target_link_libraries(GTests Core Algo_lib gtest gtest_main)
 set_target_properties (GTests PROPERTIES FOLDER Test)
 

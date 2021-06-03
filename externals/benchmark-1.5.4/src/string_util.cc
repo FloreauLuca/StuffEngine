@@ -132,7 +132,7 @@ std::string StrFormatImp(const char* msg, va_list args) {
 
   // TODO(ericwf): use std::array for first attempt to avoid one memory
   // allocation guess what the size might be
-  std::array<char, 256> local_buff;
+  std::array<char, 256> local_buff{};
   std::size_t size = local_buff.size();
   // 2015-10-08: vsnprintf is used instead of snd::vsnprintf due to a limitation
   // in the android-ndk
@@ -169,9 +169,11 @@ std::vector<std::string> StrSplit(const std::string& str, char delim) {
   size_t first = 0;
   size_t next = str.find(delim);
   for (; next != std::string::npos;
+#pragma warning(disable:4267)
        first = next + 1, next = str.find(first, delim)) {
     ret.push_back(str.substr(first, next - first));
   }
+#pragma warning(default:4267) 
   ret.push_back(str.substr(first));
   return ret;
 }

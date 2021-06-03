@@ -159,6 +159,7 @@ order to manually set the time unit, you can specify it manually:
 BENCHMARK(BM_test)->Unit(benchmark::kMillisecond);
 */
 
+
 #ifndef BENCHMARK_BENCHMARK_H_
 #define BENCHMARK_BENCHMARK_H_
 
@@ -173,6 +174,7 @@ BENCHMARK(BM_test)->Unit(benchmark::kMillisecond);
 #define BENCHMARK_HAS_CXX17
 #endif
 
+#pragma warning ( disable : 26812 26495 )
 #include <stdint.h>
 
 #include <algorithm>
@@ -1632,5 +1634,6 @@ inline double GetTimeUnitMultiplier(TimeUnit unit) {
 }
 
 }  // namespace benchmark
+#pragma warning ( default : 26812 26495 )
 
 #endif  // BENCHMARK_BENCHMARK_H_

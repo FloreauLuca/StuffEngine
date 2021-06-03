@@ -22,7 +22,7 @@ static void BM_Algo_BubbleSort(benchmark::State& state) {
 	bubble_sort_.SetList(list_);
     // Perform setup here
     for (auto _ : state) {
-		bubble_sort_.AutoSort();
+		bubble_sort_.SortList();
     }
 }
 // Register the function as a benchmark
