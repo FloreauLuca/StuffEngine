@@ -23,7 +23,7 @@ private:
 	Engine& engine_;
 	Graphics& graphics_;
 
-	float timer_;
+	float timer_ = 0.0f;
 	sf::Texture penguinHead_;
 	sf::Texture penguinLogo_;
 };
