@@ -12,9 +12,8 @@ set(COMMON_DIR "${CMAKE_SOURCE_DIR}/common" CACHE INTERNAL "Common folder")
 set(CORE_DIR "${CMAKE_SOURCE_DIR}/core" CACHE INTERNAL "Core folder")
 set(EXTERNAL_DIR "${CMAKE_SOURCE_DIR}/externals" CACHE INTERNAL "Externals folder")
 set(MAIN_DIR "${CMAKE_SOURCE_DIR}/main" CACHE INTERNAL "Main folder")
-set(TEST_DIR "${CMAKE_SOURCE_DIR}/main/test" CACHE INTERNAL "Tests folder")
-set(GTEST_DIR "${CMAKE_SOURCE_DIR}/main/gtests" CACHE INTERNAL "GTests folder")
-set(BENCH_DIR "${CMAKE_SOURCE_DIR}/main/benchmarks" CACHE INTERNAL "Benchmarks folder")
+set(GTEST_DIR "${CMAKE_SOURCE_DIR}/tests/gtests" CACHE INTERNAL "GTests folder")
+set(BENCH_DIR "${CMAKE_SOURCE_DIR}/tests/benchmarks" CACHE INTERNAL "Benchmarks folder")
 
 
 # Librairies implementations
@@ -60,18 +59,16 @@ add_executable(Benchmarks ${BENCH_SRC})
 target_link_libraries(Benchmarks Core Algo_lib benchmark benchmark_main)
 set_target_properties (Benchmarks PROPERTIES FOLDER Test)
 
-# Test files
-file(GLOB_RECURSE TEST_SRC ${TEST_DIR}/src/*.cpp ${TEST_DIR}/include/*.h)
-source_group("Tests" FILES ${TEST_SRC})
-add_library(Tests STATIC ${TEST_SRC})
-target_include_directories(Tests PUBLIC ${TEST_DIR}/include/)
-target_link_libraries(Tests Core Algo_lib)
-set_target_properties (Tests PROPERTIES FOLDER Test)
-
 # Main files
-file(GLOB_RECURSE main_src ${MAIN_DIR}/main.cpp)
+file(GLOB MAIN_PROJECTS "${MAIN_DIR}/*")
+foreach (MAIN_PROJECT_PATH ${MAIN_PROJECTS})
+    get_filename_component(MAIN_PROJECT_NAME ${MAIN_PROJECT_PATH} NAME)
 
-add_executable(Main ${main_src})
-target_link_libraries(Main PUBLIC Core Tests Algo_lib)
+    message(VERBOSE "${MAIN_PROJECT_NAME} found at: '${MAIN_PROJECT_PATH}'")
+    set(${MAIN_PROJECT_NAME} ON CACHE BOOL "")
+    if (${MAIN_PROJECT_NAME})
+        add_subdirectory(${MAIN_PROJECT_PATH})
+    endif ()
+endforeach ()
 
 message(STATUS "StuffEngine ready to done some weird stuffs.")

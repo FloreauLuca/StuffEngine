@@ -3,5 +3,5 @@
 
 namespace stuff
 {
-const std::string dataPath = "../data/";
+const std::string dataPath = "../../../data/";
 }

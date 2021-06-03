@@ -40,7 +40,9 @@ void Engine::EngineLoop()
 void Engine::DestroyEngine()
 {
 	destroyAction_.Execute();
-	
+    initAction_.ClearAction();
+    updateAction_.ClearAction();
+    destroyAction_.ClearAction();
 }
 
 void Engine::StopEngine()

@@ -45,6 +45,10 @@ public:
 		for (auto& callback : callbacks_)
 			callback(args...);
 	}
+	void ClearAction()
+	{
+		callbacks_.clear();
+	}
 
 private:
 	std::vector<std::function<void(Ts...)>> callbacks_;
