@@ -45,5 +45,7 @@ private:
 		sf::Color(0, 0, 249),
 		sf::Color(134, 0, 125)
 	};
+
+	int sortSpeed = 20;
 };
 }

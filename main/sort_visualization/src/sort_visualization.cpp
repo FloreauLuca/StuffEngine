@@ -28,6 +28,12 @@ void SortVisualization::Init()
 
 void SortVisualization::Update(float dt)
 {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		sortSpeed+=5;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sortSpeed >5)
+		sortSpeed -= 5;
+
 	sf::Text text;
 	text.setString(std::to_string(pairIndex_));
 	text.setFillColor(sf::Color::White);
@@ -54,8 +60,8 @@ void SortVisualization::Update(float dt)
 		graphics_.Draw(standardRect);
 	}
 	//std::cout << pair.first << "; " << pair.second << std::endl;
-	//sf::sleep(sf::seconds(0.1f));
-	if (pairIndex_ >= swap_pairs.size()) return;
+	sf::sleep(sf::seconds(1.0f/ sortSpeed));
+	if (pairIndex_ >= swap_pairs.size() || sf::Keyboard::isKeyPressed((sf::Keyboard::Space))) return;
 	std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
 	pairIndex_++;
 }
