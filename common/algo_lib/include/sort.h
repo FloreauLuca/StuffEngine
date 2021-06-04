@@ -16,7 +16,10 @@ class Sort
 public:
 	Sort() = default;
 
-	virtual std::vector<std::pair<size_t, size_t>> SortList() = 0;
+	virtual std::vector<std::pair<size_t, size_t>> SortList() {
+		return std::vector<std::pair<size_t, size_t>>
+			();
+	}
 	
 	void SetList(const std::vector<T>& list);
 	[[nodiscard]] std::vector<T> GetList() const { return list_; }

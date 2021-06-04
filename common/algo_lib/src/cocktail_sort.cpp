@@ -7,7 +7,7 @@ std::vector<std::pair<size_t, size_t>> CocktailSort<T>::SortList()
 {
     bool swapped = true;
     int start = 0;
-    int end = listSize_ - 1;
+    int end = this->listSize_ - 1;
 
     while (swapped)
     {
@@ -20,10 +20,10 @@ std::vector<std::pair<size_t, size_t>> CocktailSort<T>::SortList()
         // the bubble sort
         for (size_t i = start; i < end; ++i)
         {
-            if (list_[i] > list_[i + 1]) {
-	            std::swap(list_[i], list_[i + 1]);
-                swapList_.push_back(std::pair<size_t, size_t>(i, i + 1));
-                coloredList_.push_back(std::vector<size_t>{i, i + 1});
+            if (this->list_[i] > this->list_[i + 1]) {
+	            std::swap(this->list_[i], this->list_[i + 1]);
+                this->swapList_.push_back(std::pair<size_t, size_t>(i, i + 1));
+                this->coloredList_.push_back(std::vector<size_t>{i, i + 1});
                 swapped = true;
             }
         }
@@ -44,10 +44,10 @@ std::vector<std::pair<size_t, size_t>> CocktailSort<T>::SortList()
         // same comparison as in the previous stage
         for (size_t i = end; i > start; --i)
         {
-            if (list_[i-1] > list_[i]) {
-	            std::swap(list_[i-1], list_[i]);
-                swapList_.push_back(std::pair<size_t, size_t>(i-1, i));
-                coloredList_.push_back(std::vector<size_t>{i-1, i});
+            if (this->list_[i-1] > this->list_[i]) {
+	            std::swap(this->list_[i-1], this->list_[i]);
+                this->swapList_.push_back(std::pair<size_t, size_t>(i-1, i));
+                this->coloredList_.push_back(std::vector<size_t>{i-1, i});
                 swapped = true;
             }
         }
@@ -57,6 +57,6 @@ std::vector<std::pair<size_t, size_t>> CocktailSort<T>::SortList()
         // smallest number to its rightful spot.
         ++start;
     }
-    return swapList_;
+    return this->swapList_;
 }
 }

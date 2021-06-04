@@ -17,7 +17,7 @@ template <class T>
 std::vector<std::pair<size_t, size_t>> CombSort<T>::SortList()
 {
 	// Initialize gap
-	int gap = listSize_;
+	int gap = this->listSize_;
 
 	// Initialize swapped as true to make sure that
 	// loop runs
@@ -35,17 +35,17 @@ std::vector<std::pair<size_t, size_t>> CombSort<T>::SortList()
 		swapped = false;
 
 		// Compare all elements with current gap
-		for (size_t i = 0; i < listSize_ - gap; i++)
+		for (size_t i = 0; i < this->listSize_ - gap; i++)
 		{
-			if (list_[i] > list_[i + gap])
+			if (this->list_[i] > this->list_[i + gap])
 			{
-				std::swap(list_[i], list_[i + gap]);
-				swapList_.push_back(std::pair<size_t, size_t>(i, i + gap));
-				coloredList_.push_back(std::vector<size_t>{i, i + gap});
+				std::swap(this->list_[i], this->list_[i + gap]);
+				this->swapList_.push_back(std::pair<size_t, size_t>(i, i + gap));
+				this->coloredList_.push_back(std::vector<size_t>{i, i + gap});
 				swapped = true;
 			}
 		}
 	}
-	return swapList_;
+	return this->swapList_;
 }
 }

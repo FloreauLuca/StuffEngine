@@ -8,6 +8,7 @@ template <class T>
 class CombSort final : public Sort<T>
 {
 public:
+	using Sort<T>::SetList;
 	std::vector<std::pair<size_t, size_t>> SortList() override;
 protected:
 

@@ -7,16 +7,16 @@ std::vector<std::pair<size_t, size_t>> BubbleSort<T>::SortList()
 {
 	size_t i, j;
 	bool swapped;
-	for (i = 0; i < listSize_ - 1; i++)
+	for (i = 0; i < this->listSize_ - 1; i++)
 	{
 		swapped = false;
-		for (j = 0; j < listSize_ - i - 1; j++)
+		for (j = 0; j < this->listSize_ - i - 1; j++)
 		{
-			if (list_[j] > list_[j + 1])
+			if (this->list_[j] > this->list_[j + 1])
 			{
-				std::swap(list_[j], list_[j + 1]);
-				swapList_.push_back(std::pair<size_t, size_t>(j, j + 1));
-				coloredList_.push_back(std::vector<size_t>{j, j + 1});
+				std::swap(this->list_[j], this->list_[j + 1]);
+				this->swapList_.push_back(std::pair<size_t, size_t>(j, j + 1));
+				this->coloredList_.push_back(std::vector<size_t>{j, j + 1});
 				swapped = true;
 			}
 		}
@@ -25,6 +25,6 @@ std::vector<std::pair<size_t, size_t>> BubbleSort<T>::SortList()
 		if (swapped == false)
 			break;
 	}
-	return swapList_;
+	return this->swapList_;
 }
 }

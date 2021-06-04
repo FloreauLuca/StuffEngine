@@ -8,6 +8,7 @@ template<class T>
 class QuickSort final : public Sort<T>
 {
 public:
+	using Sort<T>::SetList;
 	std::vector<std::pair<size_t, size_t>> SortList() override;
 private:
 	int Partition(size_t low, size_t high);

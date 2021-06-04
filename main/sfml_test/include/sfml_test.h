@@ -27,21 +27,4 @@ private:
 	sf::Texture penguinHead_;
 	sf::Texture penguinLogo_;
 };
-
-template<typename T>
-class Test
-{
-protected:
-	bool accessible = false;
-};
-
-template<typename T>
-class ChildTest : Test<T>
-{
-public:
-	void foo()
-	{
-		accessible = true;
-	}
-};
 }

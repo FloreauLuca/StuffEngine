@@ -5,30 +5,30 @@ namespace stuff::algo
 template<class T>
 std::vector<std::pair<size_t, size_t>> QuickSort<T>::SortList()
 {
-    QuickSortFunc(0 ,list_.size() - 1);
-    return swapList_;
+    QuickSortFunc(0 ,this->list_.size() - 1);
+    return this->swapList_;
 }
 
 template<class T>
 int QuickSort<T>::Partition(size_t low, size_t high)
 {
-    const int pivot = list_[high]; // pivot
+    const int pivot = this->list_[high]; // pivot
     size_t i = low; // Index of smaller element and indicates the right position of pivot found so far
 
     for (size_t j = low; j <= high - 1; j++)
     {
         // If current element is smaller than the pivot
-        if (list_[j] < pivot)
+        if (this->list_[j] < pivot)
         {
-            std::swap(list_[i], list_[j]);
-            swapList_.push_back(std::pair<size_t, size_t>(i, j));
-            coloredList_.push_back(std::vector<size_t>{i, j, high});
+            std::swap(this->list_[i], this->list_[j]);
+            this->swapList_.push_back(std::pair<size_t, size_t>(i, j));
+            this->coloredList_.push_back(std::vector<size_t>{i, j, high});
             i++; // increment index of smaller element
         }
     }
-    std::swap(list_[i], list_[high]);
-    swapList_.push_back(std::pair<size_t, size_t>(i, high));
-    coloredList_.push_back(std::vector<size_t>{i, high});
+    std::swap(this->list_[i], this->list_[high]);
+    this->swapList_.push_back(std::pair<size_t, size_t>(i, high));
+    this->coloredList_.push_back(std::vector<size_t>{i, high});
     return (i);
 }
 

@@ -5,8 +5,8 @@ namespace stuff::algo
     template<class T>
 std::vector<std::pair<size_t, size_t>> MergeSort<T>::SortList()
 {
-    MergeSortFunc(0, listSize_ - 1);
-    return swapList_;
+    MergeSortFunc(0, this->listSize_ - 1);
+    return this->swapList_;
 }
 template<class T>
 void MergeSort<T>::Merge(int start, int mid, int end)
@@ -15,7 +15,7 @@ void MergeSort<T>::Merge(int start, int mid, int end)
     int start2 = mid + 1;
 
     // If the direct merge is already sorted
-    if (list_[mid] <= list_[start2]) {
+    if (this->list_[mid] <= this->list_[start2]) {
         return;
     }
 
@@ -24,19 +24,19 @@ void MergeSort<T>::Merge(int start, int mid, int end)
     while (start <= mid && start2 <= end) {
 
         // If element 1 is in right place
-        if (list_[start] <= list_[start2]) {
+        if (this->list_[start] <= this->list_[start2]) {
             start++;
         }
         else {
-            int value = list_[start2];
+            int value = this->list_[start2];
             size_t index = start2;
             int switchPos = start2;
             // Shift all the elements between element 1
             // element 2, right by 1.
             while (index != start) {
-                list_[index] = list_[index - 1];
-                swapList_.push_back(std::pair<size_t, size_t>(index, index - 1));
-                coloredList_.push_back(std::vector<size_t>{index, index - 1});
+                this->list_[index] = this->list_[index - 1];
+                this->swapList_.push_back(std::pair<size_t, size_t>(index, index - 1));
+                this->coloredList_.push_back(std::vector<size_t>{index, index - 1});
             	if (index == start2)
             	{
                     switchPos = index - 1;
@@ -47,7 +47,7 @@ void MergeSort<T>::Merge(int start, int mid, int end)
                 }
                 index--;
             }
-            list_[start] = value; // ?????
+            this->list_[start] = value; // ?????
             //swapList_.push_back(std::pair<size_t, size_t>(start, switchPos));
 
             // Update all the pointers
