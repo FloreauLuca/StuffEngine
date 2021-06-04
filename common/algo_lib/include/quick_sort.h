@@ -4,7 +4,8 @@
 
 namespace stuff::algo
 {
-class QuickSort final : public Sort
+template<class T>
+class QuickSort final : public Sort<T>
 {
 public:
 	std::vector<std::pair<size_t, size_t>> SortList() override;

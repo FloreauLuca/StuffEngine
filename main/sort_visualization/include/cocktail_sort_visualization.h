@@ -14,6 +14,6 @@ public:
 
 	void SortList() override;
 private:
-	algo::CocktailSort cocktail_sort_;
+	algo::CocktailSort<int> cocktail_sort_;
 };
 }

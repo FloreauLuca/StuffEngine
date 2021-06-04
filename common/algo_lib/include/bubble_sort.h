@@ -4,7 +4,8 @@
 
 namespace stuff::algo
 {
-class BubbleSort final : public Sort
+	template<class T>
+class BubbleSort final : public Sort<T>
 {
 public:
 	std::vector<std::pair<size_t, size_t>> SortList() override;

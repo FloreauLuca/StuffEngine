@@ -2,7 +2,8 @@
 
 namespace stuff::algo
 {
-std::vector<std::pair<size_t, size_t>> BubbleSort::SortList()
+	template<class T>
+std::vector<std::pair<size_t, size_t>> BubbleSort<T>::SortList()
 {
 	size_t i, j;
 	bool swapped;

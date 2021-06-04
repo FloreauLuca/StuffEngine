@@ -2,7 +2,8 @@
 
 namespace stuff::algo
 {
-std::vector<std::pair<size_t, size_t>> CocktailSort::SortList()
+    template<class T>
+std::vector<std::pair<size_t, size_t>> CocktailSort<T>::SortList()
 {
     bool swapped = true;
     int start = 0;

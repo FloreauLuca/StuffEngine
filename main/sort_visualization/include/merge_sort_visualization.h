@@ -14,6 +14,6 @@ namespace stuff
 
 		void SortList() override;
 	private:
-		algo::MergeSort merge_sort_;
+		algo::MergeSort<int> merge_sort_;
 	};
 }

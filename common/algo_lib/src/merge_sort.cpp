@@ -2,12 +2,14 @@
 
 namespace stuff::algo
 {
-std::vector<std::pair<size_t, size_t>> MergeSort::SortList()
+    template<class T>
+std::vector<std::pair<size_t, size_t>> MergeSort<T>::SortList()
 {
     MergeSortFunc(0, listSize_ - 1);
     return swapList_;
 }
-void MergeSort::Merge(int start, int mid, int end)
+template<class T>
+void MergeSort<T>::Merge(int start, int mid, int end)
 {
 
     int start2 = mid + 1;
@@ -56,10 +58,11 @@ void MergeSort::Merge(int start, int mid, int end)
     }
 }
 
+template<class T>
 // l is for left index and r is
 // right index of the sub-array
 // of arr to be sorted */
-void MergeSort::MergeSortFunc(int l, int r) {
+void MergeSort<T>::MergeSortFunc(int l, int r) {
     if (l >= r) {
         return;//returns recursively
     }

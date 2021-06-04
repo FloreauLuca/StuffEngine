@@ -2,13 +2,15 @@
 
 namespace stuff::algo
 {
-std::vector<std::pair<size_t, size_t>> QuickSort::SortList()
+template<class T>
+std::vector<std::pair<size_t, size_t>> QuickSort<T>::SortList()
 {
     QuickSortFunc(0 ,list_.size() - 1);
     return swapList_;
 }
 
-int QuickSort::Partition(size_t low, size_t high)
+template<class T>
+int QuickSort<T>::Partition(size_t low, size_t high)
 {
     const int pivot = list_[high]; // pivot
     size_t i = low; // Index of smaller element and indicates the right position of pivot found so far
@@ -30,7 +32,8 @@ int QuickSort::Partition(size_t low, size_t high)
     return (i);
 }
 
-void QuickSort::QuickSortFunc(size_t low, size_t high)
+template<class T>
+void QuickSort<T>::QuickSortFunc(size_t low, size_t high)
 {
     if (low < high)
     {

@@ -14,6 +14,6 @@ public:
 
 	void SortList() override;
 private:
-	algo::BubbleSort bubble_sort_;
+	algo::BubbleSort<int> bubble_sort_;
 };
 }

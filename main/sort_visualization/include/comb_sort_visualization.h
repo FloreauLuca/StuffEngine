@@ -14,6 +14,6 @@ public:
 
 	void SortList() override;
 private:
-	algo::CombSort comb_sort_;
+	algo::CombSort<int> comb_sort_;
 };
 }

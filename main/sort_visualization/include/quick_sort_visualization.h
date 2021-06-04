@@ -14,6 +14,6 @@ public:
 
 	void SortList() override;
 private:
-	algo::QuickSort quick_sort_;
+	algo::QuickSort<int> quick_sort_;
 };
 }
