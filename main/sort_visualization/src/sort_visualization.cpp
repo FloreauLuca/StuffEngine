@@ -28,16 +28,22 @@ void SortVisualization::Init()
 
 void SortVisualization::Update(float dt)
 {
+	sf::Text text;
+	text.setString(std::to_string(pairIndex_));
+	text.setFillColor(sf::Color::White);
+	text.setCharacterSize(14);
+	text.setPosition(0, 20);
+	graphics_.Draw(text);
 	for(unsigned i = 0; i < listSize; i++)
 	{
 		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x), (windowSize_.y - 2 * offset.y));
 		rectSize /= static_cast<float>(listSize);
 		rectSize.y *= static_cast<float>(list_[i]+1);
 		standardRect.setSize(rectSize);
-		if (pairIndex_ >= swap_pairs.size())
+		if (pairIndex_ >= coloredList_.size())
 		{
 			standardRect.setFillColor(lgbtColors_[list_[i] / 17]);
-		} else if (swap_pairs[pairIndex_].first == i || swap_pairs[pairIndex_].second == i)
+		} else if (std::ranges::find(coloredList_[pairIndex_],i) != coloredList_[pairIndex_].end())
 		{
 			standardRect.setFillColor(sf::Color::White);
 		} else
@@ -48,7 +54,7 @@ void SortVisualization::Update(float dt)
 		graphics_.Draw(standardRect);
 	}
 	//std::cout << pair.first << "; " << pair.second << std::endl;
-	sf::sleep(sf::seconds(0.1f));
+	//sf::sleep(sf::seconds(0.1f));
 	if (pairIndex_ >= swap_pairs.size()) return;
 	std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
 	pairIndex_++;

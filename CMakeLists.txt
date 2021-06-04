@@ -46,6 +46,7 @@ add_subdirectory(${CORE_DIR})
 add_subdirectory("common/algo_lib")
 
 # GTests files
+include(CTest)
 enable_testing()
 file(GLOB_RECURSE GTEST_SRC ${GTEST_DIR}/*.cpp)
 source_group("GTests" FILES ${GTEST_SRC})

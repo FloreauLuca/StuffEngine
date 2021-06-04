@@ -4,13 +4,11 @@
 
 namespace stuff::algo
 {
-class QuickSort final : public Sort
+class MergeSort final : public Sort
 {
 public:
 	std::vector<std::pair<size_t, size_t>> SortList() override;
-private:
-	int Partition(size_t low, size_t high);
-	void QuickSortFunc(size_t low, size_t high);
+	void Merge(int start, int mid, int end);
+	void MergeSortFunc(int l, int r);
 };
 }
-

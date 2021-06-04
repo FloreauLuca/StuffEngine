@@ -4,8 +4,7 @@ namespace stuff::algo
 {
 std::vector<std::pair<size_t, size_t>> BubbleSort::SortList()
 {
-	std::vector<std::pair<size_t, size_t>> swapList;
-	int i, j;
+	size_t i, j;
 	bool swapped;
 	for (i = 0; i < listSize_ - 1; i++)
 	{
@@ -15,7 +14,8 @@ std::vector<std::pair<size_t, size_t>> BubbleSort::SortList()
 			if (list_[j] > list_[j + 1])
 			{
 				std::swap(list_[j], list_[j + 1]);
-				swapList.push_back(std::pair<size_t, size_t>(j, j + 1));
+				swapList_.push_back(std::pair<size_t, size_t>(j, j + 1));
+				coloredList_.push_back(std::vector<size_t>{j, j + 1});
 				swapped = true;
 			}
 		}
@@ -24,6 +24,6 @@ std::vector<std::pair<size_t, size_t>> BubbleSort::SortList()
 		if (swapped == false)
 			break;
 	}
-	return swapList;
+	return swapList_;
 }
 }

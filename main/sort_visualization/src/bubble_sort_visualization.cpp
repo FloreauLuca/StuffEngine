@@ -8,5 +8,6 @@ void BubbleSortVisualization::SortList()
 {
 	bubble_sort_.SetList(list_);
 	swap_pairs = bubble_sort_.SortList();
+	coloredList_ = bubble_sort_.GetColoredList();
 }
 }
