@@ -17,6 +17,7 @@ public:
 	void Draw(sf::Sprite& sprite);
 	void Destroy() override;
 	sf::Vector2u GetWindowSize() const { return windowSize_; }
+	sf::RenderWindow* GetWindow() const { return window_.get(); }
 private:
 	sf::Vector2u windowSize_ = sf::Vector2u(1400, 900);
 	sf::Texture penguinLogo_;
