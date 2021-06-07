@@ -1,4 +1,4 @@
-#include "merge_sort.h"
+#include "algo/sort/merge_sort.h"
 
 namespace stuff::algo
 {

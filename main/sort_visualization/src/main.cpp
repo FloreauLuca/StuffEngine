@@ -14,9 +14,9 @@ int main()
 {
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
-	stuff::CombSortVisualization comb_sort_visualization(engine);
-	engine.RegisterSystem(comb_sort_visualization);
-	engine.StartEngine();
+	//stuff::CombSortVisualization comb_sort_visualization(engine);
+	//engine.RegisterSystem(comb_sort_visualization);
+	//engine.StartEngine();
 	stuff::CocktailSortVisualization cocktail_sort_visualization(engine);
 	engine.RegisterSystem(cocktail_sort_visualization);
 	engine.StartEngine();

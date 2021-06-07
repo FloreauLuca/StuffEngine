@@ -1,5 +1,5 @@
 #pragma once
-#include "merge_sort.h"
+#include "algo/sort/merge_sort.h"
 #include "sort_visualization.h"
 
 namespace stuff
@@ -10,6 +10,7 @@ namespace stuff
 		explicit MergeSortVisualization(Engine& engine)
 			: SortVisualization(engine)
 		{
+			sortName_ = "Merge Sort";
 		}
 
 		void SortList() override;

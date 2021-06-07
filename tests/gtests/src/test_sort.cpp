@@ -3,11 +3,11 @@
 
 #include "sort_test.h"
 
-#include "bubble_sort.h"
-#include "quick_sort.h"
-#include "merge_sort.h"
-#include "cocktail_sort.h"
-#include "comb_sort.h"
+#include "algo/sort/bubble_sort.h"
+#include "algo/sort/quick_sort.h"
+#include "algo/sort/merge_sort.h"
+#include "algo/sort/cocktail_sort.h"
+#include "algo/sort/comb_sort.h"
 
 constexpr size_t LIST_SIZE = 100;
 

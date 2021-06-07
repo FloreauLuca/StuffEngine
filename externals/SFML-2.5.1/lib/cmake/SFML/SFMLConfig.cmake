@@ -108,7 +108,7 @@ else()
     set(config_name "Shared")
 endif()
 set(targets_config_file "${CMAKE_CURRENT_LIST_DIR}/SFML${config_name}Targets.cmake")
-message("${targets_config_file}")
+
 # Generate imported targets for SFML and its dependencies
 if (EXISTS "${targets_config_file}")
     # Set SFML_FOUND to TRUE by default, may be overwritten by one of the includes below

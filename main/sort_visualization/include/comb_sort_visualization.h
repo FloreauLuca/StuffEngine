@@ -1,5 +1,5 @@
 #pragma once
-#include "comb_sort.h"
+#include "algo/sort/comb_sort.h"
 #include "sort_visualization.h"
 
 namespace stuff
@@ -10,6 +10,7 @@ public:
 	explicit CombSortVisualization(Engine& engine)
 		: SortVisualization(engine)
 	{
+		sortName_ = "Comb Sort";
 	}
 
 	void SortList() override;

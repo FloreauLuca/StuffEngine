@@ -1,5 +1,5 @@
 #pragma once
-#include "quick_sort.h"
+#include "algo/sort/quick_sort.h"
 #include "sort_visualization.h"
 
 namespace stuff
@@ -10,6 +10,7 @@ public:
 	explicit QuickSortVisualization(Engine& engine)
 		: SortVisualization(engine)
 	{
+		sortName_ = "Quick Sort";
 	}
 
 	void SortList() override;

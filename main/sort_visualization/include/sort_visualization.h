@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "bubble_sort.h"
 #include "engine/engine.h"
 #include "engine/system.h"
 
@@ -27,6 +26,7 @@ protected:
 	std::vector<int> list_;
 	std::vector <std::pair<size_t, size_t>> swap_pairs;
 	std::vector<std::vector<size_t>> coloredList_;
+	std::string sortName_ = "";
 private:
 	Engine& engine_;
 	Graphics& graphics_;
@@ -46,6 +46,6 @@ private:
 		sf::Color(134, 0, 125)
 	};
 
-	int sortSpeed = 20;
+	int sortSpeed = 100;
 };
 }

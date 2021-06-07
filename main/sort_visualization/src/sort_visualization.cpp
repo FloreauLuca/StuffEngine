@@ -35,10 +35,16 @@ void SortVisualization::Update(float dt)
 		sortSpeed -= 5;
 
 	sf::Text text;
-	text.setString(std::to_string(pairIndex_));
+	text.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
 	text.setFillColor(sf::Color::White);
-	text.setCharacterSize(14);
-	text.setPosition(0, 20);
+	text.setCharacterSize(30);
+	text.setPosition(0, 35);
+	graphics_.Draw(text);
+	text;
+	text.setString(sortName_);
+	text.setFillColor(sf::Color::White);
+	text.setCharacterSize(30);
+	text.setPosition(0, 65);
 	graphics_.Draw(text);
 	for(unsigned i = 0; i < listSize; i++)
 	{
