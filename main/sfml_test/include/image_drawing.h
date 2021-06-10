@@ -9,10 +9,10 @@ namespace stuff
 class Graphics;
 class Engine;
 
-class MouseSim : public SystemInterface
+class ImageDrawing : public SystemInterface
 {
 public:
-	MouseSim(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
+	ImageDrawing(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
 	{
 	}
 
@@ -28,8 +28,15 @@ private:
 	float radiusMouse = 2.0f;
 	float mousePower = 1.0f;
 
-	const sf::Vector2u squareCount_ = sf::Vector2u(20, 20);
+	const sf::Vector2u squareCount_ = sf::Vector2u(100, 100);
 	sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 	std::vector <std::pair<sf::Vector2f, float>> pixelToDraw_;
+
+	sf::Texture texture_;
+	sf::Image image_;
+	sf::Image prev_image_;
+	sf::Sprite sprite_;
+
+	sf::Color currentColor_;
 };
 }
