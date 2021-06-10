@@ -42,9 +42,9 @@ void SortVisualization::Init()
 	{
 		std::cout << "Error font not loaded" << std::endl;
 	}
-	text_.setFillColor(sf::Color::White);
-	text_.setCharacterSize(30);
 	text_.setFont(font_);
+	text_.setFillColor(sf::Color::White);
+	text_.setCharacterSize(20);
 }
 
 void SortVisualization::Update(float dt)
@@ -55,13 +55,15 @@ void SortVisualization::Update(float dt)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sortSpeed >5)
 		sortSpeed -= 5;
 	text_.setString(sortName_);
-	text_.setPosition(0, 35);
+	text_.setPosition(5, 35);
+	text_.setFont(font_);
 	graphics_.Draw(text_);
 	for(unsigned i = 0; i < listSize; i++)
 	{
-		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x), (windowSize_.y - 2 * offset.y));
+		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x - fillSize_.x), (windowSize_.y - 2 * offset.y - fillSize_.y));
 		rectSize /= static_cast<float>(listSize);
 		rectSize.y *= static_cast<float>(list_[i]+1);
+		rectSize += fillSize_;
 		standardRect.setSize(rectSize);
 		if (pairIndex_ >= coloredList_.size())
 		{
@@ -82,19 +84,19 @@ void SortVisualization::Update(float dt)
 	if (pairIndex_ >= coloredList_.size())
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
-		text_.setPosition(0, 65);
+		text_.setPosition(5, 65);
 		graphics_.Draw(text_);
 		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
-		text_.setPosition(0, 95);
+		text_.setPosition(5, 95);
 		graphics_.Draw(text_);
 		waveSound_.stop();
 	} else if(pairIndex_ >= swap_pairs.size())
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
-		text_.setPosition(0, 65);
+		text_.setPosition(5, 65);
 		graphics_.Draw(text_);
 		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
-		text_.setPosition(0, 95);
+		text_.setPosition(5, 95);
 		graphics_.Draw(text_);
 		sortSpeed = 50;
 		pairIndex_++;
@@ -102,14 +104,14 @@ void SortVisualization::Update(float dt)
 	else if (!sf::Keyboard::isKeyPressed((sf::Keyboard::Space)))
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
-		text_.setPosition(0, 65);
+		text_.setPosition(5, 65);
 		graphics_.Draw(text_);
 		std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
 		pairIndex_++;
 	} else
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
-		text_.setPosition(0, 65);
+		text_.setPosition(5, 65);
 		graphics_.Draw(text_);
 	}
 }

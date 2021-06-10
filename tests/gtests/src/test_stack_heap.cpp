@@ -52,6 +52,8 @@ void vector(std::vector<char> vec_param)
     char* char_vec = &vec[2];
     std::array<char, 3> arr = { 0, 1, 2 };
     char* char_arr = &arr[2];
+    std::list<char> list = { 0, 1, 2 };
+    char* char_list = &list.front();
 
     DisplayAddr(&vec_param, "&vec_param", Location::STACK);
     DisplayAddr(char_vec_param, "char_vec_param", Location::HEAP);
@@ -61,6 +63,8 @@ void vector(std::vector<char> vec_param)
     DisplayAddr(char_vec, "char_vec", Location::HEAP);
     DisplayAddr(&arr, "&arr", Location::STACK);
     DisplayAddr(char_arr, "char_arr", Location::STACK);
+    DisplayAddr(&list, "&list", Location::STACK);
+    DisplayAddr(char_list, "char_list", Location::HEAP);
 }
 
 TEST(StackHeap, Vector)
