@@ -36,7 +36,7 @@ void SortVisualization::Init()
 		coloredList_.push_back({i, i+1});
 	}
 	waveSound_.play();
-	sortSpeed = swap_pairs.size() / 10;
+	sortSpeed = swap_pairs.size() / 0.5f;
 	windowSize_ = engine_.GetGraphics().GetWindowSize();
 	if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
 	{
@@ -44,7 +44,7 @@ void SortVisualization::Init()
 	}
 	text_.setFont(font_);
 	text_.setFillColor(sf::Color::White);
-	text_.setCharacterSize(20);
+	text_.setCharacterSize(30);
 }
 
 void SortVisualization::Update(float dt)
@@ -98,7 +98,7 @@ void SortVisualization::Update(float dt)
 		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
 		text_.setPosition(5, 95);
 		graphics_.Draw(text_);
-		sortSpeed = 50;
+		sortSpeed = 200;
 		pairIndex_++;
 	}
 	else if (!sf::Keyboard::isKeyPressed((sf::Keyboard::Space)))

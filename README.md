@@ -2,4 +2,4 @@
 An Engine created to do weird stuffs.
 
 
-<img src="publish/quicksort.gif" width="300" alt="QuickSort Visualization">
+<img src="publish/all_in_one.gif" width="600" alt="Sorts Visualization">

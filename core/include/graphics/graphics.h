@@ -19,7 +19,7 @@ public:
 	sf::Vector2u GetWindowSize() const { return windowSize_; }
 	sf::RenderWindow* GetWindow() const { return window_.get(); }
 private:
-	sf::Vector2u windowSize_ = sf::Vector2u(800, 800);
+	sf::Vector2u windowSize_ = sf::Vector2u(600, 600);
 	sf::Texture penguinLogo_;
 	
 	sf::Font font_;
