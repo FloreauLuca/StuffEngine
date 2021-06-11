@@ -28,20 +28,22 @@ void ImageDrawing::Update(float dt)
 	{
 		for (unsigned y = 2; y < squareCount_.y-3; y ++)
 		{
-			if (prev_image_.getPixel(x, y) == currentColor_)
-			{
-				image_.setPixel(x+1, y, currentColor_);
-				image_.setPixel(x, y+1, currentColor_);
-			}
+			image_.setPixel(x + 1, y, prev_image_.getPixel(x, y));
+			image_.setPixel(x, y + 1, prev_image_.getPixel(x, y));
 		}
 	}
-	if (prev_image_.getPixel(squareCount_.x - 4, squareCount_.x - 4) == currentColor_)
+	if (prev_image_.getPixel(bandSize, bandSize) == currentColor_)
 	{
 		currentColor_ = sf::Color(rand() % 255, rand() % 255, rand() % 255);
 	}
 	prev_image_ = image_;
 	texture_.update(image_);
 	graphics_.Draw(sprite_);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && bandSize < 99)
+		bandSize += 1;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && bandSize > 2)
+		bandSize -= 1;
 }
 
 void ImageDrawing::Destroy()

@@ -38,5 +38,6 @@ private:
 	sf::Sprite sprite_;
 
 	sf::Color currentColor_;
+	unsigned bandSize = 50;
 };
 }
