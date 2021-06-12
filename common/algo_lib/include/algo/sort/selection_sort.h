@@ -4,9 +4,10 @@
 //https://www.geeksforgeeks.org/selection-sort/
 namespace stuff::algo
 {
-class SelectionSort final : public Sort
+template<class T>
+class SelectionSort final : public Sort<T>
 {
 public:
-	std::vector<std::pair<size_t, size_t>> SortList() override;
+	std::vector<std::pair<size_t, size_t>> SortList();
 };
 }

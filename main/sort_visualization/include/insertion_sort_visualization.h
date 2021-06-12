@@ -15,6 +15,6 @@ namespace stuff
 
 		void SortList() override;
 	private:
-		algo::InsertionSort insertion_sort_;
+		algo::InsertionSort<int> insertion_sort_;
 	};
 }

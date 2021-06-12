@@ -4,10 +4,11 @@
 //https://www.geeksforgeeks.org/stooge-sort/
 namespace stuff::algo
 {
-class StoogeSort final : public Sort
+template<class T>
+class StoogeSort final : public Sort<T>
 {
 public:
-	std::vector<std::pair<size_t, size_t>> SortList() override;
+	std::vector<std::pair<size_t, size_t>> SortList();
 private:
 	void StoogeSortFunc(int l, int h);
 };

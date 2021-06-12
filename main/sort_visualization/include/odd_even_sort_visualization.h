@@ -15,6 +15,6 @@ namespace stuff
 
 		void SortList() override;
 	private:
-		algo::OddEvenSort odd_even_sort_;
+		algo::OddEvenSort<int> odd_even_sort_;
 	};
 }

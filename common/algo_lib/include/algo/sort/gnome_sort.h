@@ -4,9 +4,10 @@
 //https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
 namespace stuff::algo
 {
-class GnomeSort final : public Sort
+	template<class T>
+class GnomeSort final : public Sort<T>
 {
 public:
-	std::vector<std::pair<size_t, size_t>> SortList() override;
+	std::vector<std::pair<size_t, size_t>> SortList();
 };
 }

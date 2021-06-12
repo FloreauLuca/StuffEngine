@@ -15,6 +15,6 @@ namespace stuff
 
 		void SortList() override;
 	private:
-		algo::GnomeSort gnome_sort_;
+		algo::GnomeSort<int> gnome_sort_;
 	};
 }

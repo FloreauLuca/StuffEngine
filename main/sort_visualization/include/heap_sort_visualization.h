@@ -15,6 +15,6 @@ namespace stuff
 
 		void SortList() override;
 	private:
-		algo::HeapSort heap_sort_;
+		algo::HeapSort<int> heap_sort_;
 	};
 }

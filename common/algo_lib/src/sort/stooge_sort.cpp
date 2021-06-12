@@ -3,24 +3,26 @@
 
 namespace stuff::algo
 {
-	std::vector<std::pair<size_t, size_t>> StoogeSort::SortList()
+	template<class T>
+	std::vector<std::pair<size_t, size_t>> StoogeSort<T>::SortList()
 	{
-		StoogeSortFunc(0, listSize_ - 1);
-		return swapList_;
+		StoogeSortFunc(0, this->listSize_ - 1);
+		return this->swapList_;
 	}
 
-	void StoogeSort::StoogeSortFunc(int l, int h)
+	template<class T>
+	void StoogeSort<T>::StoogeSortFunc(int l, int h)
 	{
 		if (l >= h)
 			return;
 
 		// If first element is smaller than last,
 		// swap them
-		if (list_[l] > list_[h])
+		if (this->list_[l] > this->list_[h])
 		{
-			std::swap(list_[l], list_[h]);
-			swapList_.push_back(std::pair<size_t, size_t>(l, h));
-			coloredList_.push_back(std::vector<size_t>{(unsigned)l, (unsigned)h});
+			std::swap(this->list_[l], this->list_[h]);
+			this->swapList_.push_back(std::pair<size_t, size_t>(l, h));
+			this->coloredList_.push_back(std::vector<size_t>{(unsigned)l, (unsigned)h});
 		}
 
 		// If there are more than 2 elements in

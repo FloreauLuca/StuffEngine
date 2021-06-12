@@ -15,6 +15,6 @@ namespace stuff
 
 		void SortList() override;
 	private:
-		algo::StoogeSort stooge_sort_;
+		algo::StoogeSort<int> stooge_sort_;
 	};
 }

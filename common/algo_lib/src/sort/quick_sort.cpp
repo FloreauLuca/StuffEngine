@@ -12,7 +12,7 @@ std::vector<std::pair<size_t, size_t>> QuickSort<T>::SortList()
 template<class T>
 int QuickSort<T>::Partition(size_t low, size_t high)
 {
-    const int pivot = this->list_[high]; // pivot
+    const T pivot = this->list_[high]; // pivot
     size_t i = low; // Index of smaller element and indicates the right position of pivot found so far
 
     for (size_t j = low; j <= high - 1; j++)

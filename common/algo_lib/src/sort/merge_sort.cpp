@@ -28,7 +28,7 @@ void MergeSort<T>::Merge(int start, int mid, int end)
             start++;
         }
         else {
-            int value = this->list_[start2];
+            T value = this->list_[start2];
             size_t index = start2;
             int switchPos = start2;
             // Shift all the elements between element 1
