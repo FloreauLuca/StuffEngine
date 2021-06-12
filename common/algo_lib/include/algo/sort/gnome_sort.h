@@ -1,10 +1,10 @@
 #pragma once
 #include "sort.h"
-#include "engine/engine.h"
+
 //https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
 namespace stuff::algo
 {
-	template<class T>
+template <Sortable T>
 class GnomeSort final : public Sort<T>
 {
 public:

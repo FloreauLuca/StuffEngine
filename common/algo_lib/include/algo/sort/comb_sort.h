@@ -1,10 +1,9 @@
 #pragma once
 #include "sort.h"
-#include "engine/engine.h"
 
 namespace stuff::algo
 {
-template <class T>
+template <Sortable T>
 class CombSort final : public Sort<T>
 {
 public:

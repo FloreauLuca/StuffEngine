@@ -9,7 +9,7 @@ template<class T>
 concept Sortable = requires(T a) {
 	std::totally_ordered<T>;
 };
-template<class T>
+template<Sortable T>
 class Sort
 {
 public:

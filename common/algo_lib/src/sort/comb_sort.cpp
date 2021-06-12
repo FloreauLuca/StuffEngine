@@ -2,7 +2,7 @@
 
 namespace stuff::algo
 {
-template <class T>
+template <Sortable T>
 int CombSort<T>::GetNextGap(int gap)
 {
 	// Shrink gap by Shrink factor
@@ -13,7 +13,7 @@ int CombSort<T>::GetNextGap(int gap)
 	return gap;
 }
 
-template <class T>
+template <Sortable T>
 std::vector<std::pair<size_t, size_t>> CombSort<T>::SortList()
 {
 	// Initialize gap

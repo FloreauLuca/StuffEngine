@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class StoogeSortVisualization final : public SortVisualization
+class StoogeSortVisualization final : public SortVisualization
+{
+public:
+	explicit StoogeSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit StoogeSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "StoogeSort";
-		}
+		sortName_ = "StoogeSort";
+	}
 
-		void SortList() override;
-	private:
-		algo::StoogeSort<int> stooge_sort_;
-	};
+	void SortList() override;
+private:
+	algo::StoogeSort<int> stooge_sort_;
+};
 }

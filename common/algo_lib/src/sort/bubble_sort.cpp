@@ -2,7 +2,7 @@
 
 namespace stuff::algo
 {
-template<class T>
+template<Sortable T>
 std::vector<std::pair<size_t, size_t>> BubbleSort<T>::SortList()
 {
 	size_t i, j;

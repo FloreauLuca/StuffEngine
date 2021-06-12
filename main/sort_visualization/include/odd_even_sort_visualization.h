@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class OddEvenSortVisualization final : public SortVisualization
+class OddEvenSortVisualization final : public SortVisualization
+{
+public:
+	explicit OddEvenSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit OddEvenSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "OddEven Sort";
-		}
+		sortName_ = "OddEven Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::OddEvenSort<int> odd_even_sort_;
-	};
+	void SortList() override;
+private:
+	algo::OddEvenSort<int> odd_even_sort_;
+};
 }

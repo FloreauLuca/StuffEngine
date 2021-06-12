@@ -18,7 +18,7 @@ void SortVisualization::Init()
 	}
 	waveSound_.setBuffer(waveSoundBuffer_);
 	waveSound_.setLoop(true);
-	
+
 	standardRect = sf::RectangleShape();
 	standardRect.setFillColor(sf::Color::White);
 	for (size_t i = 0; i < listSize; ++i)
@@ -31,9 +31,9 @@ void SortVisualization::Init()
 
 	std::ranges::shuffle(list_, g);
 	SortList();
-	for (size_t i = 0; i < listSize-1; ++i)
+	for (size_t i = 0; i < listSize - 1; ++i)
 	{
-		coloredList_.push_back({i, i+1});
+		coloredList_.push_back({i, i + 1});
 	}
 	waveSound_.play();
 	sortSpeed = swap_pairs.size() / 10.0f;
@@ -50,37 +50,42 @@ void SortVisualization::Init()
 void SortVisualization::Update(float dt)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		sortSpeed+=5;
+		sortSpeed += 5;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sortSpeed >5)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sortSpeed > 5)
 		sortSpeed -= 5;
 	text_.setString(sortName_);
-	text_.setPosition(offset.x, 30+offset.y);
+	text_.setPosition(offset.x, 30 + offset.y);
 	text_.setFont(font_);
 	graphics_.Draw(text_);
-	for(unsigned i = 0; i < listSize; i++)
+	for (unsigned i = 0; i < listSize; i++)
 	{
-		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x - fillSize_.x), (windowSize_.y - 2 * offset.y - fillSize_.y));
+		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x - fillSize_.x),
+		                      (windowSize_.y - 2 * offset.y - fillSize_.y));
 		rectSize /= static_cast<float>(listSize);
-		rectSize.y *= static_cast<float>(list_[i]+1);
+		rectSize.y *= static_cast<float>(list_[i] + 1);
 		rectSize += fillSize_;
 		standardRect.setSize(rectSize);
 		if (pairIndex_ >= coloredList_.size())
 		{
 			standardRect.setFillColor(lgbtColors_[list_[i] / 17]);
-		} else if (std::ranges::find(coloredList_[pairIndex_],i) != coloredList_[pairIndex_].end())
+		}
+		else if (std::ranges::find(coloredList_[pairIndex_], i) != coloredList_[pairIndex_].end())
 		{
 			standardRect.setFillColor(sf::Color::White);
-			waveSound_.setPitch((list_[coloredList_[pairIndex_][0]] / static_cast<float>(listSize))+ (list_[coloredList_[pairIndex_][1]] / static_cast<float>(listSize)));
-		} else
+			waveSound_.setPitch(
+				(list_[coloredList_[pairIndex_][0]] / static_cast<float>(listSize)) + (list_[coloredList_[pairIndex_][1]
+				] / static_cast<float>(listSize)));
+		}
+		else
 		{
-			standardRect.setFillColor(lgbtColors_[list_[i]/17]);
+			standardRect.setFillColor(lgbtColors_[list_[i] / 17]);
 		}
 		standardRect.setPosition(offset.x + rectSize.x * i, (windowSize_.y - offset.y) - rectSize.y);
 		graphics_.Draw(standardRect);
 	}
 	//std::cout << pair.first << "; " << pair.second << std::endl;
-	sf::sleep(sf::seconds(1.0f/ sortSpeed));
+	sf::sleep(sf::seconds(1.0f / sortSpeed));
 	if (pairIndex_ >= coloredList_.size())
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
@@ -91,7 +96,8 @@ void SortVisualization::Update(float dt)
 		graphics_.Draw(text_);
 		waveSound_.stop();
 		engine_.StopEngine();
-	} else if(pairIndex_ >= swap_pairs.size())
+	}
+	else if (pairIndex_ >= swap_pairs.size())
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
 		text_.setPosition(offset.x, 60 + offset.y);
@@ -109,7 +115,8 @@ void SortVisualization::Update(float dt)
 		graphics_.Draw(text_);
 		std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
 		pairIndex_++;
-	} else
+	}
+	else
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
 		text_.setPosition(offset.x, 60 + offset.y);

@@ -1,10 +1,10 @@
 #pragma once
 #include "sort.h"
-#include "engine/engine.h"
+
 //https://www.geeksforgeeks.org/stooge-sort/
 namespace stuff::algo
 {
-template<class T>
+template<Sortable T>
 class StoogeSort final : public Sort<T>
 {
 public:

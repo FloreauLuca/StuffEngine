@@ -27,7 +27,7 @@ public:
 	virtual void SortList();
 protected:
 	std::vector<int> list_;
-	std::vector <std::pair<size_t, size_t>> swap_pairs;
+	std::vector<std::pair<size_t, size_t>> swap_pairs;
 	std::vector<std::vector<size_t>> coloredList_;
 	std::string sortName_ = "";
 	std::chrono::microseconds sortTime_;
@@ -56,6 +56,5 @@ private:
 	sf::Text text_;
 
 	int sortSpeed = 100;
-
 };
 }

@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class MergeSortVisualization final : public SortVisualization
+class MergeSortVisualization final : public SortVisualization
+{
+public:
+	explicit MergeSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit MergeSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Merge Sort";
-		}
+		sortName_ = "Merge Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::MergeSort<int> merge_sort_;
-	};
+	void SortList() override;
+private:
+	algo::MergeSort<int> merge_sort_;
+};
 }

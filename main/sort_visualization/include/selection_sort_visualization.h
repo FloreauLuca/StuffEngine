@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class SelectionSortVisualization final : public SortVisualization
+class SelectionSortVisualization final : public SortVisualization
+{
+public:
+	explicit SelectionSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit SelectionSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "SelectionSort";
-		}
+		sortName_ = "SelectionSort";
+	}
 
-		void SortList() override;
-	private:
-		algo::SelectionSort<int> selection_sort_;
-	};
+	void SortList() override;
+private:
+	algo::SelectionSort<int> selection_sort_;
+};
 }

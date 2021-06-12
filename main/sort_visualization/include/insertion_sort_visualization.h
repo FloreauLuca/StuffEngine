@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class InsertionSortVisualization final : public SortVisualization
+class InsertionSortVisualization final : public SortVisualization
+{
+public:
+	explicit InsertionSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit InsertionSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Insertion Sort";
-		}
+		sortName_ = "Insertion Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::InsertionSort<int> insertion_sort_;
-	};
+	void SortList() override;
+private:
+	algo::InsertionSort<int> insertion_sort_;
+};
 }

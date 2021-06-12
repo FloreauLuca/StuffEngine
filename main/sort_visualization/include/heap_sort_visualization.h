@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class HeapSortVisualization final : public SortVisualization
+class HeapSortVisualization final : public SortVisualization
+{
+public:
+	explicit HeapSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit HeapSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Heap Sort";
-		}
+		sortName_ = "Heap Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::HeapSort<int> heap_sort_;
-	};
+	void SortList() override;
+private:
+	algo::HeapSort<int> heap_sort_;
+};
 }

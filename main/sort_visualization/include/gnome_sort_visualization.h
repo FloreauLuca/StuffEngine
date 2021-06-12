@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class GnomeSortVisualization final : public SortVisualization
+class GnomeSortVisualization final : public SortVisualization
+{
+public:
+	explicit GnomeSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit GnomeSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Gnome Sort";
-		}
+		sortName_ = "Gnome Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::GnomeSort<int> gnome_sort_;
-	};
+	void SortList() override;
+private:
+	algo::GnomeSort<int> gnome_sort_;
+};
 }
