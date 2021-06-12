@@ -9,19 +9,16 @@ template<class T>
 concept Sortable = requires(T a) {
 	std::totally_ordered<T>;
 };
-
 template<class T>
 class Sort
 {
 public:
 	Sort() = default;
-
-	virtual std::vector<std::pair<size_t, size_t>> SortList() {
-		return std::vector<std::pair<size_t, size_t>>
-			();
-	}
-	
-	void SetList(const std::vector<T>& list);
+	void SetList(const std::vector<T>& list)
+	{
+		list_ = list;
+		listSize_ = list_.size();
+	};
 	[[nodiscard]] std::vector<T> GetList() const { return list_; }
 	[[nodiscard]] std::vector<std::vector<size_t>> GetColoredList() const { return coloredList_; }
 	[[nodiscard]] bool IsSorted() const { return sorted_; }
