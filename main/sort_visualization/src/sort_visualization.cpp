@@ -36,7 +36,7 @@ void SortVisualization::Init()
 		coloredList_.push_back({i, i+1});
 	}
 	waveSound_.play();
-	sortSpeed = swap_pairs.size() / 0.5f;
+	sortSpeed = swap_pairs.size() / 10.0f;
 	windowSize_ = engine_.GetGraphics().GetWindowSize();
 	if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
 	{
@@ -55,7 +55,7 @@ void SortVisualization::Update(float dt)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sortSpeed >5)
 		sortSpeed -= 5;
 	text_.setString(sortName_);
-	text_.setPosition(5, 35);
+	text_.setPosition(offset.x, 30+offset.y);
 	text_.setFont(font_);
 	graphics_.Draw(text_);
 	for(unsigned i = 0; i < listSize; i++)
@@ -84,34 +84,35 @@ void SortVisualization::Update(float dt)
 	if (pairIndex_ >= coloredList_.size())
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
-		text_.setPosition(5, 65);
+		text_.setPosition(offset.x, 60 + offset.y);
 		graphics_.Draw(text_);
 		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
-		text_.setPosition(5, 95);
+		text_.setPosition(offset.x, 90 + offset.y);
 		graphics_.Draw(text_);
 		waveSound_.stop();
+		engine_.StopEngine();
 	} else if(pairIndex_ >= swap_pairs.size())
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
-		text_.setPosition(5, 65);
+		text_.setPosition(offset.x, 60 + offset.y);
 		graphics_.Draw(text_);
 		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
-		text_.setPosition(5, 95);
+		text_.setPosition(offset.x, 90 + offset.y);
 		graphics_.Draw(text_);
-		sortSpeed = 200;
+		sortSpeed = 50;
 		pairIndex_++;
 	}
 	else if (!sf::Keyboard::isKeyPressed((sf::Keyboard::Space)))
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
-		text_.setPosition(5, 65);
+		text_.setPosition(offset.x, 60 + offset.y);
 		graphics_.Draw(text_);
 		std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
 		pairIndex_++;
 	} else
 	{
 		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
-		text_.setPosition(5, 65);
+		text_.setPosition(offset.x, 60 + offset.y);
 		graphics_.Draw(text_);
 	}
 }
