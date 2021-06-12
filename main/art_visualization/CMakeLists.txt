@@ -4,5 +4,5 @@ file(GLOB_RECURSE art_visualization_src include/*.h src/*.cpp)
 
 add_executable(art_visualization ${art_visualization_src})
 
-target_link_libraries(art_visualization PUBLIC Core)
+target_link_libraries(art_visualization PUBLIC core)
 set_target_properties (art_visualization PROPERTIES FOLDER Main)

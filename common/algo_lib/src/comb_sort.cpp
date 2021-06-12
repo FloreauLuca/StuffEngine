@@ -1,4 +1,4 @@
-#include "comb_sort.h"
+#include "algo/sort/comb_sort.h"
 
 namespace stuff::algo
 {

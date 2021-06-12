@@ -1,4 +1,4 @@
-#include "bubble_sort.h"
+#include "algo/sort/bubble_sort.h"
 
 namespace stuff::algo
 {

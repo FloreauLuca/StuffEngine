@@ -28,7 +28,7 @@ private:
 	float radiusMouse = 2.0f;
 	float mousePower = 1.0f;
 
-	const sf::Vector2f squareSize_ = sf::Vector2f(40, 40);
+	const sf::Vector2u squareCount_ = sf::Vector2u(20, 20);
 	sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 	std::vector <std::pair<sf::Vector2f, float>> pixelToDraw_;
 };

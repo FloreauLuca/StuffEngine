@@ -1,5 +1,5 @@
 #pragma once
-#include "bubble_sort.h"
+#include "algo/sort/bubble_sort.h"
 #include "sort_visualization.h"
 
 namespace stuff
@@ -10,6 +10,7 @@ public:
 	explicit BubbleSortVisualization(Engine& engine)
 		: SortVisualization(engine)
 	{
+		sortName_ = "Bubble Sort";
 	}
 
 	void SortList() override;

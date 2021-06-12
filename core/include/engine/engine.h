@@ -36,5 +36,6 @@ private:
 	Window window_;
 	InputSystem inputSystem_;
 	bool isRunning_ = true;
+	sf::Texture penguinLogo_;
 };
 }

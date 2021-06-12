@@ -1,4 +1,4 @@
-#include "quick_sort.h"
+#include "algo/sort/quick_sort.h"
 
 namespace stuff::algo
 {

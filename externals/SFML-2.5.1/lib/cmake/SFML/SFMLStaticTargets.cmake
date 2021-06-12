@@ -146,7 +146,7 @@ foreach(target ${_IMPORT_CHECK_TARGETS} )
     if(NOT EXISTS "${file}" )
       message(FATAL_ERROR "The imported target \"${target}\" references the file
    \"${file}\"
-but this file does not exist.  Possible reasons include:
+but this ${file} does not exist.  Possible reasons include:
 * The file was deleted, renamed, or moved to another location.
 * An install or uninstall procedure did not complete successfully.
 * The installation package was faulty and contained

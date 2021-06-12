@@ -1,5 +1,5 @@
 #pragma once
-#include "cocktail_sort.h"
+#include "algo/sort/cocktail_sort.h"
 #include "sort_visualization.h"
 
 namespace stuff
@@ -10,6 +10,7 @@ public:
 	explicit CocktailSortVisualization(Engine& engine)
 		: SortVisualization(engine)
 	{
+		sortName_ = "Cocktail Sort";
 	}
 
 	void SortList() override;

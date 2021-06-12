@@ -1,4 +1,4 @@
-#include "cocktail_sort.h"
+#include "algo/sort/cocktail_sort.h"
 
 namespace stuff::algo
 {

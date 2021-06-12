@@ -12,9 +12,16 @@ namespace stuff
 {
 void SortVisualization::Init()
 {
+	if (!waveSoundBuffer_.loadFromFile(dataPath + "wave.wav"))
+	{
+		std::cout << "Sound fail to load" << std::endl;
+	}
+	waveSound_.setBuffer(waveSoundBuffer_);
+	waveSound_.setLoop(true);
+	
 	standardRect = sf::RectangleShape();
 	standardRect.setFillColor(sf::Color::White);
-	for (int i = 0; i < listSize; ++i)
+	for (size_t i = 0; i < listSize; ++i)
 	{
 		list_.push_back(i);
 	}
@@ -24,6 +31,20 @@ void SortVisualization::Init()
 
 	std::ranges::shuffle(list_, g);
 	SortList();
+	for (size_t i = 0; i < listSize-1; ++i)
+	{
+		coloredList_.push_back({i, i+1});
+	}
+	waveSound_.play();
+	sortSpeed = swap_pairs.size() / 10.0f;
+	windowSize_ = engine_.GetGraphics().GetWindowSize();
+	if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
+	{
+		std::cout << "Error font not loaded" << std::endl;
+	}
+	text_.setFont(font_);
+	text_.setFillColor(sf::Color::White);
+	text_.setCharacterSize(30);
 }
 
 void SortVisualization::Update(float dt)
@@ -33,18 +54,16 @@ void SortVisualization::Update(float dt)
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sortSpeed >5)
 		sortSpeed -= 5;
-
-	sf::Text text;
-	text.setString(std::to_string(pairIndex_));
-	text.setFillColor(sf::Color::White);
-	text.setCharacterSize(14);
-	text.setPosition(0, 20);
-	graphics_.Draw(text);
+	text_.setString(sortName_);
+	text_.setPosition(offset.x, 30+offset.y);
+	text_.setFont(font_);
+	graphics_.Draw(text_);
 	for(unsigned i = 0; i < listSize; i++)
 	{
-		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x), (windowSize_.y - 2 * offset.y));
+		sf::Vector2f rectSize((windowSize_.x - 2 * offset.x - fillSize_.x), (windowSize_.y - 2 * offset.y - fillSize_.y));
 		rectSize /= static_cast<float>(listSize);
 		rectSize.y *= static_cast<float>(list_[i]+1);
+		rectSize += fillSize_;
 		standardRect.setSize(rectSize);
 		if (pairIndex_ >= coloredList_.size())
 		{
@@ -52,6 +71,7 @@ void SortVisualization::Update(float dt)
 		} else if (std::ranges::find(coloredList_[pairIndex_],i) != coloredList_[pairIndex_].end())
 		{
 			standardRect.setFillColor(sf::Color::White);
+			waveSound_.setPitch((list_[coloredList_[pairIndex_][0]] / static_cast<float>(listSize))+ (list_[coloredList_[pairIndex_][1]] / static_cast<float>(listSize)));
 		} else
 		{
 			standardRect.setFillColor(lgbtColors_[list_[i]/17]);
@@ -61,13 +81,45 @@ void SortVisualization::Update(float dt)
 	}
 	//std::cout << pair.first << "; " << pair.second << std::endl;
 	sf::sleep(sf::seconds(1.0f/ sortSpeed));
-	if (pairIndex_ >= swap_pairs.size() || sf::Keyboard::isKeyPressed((sf::Keyboard::Space))) return;
-	std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
-	pairIndex_++;
+	if (pairIndex_ >= coloredList_.size())
+	{
+		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
+		text_.setPosition(offset.x, 60 + offset.y);
+		graphics_.Draw(text_);
+		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
+		text_.setPosition(offset.x, 90 + offset.y);
+		graphics_.Draw(text_);
+		waveSound_.stop();
+		engine_.StopEngine();
+	} else if(pairIndex_ >= swap_pairs.size())
+	{
+		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(swap_pairs.size()) + " iterations");
+		text_.setPosition(offset.x, 60 + offset.y);
+		graphics_.Draw(text_);
+		text_.setString("Duration : " + std::to_string(sortTime_.count()) + "µs");
+		text_.setPosition(offset.x, 90 + offset.y);
+		graphics_.Draw(text_);
+		sortSpeed = 50;
+		pairIndex_++;
+	}
+	else if (!sf::Keyboard::isKeyPressed((sf::Keyboard::Space)))
+	{
+		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
+		text_.setPosition(offset.x, 60 + offset.y);
+		graphics_.Draw(text_);
+		std::swap(list_[swap_pairs[pairIndex_].first], list_[swap_pairs[pairIndex_].second]);
+		pairIndex_++;
+	} else
+	{
+		text_.setString(std::to_string(listSize) + " elements; " + std::to_string(pairIndex_) + " iterations");
+		text_.setPosition(offset.x, 60 + offset.y);
+		graphics_.Draw(text_);
+	}
 }
 
 void SortVisualization::Destroy()
 {
+	waveSound_.stop();
 }
 
 void SortVisualization::SortList()
