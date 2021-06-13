@@ -36,7 +36,8 @@ void SortVisualization::Init()
 		coloredList_.push_back({i, i + 1});
 	}
 	waveSound_.play();
-	sortSpeed = swap_pairs.size() / 10.0f;
+	waveSound_.setPitch(0);
+	sortSpeed = swap_pairs.size() / 5.0f;
 	windowSize_ = engine_.GetGraphics().GetWindowSize();
 	if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
 	{

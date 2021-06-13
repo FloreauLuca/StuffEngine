@@ -12,7 +12,7 @@ PerlinNoise::PerlinNoise(unsigned seed) : seed_(seed)
 {
 }
 
-float PerlinNoise::CalculateNoise(float x, float y, float z, float persistance, float octaves = 5)
+float PerlinNoise::CalculateNoise(float x, float y, float z, float persistance, int octaves)
 {
 	float total = 0;
 

@@ -19,7 +19,7 @@
 int main()
 {
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 450, 800 });
+	engine.GetGraphics().SetWindowSize({ 600, 600 });
 	stuff::GnomeSortVisualization gnome_sort_visualization(engine);
 	engine.RegisterSystem(gnome_sort_visualization);
 	engine.StartEngine();

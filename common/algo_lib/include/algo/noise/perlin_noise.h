@@ -153,7 +153,7 @@ class PerlinNoise
 public:
 	PerlinNoise() = default;
 	explicit PerlinNoise(unsigned int seed);
-	float CalculateNoise(float x, float y, float z, float persistance, float octaves);
+	float CalculateNoise(float x, float y = 0, float z = 0, float persistance = 0.5f, int octaves = 5);
 	float InterpolationNoise(float x, float y, float z);
 	float SmoothNoise(float x, float y, float z);
 	float Lerp(float a, float b, float t);

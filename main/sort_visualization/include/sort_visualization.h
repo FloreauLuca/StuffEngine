@@ -37,7 +37,7 @@ private:
 
 	sf::Vector2u windowSize_ = sf::Vector2u(1400, 900);
 	const sf::Vector2u offset = sf::Vector2u(5, 5);
-	const sf::Vector2f fillSize_ = sf::Vector2f(0, 300);
+	const sf::Vector2f fillSize_ = sf::Vector2f(0, 0);
 
 	size_t pairIndex_ = 0;
 	sf::RectangleShape standardRect;
