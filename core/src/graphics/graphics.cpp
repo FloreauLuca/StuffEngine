@@ -52,6 +52,10 @@ void Graphics::Update(float dt)
     {
         window_->draw(circle_shape);
     }
+    for (auto& vertex_array : vertex_arrays_)
+    {
+        window_->draw(vertex_array);
+    }
     for (auto& sprite : sprites_)
     {
         window_->draw(sprite);
@@ -64,6 +68,7 @@ void Graphics::Update(float dt)
     window_->display();
     circleShapes_.clear();
     rectangleShapes_.clear();
+    vertex_arrays_.clear();
     texts_.clear();
     sprites_.clear();
 }
@@ -85,6 +90,11 @@ void Graphics::Draw(sf::Text& text)
 void Graphics::Draw(sf::Sprite& sprite)
 {
     sprites_.push_back(sprite);
+}
+
+void Graphics::Draw(sf::VertexArray& vertexArray)
+{
+    vertex_arrays_.push_back(vertexArray);
 }
 
 void Graphics::Destroy()

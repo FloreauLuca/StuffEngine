@@ -15,6 +15,7 @@ public:
 	void Draw(sf::RectangleShape& rectangleShape);
 	void Draw(sf::Text& text);
 	void Draw(sf::Sprite& sprite);
+	void Draw(sf::VertexArray& vertexArray);
 	void Destroy() override;
 	sf::Vector2u GetWindowSize() const { return windowSize_; }
 	void SetWindowSize(const sf::Vector2u& windowSize) { windowSize_ = windowSize; }
@@ -30,5 +31,6 @@ private:
 	std::vector<sf::RectangleShape> rectangleShapes_;
 	std::vector<sf::Text> texts_;
 	std::vector<sf::Sprite> sprites_;
+	std::vector<sf::VertexArray> vertex_arrays_;
 };
 }
