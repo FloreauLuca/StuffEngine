@@ -37,24 +37,30 @@ namespace stuff
 				y -= timer_;
 				if (j < squareCount_.y / 2)
 				{
+					perlinNoise_.SetOctaves(3);
 					if (i < squareCount_.x / 2)
 					{
-						result = perlinNoise_.CalculateNoise(x, y, z, 0.5f, 3) + 1;
+						perlinNoise_.SetPersistance(0.5f);
+						result = perlinNoise_.CalculateNoise(x, y, z) + 1;
 					}
 					else
 					{
-						result = perlinNoise_.CalculateNoise(x, y, z, 0.9f, 3) + 1;
+						perlinNoise_.SetPersistance(0.9f);
+						result = perlinNoise_.CalculateNoise(x, y, z) + 1;
 					}
 				}
 				else
 				{
+					perlinNoise_.SetOctaves(10);
 					if (i < squareCount_.x / 2)
 					{
-						result = perlinNoise_.CalculateNoise(x, y, z, 0.5f, 10) + 1;
+						perlinNoise_.SetPersistance(0.5f);
+						result = perlinNoise_.CalculateNoise(x, y, z) + 1;
 					}
 					else
 					{
-						result = perlinNoise_.CalculateNoise(x, y, z, 0.9f, 10) + 1;
+						perlinNoise_.SetPersistance(0.9f);
+						result = perlinNoise_.CalculateNoise(x, y, z) + 1;
 					}
 				}
 				result /= 2;

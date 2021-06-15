@@ -20,6 +20,8 @@ namespace stuff
 		text_.setOutlineColor(sf::Color::Black);
 		text_.setOutlineThickness(5.0f);
 		text_.setStyle(sf::Text::Bold);
+		perlinNoise_.SetPersistance(0.75f);
+		perlinNoise_.SetOctaves(5);
 	}
 
 	void PerlinNoiseSteps::Update(float dt)
@@ -49,7 +51,7 @@ namespace stuff
 				}
 				else
 				{
-					result = perlinNoise_.CalculateNoise(x, y, z, 0.75f, 5) + 1;
+					result = perlinNoise_.CalculateNoise(x, y, z) + 1;
 				}
 				result /= 2;
 				result = std::clamp(result, 0.0f, 1.0f);

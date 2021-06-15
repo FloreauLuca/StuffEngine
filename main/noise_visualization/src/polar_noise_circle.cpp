@@ -21,6 +21,8 @@ void PolarNoiseCircle::GenerateCircle()
 	vertices_.clear();
 	sf::Vector2f center = sf::Vector2f(windowSize_.x / 2.0f, windowSize_.y / 2.0f);
 	algo::PerlinNoise perlin = algo::PerlinNoise(5.0f);
+	perlin.SetPersistance(0.75f);
+	perlin.SetOctaves(5);
 	float noise = 1.0f;
 	float phase = timer_;
 	float zOff = timer_;
