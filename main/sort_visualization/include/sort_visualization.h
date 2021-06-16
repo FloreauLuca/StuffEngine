@@ -24,6 +24,7 @@ public:
 	void Init() override;
 	void Update(float dt) override;
 	void Destroy() override;
+	void SetListSize(unsigned listSize) { listSize_ = listSize; }
 	virtual void SortList();
 protected:
 	std::vector<int> list_;
@@ -41,7 +42,7 @@ private:
 
 	size_t pairIndex_ = 0;
 	sf::RectangleShape standardRect;
-	const unsigned int listSize = 100;
+	unsigned int listSize_ = 100;
 	const std::array<sf::Color, 6> lgbtColors_ = {
 		sf::Color(255, 0, 24),
 		sf::Color(255, 165, 44),

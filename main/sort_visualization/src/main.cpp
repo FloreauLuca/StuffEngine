@@ -15,17 +15,35 @@
 #include "odd_even_sort_visualization.h"
 #include "insertion_sort_visualization.h"
 #include "gnome_sort_visualization.h"
+#include "bogo_sort_visualization.h"
+#include "cycle_sort_visualization.h"
+#include "pancake_sort_visualization.h"
+#include "shell_sort_visualization.h"
+#include "tim_sort_visualization.h"
 
 int main()
 {
 	stuff::Engine engine;
 	engine.GetGraphics().SetWindowSize({ 600, 600 });
+	stuff::BogoSortVisualization bogo_sort_visualization(engine);
+	bogo_sort_visualization.SetListSize(6);
+	engine.RegisterSystem(bogo_sort_visualization);
+	engine.StartEngine();
+	stuff::TimSortVisualization tim_sort_visualization(engine);
+	engine.RegisterSystem(tim_sort_visualization);
+	engine.StartEngine();
+	stuff::ShellSortVisualization shell_sort_visualization(engine);
+	engine.RegisterSystem(shell_sort_visualization);
+	engine.StartEngine();
+	stuff::PancakeSortVisualization pancake_sort_visualization(engine);
+	engine.RegisterSystem(pancake_sort_visualization);
+	engine.StartEngine();
+	stuff::CycleSortVisualization cycle_sort_visualization(engine);
+	engine.RegisterSystem(cycle_sort_visualization);
+	engine.StartEngine();
 	stuff::GnomeSortVisualization gnome_sort_visualization(engine);
 	engine.RegisterSystem(gnome_sort_visualization);
 	engine.StartEngine();
-	//stuff::InsertionSortVisualization insertion_sort_visualization(engine);
-	//engine.RegisterSystem(insertion_sort_visualization);
-	//engine.StartEngine();
 	stuff::OddEvenSortVisualization odd_even_sort_visualization(engine);
 	engine.RegisterSystem(odd_even_sort_visualization);
 	engine.StartEngine();
