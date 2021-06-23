@@ -24,17 +24,17 @@
 int main()
 {
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 600, 600 });
+	engine.GetGraphics().SetWindowSize({ 450, 800 });
 	stuff::BogoSortVisualization bogo_sort_visualization(engine);
 	bogo_sort_visualization.SetListSize(6);
 	engine.RegisterSystem(bogo_sort_visualization);
 	engine.StartEngine();
-	stuff::TimSortVisualization tim_sort_visualization(engine);
-	engine.RegisterSystem(tim_sort_visualization);
-	engine.StartEngine();
-	stuff::ShellSortVisualization shell_sort_visualization(engine);
-	engine.RegisterSystem(shell_sort_visualization);
-	engine.StartEngine();
+	//stuff::TimSortVisualization tim_sort_visualization(engine);
+	//engine.RegisterSystem(tim_sort_visualization);
+	//engine.StartEngine();
+	//stuff::ShellSortVisualization shell_sort_visualization(engine);
+	//engine.RegisterSystem(shell_sort_visualization);
+	//engine.StartEngine();
 	stuff::PancakeSortVisualization pancake_sort_visualization(engine);
 	engine.RegisterSystem(pancake_sort_visualization);
 	engine.StartEngine();
@@ -47,6 +47,9 @@ int main()
 	stuff::OddEvenSortVisualization odd_even_sort_visualization(engine);
 	engine.RegisterSystem(odd_even_sort_visualization);
 	engine.StartEngine();
+	//stuff::InsertionSortVisualization insertion_sort_visualization(engine);
+	//engine.RegisterSystem(insertion_sort_visualization);
+	//engine.StartEngine();
 	stuff::HeapSortVisualization heap_sort_visualization(engine);
 	engine.RegisterSystem(heap_sort_visualization);
 	engine.StartEngine();

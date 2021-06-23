@@ -1,4 +1,4 @@
-#include "sort_visualization.h"
+#include "search_visualization.h"
 
 #include <iostream>
 #include <random>
@@ -10,7 +10,7 @@
 
 namespace stuff
 {
-void SortVisualization::Init()
+void SearchVisualization::Init()
 {
 	if (!waveSoundBuffer_.loadFromFile(dataPath + "wave.wav"))
 	{
@@ -48,7 +48,7 @@ void SortVisualization::Init()
 	text_.setCharacterSize(30);
 }
 
-void SortVisualization::Update(float dt)
+void SearchVisualization::Update(float dt)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		sortSpeed += 5;
@@ -126,12 +126,12 @@ void SortVisualization::Update(float dt)
 	}
 }
 
-void SortVisualization::Destroy()
+void SearchVisualization::Destroy()
 {
 	waveSound_.stop();
 }
 
-void SortVisualization::SortList()
+void SearchVisualization::SortList()
 {
 }
 }

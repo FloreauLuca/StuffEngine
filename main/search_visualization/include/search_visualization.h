@@ -14,10 +14,10 @@ namespace stuff
 class Graphics;
 class Engine;
 
-class SortVisualization : public SystemInterface
+class SearchVisualization : public SystemInterface
 {
 public:
-	SortVisualization(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
+	SearchVisualization(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
 	{
 	}
 
