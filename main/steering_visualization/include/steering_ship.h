@@ -26,19 +26,14 @@ namespace stuff
 		void Draw(Graphics& graphics);
 
 		void LookAt(sf::Vector2f pos);
+	
 	private:
 		
 		float timer_ = 0.0f;
 		
 		sf::CircleShape triangle_;
-		
-		sf::Color color_;
 
-		float size_ = 25.0f;
-
-		sf::Vector2f pos_;
-
-		float rot_ = 0.0f;
+		sf::Vector2f target_;
 
 	};
 }
