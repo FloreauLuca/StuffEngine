@@ -34,7 +34,7 @@ namespace stuff
 		std::vector<SteeringShip> ships_;
 
 		const float shipSize_ = 25.0f;
-		const unsigned shipNb_ = 10;
+		const unsigned shipNb_ = 100;
 
 	};
 }

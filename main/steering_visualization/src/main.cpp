@@ -9,7 +9,7 @@
 int main()
 {
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 600, 600 });
+	engine.GetGraphics().SetWindowSize({ 800, 800 });
 	stuff::SteeringVisualization steering_visualization(engine);
 	engine.RegisterSystem(steering_visualization);
 	engine.StartEngine();

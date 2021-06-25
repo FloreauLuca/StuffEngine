@@ -1,14 +1,16 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#include "algo/steering/flee_behavior.h"
+#include "algo/steering/seek_behavior.h"
 #include "engine/engine.h"
 #include "engine/system.h"
 
+//https://gamedevelopment.tutsplus.com/series/understanding-steering-behaviors--gamedev-12732
+
 namespace stuff
 {
-	const float PI = static_cast<float>(3.14159265358979323846);
-
-	class SteeringShip final
+	class SteeringShip final : FleeBehavior, SeekBehavior
 	{
 	public:
 		SteeringShip(float size = 25.0f, float rot = 0.0f, sf::Color color = sf::Color::Red,
@@ -22,10 +24,17 @@ namespace stuff
 		void SetPosition(sf::Vector2f pos);
 		void SetColor(sf::Color color);
 		void SetRotation(float rot);
+		
+		float GetSize() const;
+		sf::Vector2f GetPosition() const;
+		sf::Color GetColor() const;
+		float GetRotation() const;
 
 		void Draw(Graphics& graphics);
 
 		void LookAt(sf::Vector2f pos);
+
+		void SetTarget(sf::Vector2f target);
 	
 	private:
 		
@@ -34,6 +43,10 @@ namespace stuff
 		sf::CircleShape triangle_;
 
 		sf::Vector2f target_;
+
+		sf::Vector2f velocity_;
+		float max_velocity_ = 300.0f;
+		float force_percent_ = 0.1f;
 
 	};
 }
