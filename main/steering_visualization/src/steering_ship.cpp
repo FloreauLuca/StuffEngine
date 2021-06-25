@@ -57,6 +57,16 @@ void SteeringShip::Update(float dt)
 	//	flee_border_steering = flee_desired_velocity - velocity_;
 	//	flee_border_steering *= 1 / magnitude(pos - target_);
 	//}
+
+	sf::Vector2f wander_steering;
+	{
+		sf::Vector2f flee_desired_velocity = pos - target_;
+		flee_desired_velocity = normalize(flee_desired_velocity);
+		flee_desired_velocity = flee_desired_velocity * max_velocity_;
+		flee_border_steering = flee_desired_velocity - velocity_;
+		flee_border_steering *= 1 / magnitude(pos - target_);
+	}
+
 	
 	
 	sf::Vector2f force = seek_steering * 0.01f + flee_steering * 0.0f + flee_border_steering * 10.0f;

@@ -40,11 +40,11 @@ namespace stuff
 			ships_[i].SetTarget(mousePosition);
 			ships_[i].Update(dt);
 			sf::Vector2f pos = ships_[i].GetPosition();
-			if (pos.x > windowSize_.x) ships_[i].SetPosition({ 0, pos.y });
-			if (pos.y > windowSize_.y) ships_[i].SetPosition({ pos.x, 0 });
-			if (pos.x < 0) ships_[i].SetPosition({ static_cast<float>(windowSize_.x), pos.y });
-			if (pos.y < 0) ships_[i].SetPosition({ pos.x , static_cast<float>(windowSize_.y) });
-			pos = ships_[i].GetPosition();
+			//if (pos.x > windowSize_.x) ships_[i].SetPosition({ 0, pos.y });
+			//if (pos.y > windowSize_.y) ships_[i].SetPosition({ pos.x, 0 });
+			//if (pos.x < 0) ships_[i].SetPosition({ static_cast<float>(windowSize_.x), pos.y });
+			//if (pos.y < 0) ships_[i].SetPosition({ pos.x , static_cast<float>(windowSize_.y) });
+			//pos = ships_[i].GetPosition();
 			ships_[i].SetColor(sf::Color(pos.x / windowSize_.x * 255, pos.y / windowSize_.y * 255, (1-(pos.x + pos.y) / (windowSize_.x + windowSize_.y)) * 255));
 			ships_[i].Draw(graphics_);
 		}
