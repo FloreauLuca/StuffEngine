@@ -32,9 +32,6 @@ namespace stuff
 	void FlockingVisualization::Update(float dt)
 	{
 		timer_ += dt * 2.0f;
-		float radius = /*(sinf(timer_) + 1)/2 **/ (windowSize_.x / 2.0f);
-
-		sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition(*graphics_.GetWindow()));
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract)) align_force_ -= 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add)) align_force_ += 0.1f;
@@ -42,6 +39,7 @@ namespace stuff
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) cohesion_force_ += 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) seperation_force_ -= 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) seperation_force_ += 0.1f;
+		
 		sf::Text text;
 		text.setString("Align : " + std::to_string(align_force_));
 		text.setPosition(10, 10);
@@ -52,6 +50,7 @@ namespace stuff
 		text.setString("Seperation : " + std::to_string(seperation_force_));
 		text.setPosition(10, 50);
 		graphics_.Draw(text);
+		
 		sf::Vector2f sum = boids_[(static_cast<int>(timer_ * 5.0f)) % boidNb_].GetPosition();
 		std::vector<algo::SteeringBehavior> steers;
 		for (auto& boid : boids_)
@@ -60,10 +59,10 @@ namespace stuff
 		}
 		for (unsigned i = 0; i < boidNb_; ++i)
 		{
-			boids_[i].Edge(windowSize_);
 			boids_[i].Update(dt, steers, windowSize_, align_force_, cohesion_force_, seperation_force_);
 			boids_[i].Draw(graphics_, windowSize_);
 		}
+
 		sum = normalize(sum) * 1.0f;
 		waveSound_.setPitch(sum.x);
 		waveSound_.setVolume(sum.y * 50.0f);

@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 
 
+#include "fleeing_ship.h"
+#include "following_ship.h"
 #include "steering_ship.h"
 #include "engine/engine.h"
 #include "engine/system.h"
@@ -31,7 +33,7 @@ namespace stuff
 
 		sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
-		std::vector<SteeringShip> ships_;
+		std::vector<FleeingShip> ships_;
 
 		const float shipSize_ = 25.0f;
 		const unsigned shipNb_ = 100;

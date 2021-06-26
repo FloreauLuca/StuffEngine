@@ -5,6 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
 
+
+#include "steering_ship.h"
 #include "algo/steering/flocking_behavior.h"
 
 #include "math/vector.h"
@@ -12,7 +14,7 @@
 
 namespace stuff
 {
-class Boid : public algo::FlockingBehavior
+class Boid : public algo::FlockingBehavior, public SteeringShip
 {
 public:
 	Boid(sf::Vector2f pos = sf::Vector2f(0, 0), float size = 25.0f, float rot = 0.0f, sf::Color color = sf::Color::Red);
