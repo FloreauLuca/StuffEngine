@@ -46,7 +46,7 @@ namespace stuff
 		for (unsigned i = 0; i < boidNb_; ++i)
 		{
 			boids_[i].Edge(windowSize_);
-			boids_[i].Flock(boids_, align_force_, cohesion_force_, seperation_force_);
+			boids_[i].Flock(boids_, windowSize_, align_force_, cohesion_force_, seperation_force_);
 			boids_[i].Update(dt);
 			boids_[i].Draw(graphics_, windowSize_);
 		}

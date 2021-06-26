@@ -98,6 +98,40 @@ namespace stuff
 			return steering;
 		}
 
+		sf::Vector2f EdgeAvoiding(sf::Vector2u windowSize)
+		{
+			sf::Vector2f steering;
+			float total = 0;
+			if (pos_.x < wall_offset_) {
+				sf::Vector2f diff = sf::Vector2f{ wall_offset_ - pos_.x, 0.0f };
+				steering += diff;
+				total++;
+			}
+			if (pos_.y < wall_offset_) {
+				sf::Vector2f diff = sf::Vector2f{ 0.0f, wall_offset_ - pos_.y};
+				steering += diff;
+				total++;
+			}
+			if (pos_.x > windowSize.x - wall_offset_) {
+				sf::Vector2f diff = sf::Vector2f{ windowSize.x - wall_offset_ - pos_.x, 0.0f };
+				steering += diff;
+				total++;
+			}
+			if (pos_.y > windowSize.y - wall_offset_) {
+				sf::Vector2f diff = sf::Vector2f{ 0.0f,  windowSize.y - wall_offset_ - pos_.y };
+				steering += diff;
+				total++;
+			}
+			if (total > 0)
+			{
+				steering /= total;
+				steering = normalize(steering) * max_speed_;
+				steering -= velocity_;
+				steering = normalize(steering) * max_force_;
+			}
+			return steering;
+		}
+
 		void Edge(sf::Vector2u windowSize)
 		{
 			if (pos_.x > windowSize.x) pos_ = { 0, pos_.y };
@@ -107,6 +141,7 @@ namespace stuff
 		}
 		
 		void Flock(std::vector<Boid>& boids,
+			sf::Vector2u windowSize,
 			float align_force_ = 0.5f,
 			float cohesion_force_ = 0.5f,
 			float seperation_force_ = 0.5f)
@@ -120,6 +155,9 @@ namespace stuff
 			sf::Vector2f seperation = Seperation(boids);
 			seperation *= seperation_force_;
 			acc_ += seperation;
+			sf::Vector2f edge_avoiding = EdgeAvoiding(windowSize);
+			edge_avoiding *= 10.0f;
+			acc_ += edge_avoiding;
 		}
 
 		void Update(float dt)
@@ -141,8 +179,9 @@ namespace stuff
 		sf::Vector2f velocity_;
 	private:
 		float max_speed_ = 400.0f;
-		float max_force_ = 500.0;
+		float max_force_ = 500.0f;
 		float perception = 100;
+		float wall_offset_ = 20;
 		sf::Vector2f acc_;
 
 		sf::CircleShape triangle_;
@@ -169,7 +208,7 @@ namespace stuff
 		sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 		
 		const float shipSize_ = 25.0f;
-		const unsigned boidNb_ = 50;
+		const unsigned boidNb_ = 100;
 		std::vector<Boid> boids_;
 
 		float align_force_ = 0.5f;
