@@ -4,18 +4,28 @@
 #include <numeric>
 
 #include "math/const.h"
+#include "utility/data_location.h"
 
 
 namespace stuff
 {
 	void FlockingVisualization::Init()
 	{
+		if (!waveSoundBuffer_.loadFromFile(dataPath + "wave.wav"))
+		{
+			std::cout << "Sound fail to load" << std::endl;
+		}
+		waveSound_.setBuffer(waveSoundBuffer_);
+		waveSound_.setLoop(true);
+		//waveSound_.play();
+		waveSound_.setPitch(1.0);
+		
 		timer_ = 0;
 		windowSize_ = graphics_.GetWindowSize();
 		float radius = windowSize_.x / 4.0f;
 		for (int i = 0; i < boidNb_; ++i)
 		{
-			boids_.push_back(Boid(sf::Vector2f(rand() % windowSize_.x, rand()%windowSize_.y)));
+			boids_.push_back(Boid(sf::Vector2f(rand() % windowSize_.x, rand()%windowSize_.y),shipSize_));
 		}
 	}
 	
@@ -42,17 +52,25 @@ namespace stuff
 		text.setString("Seperation : " + std::to_string(seperation_force_));
 		text.setPosition(10, 50);
 		graphics_.Draw(text);
-		
+		sf::Vector2f sum = boids_[(static_cast<int>(timer_ * 5.0f)) % boidNb_].GetPosition();
+		std::vector<algo::SteeringBehavior> steers;
+		for (auto& boid : boids_)
+		{
+			steers.push_back(boid);
+		}
 		for (unsigned i = 0; i < boidNb_; ++i)
 		{
 			boids_[i].Edge(windowSize_);
-			boids_[i].Flock(boids_, windowSize_, align_force_, cohesion_force_, seperation_force_);
-			boids_[i].Update(dt);
+			boids_[i].Update(dt, steers, windowSize_, align_force_, cohesion_force_, seperation_force_);
 			boids_[i].Draw(graphics_, windowSize_);
 		}
+		sum = normalize(sum) * 1.0f;
+		waveSound_.setPitch(sum.x);
+		waveSound_.setVolume(sum.y * 50.0f);
 	}
 
 	void FlockingVisualization::Destroy()
 	{
+		waveSound_.stop();
 	}
 }

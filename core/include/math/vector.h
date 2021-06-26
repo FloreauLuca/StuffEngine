@@ -14,7 +14,11 @@ inline float magnitude(const sf::Vector2f& vec)
 
 inline sf::Vector2f normalize(const sf::Vector2f& vec1)
 {
-	return vec1 / magnitude(vec1);
+	if (magnitude(vec1) != 0.0f)
+	{
+		return vec1 / magnitude(vec1);
+	}
+	return vec1;
 }
 
 inline sf::Vector2f truncate(const sf::Vector2f& vec1, float max_value)

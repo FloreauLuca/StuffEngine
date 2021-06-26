@@ -185,3 +185,23 @@ TEST(Keyword, Decltype)
     std::cout << "i = " << i << ", "
         << "j = " << j << '\n';
 }
+
+class Base {};
+
+class Child1 : public virtual Base{};
+
+class Child2 : public virtual Base{};
+
+class GrandChild : public Child1, public Child2 {};
+
+
+TEST(Keyword, VirtualClass)
+{
+    std::vector<GrandChild> grands;
+    //std::vector<Base> bases = grands; //error E0312
+    std::vector<Base> bases;
+    for (auto grand_child : grands)
+    {
+        bases.push_back(grand_child);
+    }
+}
