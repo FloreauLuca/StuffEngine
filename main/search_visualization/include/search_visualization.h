@@ -17,7 +17,7 @@ class Engine;
 class SearchVisualization : public SystemInterface
 {
 public:
-	SearchVisualization(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
+	explicit SearchVisualization(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
 	{
 	}
 
@@ -31,7 +31,7 @@ protected:
 	std::vector<std::pair<size_t, size_t>> swap_pairs;
 	std::vector<std::vector<size_t>> coloredList_;
 	std::string sortName_ = "";
-	std::chrono::microseconds sortTime_;
+	std::chrono::microseconds sortTime_ = std::chrono::microseconds();
 private:
 	Engine& engine_;
 	Graphics& graphics_;

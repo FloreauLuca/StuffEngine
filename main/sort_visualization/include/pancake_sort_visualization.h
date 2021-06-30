@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class PancakeSortVisualization final : public SortVisualization
+class PancakeSortVisualization final : public SortVisualization
+{
+public:
+	explicit PancakeSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit PancakeSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Pancake Sort";
-		}
+		sortName_ = "Pancake Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::PancakeSort<int> pancake_sort_;
-	};
+	void SortList() override;
+private:
+	algo::PancakeSort<int> pancake_sort_;
+};
 }

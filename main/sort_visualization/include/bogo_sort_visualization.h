@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class BogoSortVisualization final : public SortVisualization
+class BogoSortVisualization final : public SortVisualization
+{
+public:
+	explicit BogoSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit BogoSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Bogo Sort";
-		}
+		sortName_ = "Bogo Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::BogoSort<int> bogo_sort_;
-	};
+	void SortList() override;
+private:
+	algo::BogoSort<int> bogo_sort_;
+};
 }

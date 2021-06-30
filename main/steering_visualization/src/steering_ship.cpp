@@ -75,7 +75,7 @@ void SteeringShip::Draw(Graphics& graphics, sf::Vector2u windowSize)
 	line.setOrigin({ 1.0f, size });
 	line.setPosition(triangle_.getPosition() + sf::Vector2f{ sinf(rot * PI / 180) * size, -cosf(rot * PI / 180) * size });
 	line.setRotation(rot);
-	graphics.Draw(line);
+	//graphics.Draw(line);
 	
 }
 

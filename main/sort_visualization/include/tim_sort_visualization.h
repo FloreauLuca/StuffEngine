@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class TimSortVisualization final : public SortVisualization
+class TimSortVisualization final : public SortVisualization
+{
+public:
+	explicit TimSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit TimSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Tim Sort";
-		}
+		sortName_ = "Tim Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::TimSort<int> tim_sort_;
-	};
+	void SortList() override;
+private:
+	algo::TimSort<int> tim_sort_;
+};
 }

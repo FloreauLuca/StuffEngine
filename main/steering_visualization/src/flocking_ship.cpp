@@ -19,7 +19,7 @@ void Boid::Edge(sf::Vector2u windowSize)
 void Boid::Update(float dt, std::vector<SteeringBehavior>& steers, sf::Vector2u windowSize, float align_force_,
 	float cohesion_force_, float seperation_force_)
 {
-	Edge(windowSize);
+	//Edge(windowSize);
 	Flock(steers, windowSize, align_force_, cohesion_force_, seperation_force_);
 	SteeringBehavior::Update(dt, max_speed_);
 }

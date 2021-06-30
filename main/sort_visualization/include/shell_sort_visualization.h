@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class ShellSortVisualization final : public SortVisualization
+class ShellSortVisualization final : public SortVisualization
+{
+public:
+	explicit ShellSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit ShellSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Shell Sort";
-		}
+		sortName_ = "Shell Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::ShellSort<int> shell_sort_;
-	};
+	void SortList() override;
+private:
+	algo::ShellSort<int> shell_sort_;
+};
 }

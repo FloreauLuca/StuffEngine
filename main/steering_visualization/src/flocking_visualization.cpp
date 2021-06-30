@@ -39,7 +39,7 @@ namespace stuff
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) cohesion_force_ += 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) seperation_force_ -= 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) seperation_force_ += 0.1f;
-		
+		/*
 		sf::Text text;
 		text.setString("Align : " + std::to_string(align_force_));
 		text.setPosition(10, 10);
@@ -50,7 +50,7 @@ namespace stuff
 		text.setString("Seperation : " + std::to_string(seperation_force_));
 		text.setPosition(10, 50);
 		graphics_.Draw(text);
-		
+		*/
 		sf::Vector2f sum = boids_[(static_cast<int>(timer_ * 5.0f)) % boidNb_].GetPosition();
 		std::vector<algo::SteeringBehavior> steers;
 		for (auto& boid : boids_)

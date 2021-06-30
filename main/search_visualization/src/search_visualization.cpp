@@ -31,13 +31,13 @@ void SearchVisualization::Init()
 
 	std::ranges::shuffle(list_, g);
 	SortList();
-	for (size_t i = 0; i < listSize_ - 1; ++i)
+	for (size_t i = 0; i + 1 < listSize_; ++i)
 	{
 		coloredList_.push_back({i, i + 1});
 	}
 	waveSound_.play();
 	waveSound_.setPitch(0);
-	sortSpeed = swap_pairs.size() / 5.0f;
+	sortSpeed = static_cast<float>(swap_pairs.size()) / 5.0f;
 	windowSize_ = engine_.GetGraphics().GetWindowSize();
 	if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
 	{

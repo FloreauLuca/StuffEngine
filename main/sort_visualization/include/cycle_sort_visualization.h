@@ -4,17 +4,17 @@
 
 namespace stuff
 {
-	class CycleSortVisualization final : public SortVisualization
+class CycleSortVisualization final : public SortVisualization
+{
+public:
+	explicit CycleSortVisualization(Engine& engine)
+		: SortVisualization(engine)
 	{
-	public:
-		explicit CycleSortVisualization(Engine& engine)
-			: SortVisualization(engine)
-		{
-			sortName_ = "Cycle Sort";
-		}
+		sortName_ = "Cycle Sort";
+	}
 
-		void SortList() override;
-	private:
-		algo::CycleSort<int> cycle_sort_;
-	};
+	void SortList() override;
+private:
+	algo::CycleSort<int> cycle_sort_;
+};
 }

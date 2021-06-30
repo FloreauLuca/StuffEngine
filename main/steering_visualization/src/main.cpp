@@ -11,7 +11,7 @@
 int main()
 {
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 800, 800 });
+	engine.GetGraphics().SetWindowSize({ 450, 800 });
 	stuff::FlockingVisualization flocking_visualization(engine);
 	engine.RegisterSystem(flocking_visualization);
 	engine.StartEngine();
