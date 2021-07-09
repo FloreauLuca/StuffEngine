@@ -10,6 +10,7 @@
 
 namespace stuff
 {
+
 class Graphics;
 class Engine;
 

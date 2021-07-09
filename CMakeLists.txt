@@ -37,6 +37,13 @@ add_subdirectory(${GOOGLE_TEST_DIR})
 set_target_properties(gtest PROPERTIES FOLDER Externals/GTest)
 set_target_properties(gtest_main PROPERTIES FOLDER Externals/GTest)
 
+set(TRACY_ENABLE ON CACHE BOOL "")
+if(TRACY_ENABLE)
+	set(TRACY_BENCH_DIR "${EXTERNAL_DIR}/tracy-0.7.8" CACHE STRING "")
+	add_subdirectory(${TRACY_BENCH_DIR})
+	set_target_properties(tracy PROPERTIES FOLDER Externals)
+	add_compile_definitions(TRACY_ENABLE)
+endif()
 
 # Core files
 include_directories("${CORE_DIR}/include")

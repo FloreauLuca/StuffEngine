@@ -4,6 +4,8 @@
 #include <chrono>
 #include <iostream>
 
+#include <Tracy.hpp>
+
 #include "engine/system.h"
 #include "utility/data_location.h"
 
@@ -33,6 +35,7 @@ void Engine::EngineLoop()
         const float dt = elapsed_seconds.count();
         clock = end;
         updateAction_.Execute(dt);
+        FrameMark
     }
 	DestroyEngine();
 }
