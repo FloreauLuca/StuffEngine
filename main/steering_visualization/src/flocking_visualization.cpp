@@ -39,18 +39,18 @@ namespace stuff
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) cohesion_force_ += 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) seperation_force_ -= 0.1f;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) seperation_force_ += 0.1f;
-		/*
-		sf::Text text;
-		text.setString("Align : " + std::to_string(align_force_));
-		text.setPosition(10, 10);
-		graphics_.Draw(text);
-		text.setString("Cohesion : " + std::to_string(cohesion_force_));
-		text.setPosition(10, 30);
-		graphics_.Draw(text);
-		text.setString("Seperation : " + std::to_string(seperation_force_));
-		text.setPosition(10, 50);
-		graphics_.Draw(text);
-		*/
+		//
+		//sf::Text text;
+		//text.setString("Align : " + std::to_string(align_force_));
+		//text.setPosition(10, 10);
+		//graphics_.Draw(text);
+		//text.setString("Cohesion : " + std::to_string(cohesion_force_));
+		//text.setPosition(10, 30);
+		//graphics_.Draw(text);
+		//text.setString("Seperation : " + std::to_string(seperation_force_));
+		//text.setPosition(10, 50);
+		//graphics_.Draw(text);
+		//
 		sf::Vector2f sum = boids_[(static_cast<int>(timer_ * 5.0f)) % boidNb_].GetPosition();
 		std::vector<algo::SteeringBehavior> steers;
 		for (auto& boid : boids_)
@@ -63,9 +63,9 @@ namespace stuff
 			boids_[i].Draw(graphics_, windowSize_);
 		}
 
-		sum = normalize(sum) * 1.0f;
-		waveSound_.setPitch(sum.x);
-		waveSound_.setVolume(sum.y * 50.0f);
+		//sum = normalize(sum) * 1.0f;
+		//waveSound_.setPitch(sum.x);
+		//waveSound_.setVolume(sum.y * 50.0f);
 	}
 
 	void FlockingVisualization::Destroy()

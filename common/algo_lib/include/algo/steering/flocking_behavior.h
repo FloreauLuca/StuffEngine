@@ -28,17 +28,17 @@ public:
 		sf::Vector2f cohesion = Cohesion(boids, perception_, max_speed_, max_force_);
 		cohesion *= cohesion_force_;
 		acc_ += cohesion;
-		sf::Vector2f seperation = Seperation(boids, perception_, max_speed_, max_force_);
+		sf::Vector2f seperation = Seperation(boids, perception_ / 2, max_speed_, max_force_);
 		seperation *= seperation_force_;
 		acc_ += seperation;
 		sf::Vector2f edge_avoiding = EdgeAvoiding(windowSize, wall_offset_, max_speed_, max_force_);
-		edge_avoiding *= 10.0f;
+		edge_avoiding *= 5.0f;
 		acc_ += edge_avoiding;
 	}
 protected:
-	float max_speed_ = 400.0f;
-	float max_force_ = 500.0f;
+	float max_speed_ = 300.0f;
+	float max_force_ = 400.0f;
 	float perception_ = 50;
-	float wall_offset_ = 20;
+	float wall_offset_ = 50;
 };
 }

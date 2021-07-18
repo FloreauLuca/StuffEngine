@@ -30,13 +30,13 @@ private:
 
 	sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
-	const float shipSize_ = 20.0f;
+	const float shipSize_ = 10.0f;
 	const unsigned boidNb_ = 75;
 	std::vector<Boid> boids_;
 
-	float align_force_ = 10.0f;
-	float cohesion_force_ = 2.0f;
-	float seperation_force_ = 3.0f;
+	float align_force_ = 5.0f;
+	float cohesion_force_ = 0.5f;
+	float seperation_force_ = 5.0f;
 
 	sf::SoundBuffer waveSoundBuffer_;
 	sf::Sound waveSound_;
