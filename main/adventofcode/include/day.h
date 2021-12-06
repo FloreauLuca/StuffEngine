@@ -23,7 +23,11 @@ namespace stuff::advent
 		virtual std::string FindAnswer();
 		virtual void DisplayAnswer();
 	protected:
-		std::ifstream myFile;
+		void ParseInt();
+		void ParseString();
+		std::ifstream myFile_;
+		std::vector<int> intParsing_;
+		std::vector<std::string> stringParsing_;
 		stuff::Engine& engine_;
 		stuff::Graphics& graphics_;
 	};
