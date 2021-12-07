@@ -11,13 +11,14 @@
 #include "day4_bingo.h"
 #include "day5_vents.h"
 #include "day6_lanternfish.h"
+#include "day7_whale.h"
 
 int main()
 {
 	stuff::Engine engine;
 	engine.GetGraphics().SetWindowSize({ 600, 600 });
-	stuff::advent::Day6LanternFish day(engine);
-	day.ReadFromName("day6_1");
+	stuff::advent::Day7Whale day(engine);
+	day.ReadFromName("day7_1");
 	std::cout << day.FindAnswer();
 	return 0;
 }

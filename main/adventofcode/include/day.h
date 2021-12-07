@@ -24,6 +24,7 @@ namespace stuff::advent
 		virtual void DisplayAnswer();
 	protected:
 		void ParseInt();
+		void ParseLineInt();
 		void ParseString();
 		std::ifstream myFile_;
 		std::vector<int> intParsing_;

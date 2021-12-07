@@ -1,6 +1,7 @@
 #include <day.h>
 
 #include <assert.h>
+#include <sstream>
 
 namespace stuff::advent
 {
@@ -45,6 +46,21 @@ namespace stuff::advent
 			int value;
 			myFile_ >> value;
 			intParsing_.push_back(value);
+		}
+	}
+
+	void Day::ParseLineInt()
+	{
+		char between = ',';
+		std::string entry = " ";
+		std::getline(myFile_, entry);
+		std::stringstream entrystream(entry);
+		while (!entrystream.eof())
+		{
+			int value;
+			entrystream >> value;
+			intParsing_.push_back(value);
+			entrystream >> between;
 		}
 	}
 
