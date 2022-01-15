@@ -29,3 +29,25 @@ inline sf::Vector2f truncate(const sf::Vector2f& vec1, float max_value)
 	}
 	return vec1;
 }
+
+inline float clamp(float x, float lowerlimit, float upperlimit) {
+	if (x < lowerlimit)
+		x = lowerlimit;
+	if (x > upperlimit)
+		x = upperlimit;
+	return x;
+}
+
+inline float lerp(const float val1, const float val2, const float time)
+{
+	float v1 = std::max(val1, val2);
+	float v2 = std::max(val1, val2);
+	return val1 + (val2 - val1) * clamp(time, 0, 1);
+}
+
+inline float smoothstep(float edge0, float edge1, float x) {
+	float v1 = std::max(edge0, edge1);
+	float v2 = std::max(edge0, edge1);
+	x = clamp((x - v1) / (v2 - v1), 0.0, 1.0);
+	return x * x * (3 - 2 * x);
+}

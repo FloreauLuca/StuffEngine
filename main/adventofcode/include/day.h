@@ -29,6 +29,7 @@ namespace stuff::advent
 		std::ifstream myFile_;
 		std::vector<int> intParsing_;
 		std::vector<std::string> stringParsing_;
+		
 		stuff::Engine& engine_;
 		stuff::Graphics& graphics_;
 	};
