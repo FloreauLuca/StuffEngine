@@ -9,6 +9,8 @@ namespace stuff
 class Graphics;
 class Engine;
 
+//https://necessarydisorder.wordpress.com/2017/11/15/drawing-from-noise-and-then-making-animated-loopy-gifs-from-there/
+
 class RotatingLine : public SystemInterface
 {
 public:

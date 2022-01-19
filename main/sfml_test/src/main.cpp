@@ -7,6 +7,7 @@
 #include "engine/engine.h"
 #include "sfml_test.h"
 #include "mouse_simulation.h"
+#include "music_test.h"
 #include "sound_test.h"
 #include "vertex_array_drawing.h"
 
@@ -14,6 +15,9 @@ int main()
 {
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
+	stuff::MusicTest music_test(engine);
+	engine.RegisterSystem(music_test);
+	engine.StartEngine();
 	stuff::VertexArrayDrawing vertex_array_drawing(engine);
 	engine.RegisterSystem(vertex_array_drawing);
 	engine.StartEngine();
