@@ -76,7 +76,7 @@ void Engine::Update(float dt)
     text.setString(std::to_string(1.0f/dt));
     text.setFillColor(sf::Color::White);
     text.setCharacterSize(14);
-    //graphics_.Draw(text);
+    graphics_.Draw(text);
     sf::Sprite spriteLogo(penguinLogo_);
     spriteLogo.setPosition(graphics_.GetWindowSize().x - 60, graphics_.GetWindowSize().y - 60);
     spriteLogo.setScale(50.0f / penguinLogo_.getSize().x, 50.0f / penguinLogo_.getSize().y);

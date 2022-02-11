@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "color_palette.h"
+#include "fire_particles.h"
 #include "rotating_line.h"
 #include "point_wave.h"
 #include "moving_stars.h"
@@ -18,6 +19,9 @@ int main()
 	//engine.GetGraphics().SetWindowSize({ 900, 900 });
 	engine.GetGraphics().SetWindowSize({ 450, 800 });
 	//engine.GetGraphics().SetWindowSize({ 750, 750 });
+	stuff::FireParticles fire_particles(engine);
+	engine.RegisterSystem(fire_particles);
+	engine.StartEngine();
 	stuff::MusicNoise music_noise(engine);
 	engine.RegisterSystem(music_noise);
 	engine.StartEngine();

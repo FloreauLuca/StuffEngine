@@ -193,12 +193,14 @@ float PerlinNoise::Lerp(float a, float b, float t)
 {
 	return (1.0f - t) * a + t * b;
 }
+
 //Random beetween -1 and 1
 float PerlinNoise::IntNoise(int x)
 {
 	x = (x << 13) ^ x;
 	return (1.0f - ((x * (x * x * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0f);
 }
+
 float PerlinNoise::IntNoise(int x, int y, int z, int w)
 {
 	int n = (

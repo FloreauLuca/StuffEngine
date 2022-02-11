@@ -1,50 +1,54 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include "algo/noise/perlin_noise.h"
 
+#include "algo/noise/perlin_noise.h"
 #include "engine/engine.h"
 #include "engine/system.h"
+#include "math/const.h"
 
 namespace stuff
 {
-class Graphics;
-class Engine;
-
-class MusicNoise : public SystemInterface
-{
-public:
-	MusicNoise(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
+	class MusicNoise : public SystemInterface
 	{
-	}
+	public:
+		MusicNoise(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
+		{
+		}
 
-	void Init() override;
-	void Update(float dt) override;
-	void Destroy() override;
-private:
-	void CreateTexture();
-	
-	Engine& engine_;
-	Graphics& graphics_;
+		void Init() override;
+		void DrawBackground(float dt);
+		void Update(float dt) override;
+		void Destroy() override;
 
-	float timer_ = 0.0f;
+	private:
+		Engine& engine_;
+		Graphics& graphics_;
 
-	const float ZOOM = 10.0f;
+		float timer_ = 0.0f;
+		sf::SoundBuffer drumSoundBuffer_;
+		sf::SoundBuffer kickSoundBuffer_;
+		sf::Sound drumSound_;
+		sf::Sound kickSound_;
 
-	const float squareSize_ = 5.0f;
-	sf::Vector2u squareCount_ = sf::Vector2u(5, 5);
-	sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
-	sf::Vector2u pos_ = sf::Vector2u(1, 1);
+		sf::SoundBuffer pianoSoundBuffer_;
+		sf::Sound pianoSound_;
+		std::vector<sf::Sound> pianoSounds_;
 
-	sf::Texture texture_;
-	sf::Image image_;
-	sf::Sprite sprite_;
+		sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
-	algo::PerlinNoise perlinNoise_;
-	sf::Text text_;
+		sf::CircleShape bigCircle_;
+		sf::CircleShape smallCircle_;
 
-	sf::SoundBuffer waveSoundBuffer_;
-	sf::Sound waveSound_;
-};
+		float bigCirRad_ = 100.0f;
+		float smallCirRad_ = 20.0f;
+		float rythm_ = 1.0f;
+		const int COUNT = 5;
+
+		sf::CircleShape backGroundCircle_;
+		float backCirSize_ = 2.0f;
+		float waveTimer_ = 0.0f;
+		algo::PerlinNoise perlinNoise_;
+		std::map <int, float> colorTimer_;
+	};
 }

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+
+#include "color_test.h"
 #include "image_drawing.h"
 #include "engine/engine.h"
 #include "sfml_test.h"
@@ -15,6 +17,9 @@ int main()
 {
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
+	stuff::ColorTest color_test(engine);
+	engine.RegisterSystem(color_test);
+	engine.StartEngine();
 	stuff::MusicTest music_test(engine);
 	engine.RegisterSystem(music_test);
 	engine.StartEngine();

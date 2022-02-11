@@ -33,13 +33,17 @@ void MusicTest::Init()
 	
 	windowSize_ = graphics_.GetWindowSize();
 
-	bigCircle_.setRadius(bigCirRad_);
-	bigCircle_.setOrigin(bigCirRad_, bigCirRad_);
+	float thickness_ = 10.0f;
+	bigCircle_.setRadius(bigCirRad_ - thickness_/2);
+	bigCircle_.setOrigin(bigCirRad_ - thickness_ / 2, bigCirRad_ - thickness_ / 2);
 	sf::Vector2f center = sf::Vector2f(windowSize_.x / 2.0f, windowSize_.y / 2.0f);
 	bigCircle_.setPosition(center);
+	bigCircle_.setOutlineThickness(thickness_);
+	bigCircle_.setFillColor(sf::Color::Transparent);
+	bigCircle_.setOutlineColor(sf::Color::White);
 
-	smallCircle_.setRadius(10.0f);
-	smallCircle_.setOrigin(10.0f, 10.0f);
+	smallCircle_.setRadius(smallCirRad_);
+	smallCircle_.setOrigin(smallCirRad_, smallCirRad_);
 	smallCircle_.setPosition(center + sf::Vector2f(bigCirRad_, 0.0f));
 	smallCircle_.setFillColor(sf::Color::Red);
 
@@ -77,6 +81,8 @@ void MusicTest::Update(float dt)
 		}
 		smallCircle_.setPosition(center + sf::Vector2f(cos((timer - speed * 0.5f) * PI * 2.0f) * bigCirRad_, sin((timer - speed * 0.5f) * PI * 2.0f) * bigCirRad_));
 		smallCircle_.setFillColor(HSLtoRGB(((float)i / COUNT) * 360.0f, 100.0f, 50.0f));
+		float radius = smallCirRad_ +  (0.1f - std::clamp(std::fmod(timer - speed * 0.4f, rythm_), 0.0f, 0.1f)) * 100.0f;
+		smallCircle_.setRadius(radius);
 		graphics_.Draw(smallCircle_);
 		
 	}

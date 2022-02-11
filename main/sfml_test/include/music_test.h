@@ -38,6 +38,7 @@ private:
 	sf::CircleShape smallCircle_;
 
 	float bigCirRad_ = 100.0f;
+	float smallCirRad_ = 20.0f;
 	float rythm_ = 1.0f;
 	const int COUNT = 5;
 };

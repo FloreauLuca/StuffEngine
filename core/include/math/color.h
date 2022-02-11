@@ -2,6 +2,23 @@
 #include <SFML/System.hpp>
 #include <SFML/Graphics/Color.hpp>
 
+struct Gradient
+{
+    std::vector<sf::Color> Colors = std::vector<sf::Color>();
+	
+	sf::Color Evaluate(float t)
+	{
+        float count = (Colors.size()-1) * t;
+        int prev = std::floor(count);
+        int next = std::ceil(count);
+        return sf::Color(
+            std::lerp(Colors[prev].r, Colors[next].r, count - prev),
+            std::lerp(Colors[prev].g, Colors[next].g, count - prev),
+            std::lerp(Colors[prev].b, Colors[next].b, count - prev)
+            );
+	}
+};
+
 inline sf::Color HSLtoRGB(const float H, const float S, const float L) {
 	
     float s = std::clamp(S, 0.0f, 100.0f) / 100;
