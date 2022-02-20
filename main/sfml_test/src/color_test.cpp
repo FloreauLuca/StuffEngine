@@ -2,6 +2,9 @@
 
 #include "sfml_test.h"
 #include "math/color.h"
+
+#include <imgui.h>
+
 #include "math/const.h"
 
 namespace stuff
@@ -44,6 +47,7 @@ void ColorTest::Update(float dt)
 	}
 	texture_.update(image_);
 	graphics_.Draw(sprite_);
+	ImGui::ShowDemoWindow();
 }
 
 void ColorTest::Destroy()

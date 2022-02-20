@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+
+#include <imgui-SFML.h> // SFML ImGui includes
+#include <imgui.h> // ImGui includes
+
 #include "engine/engine.h"
 #include "utility/data_location.h"
 
@@ -23,6 +27,7 @@ void Graphics::Init()
     {
         std::cout << "Error file not loaded" << std::endl;
     }
+    ImGui::SFML::Init(*window_);
 }
 
 void Graphics::Update(float dt)
@@ -38,9 +43,11 @@ void Graphics::Update(float dt)
     	{
             windowSize_.x = event.size.width;
             windowSize_.y = event.size.height;
+            window_->setSize(windowSize_);
             std::cout << "Window resized : " << windowSize_.x << ", " << windowSize_.y << std::endl;
     	}
         engine_.GetInputSystem().OnEvent(event);
+        ImGui::SFML::ProcessEvent(event);
     }
 	
     window_->clear();
@@ -65,7 +72,10 @@ void Graphics::Update(float dt)
         text.setFont(font_);
         window_->draw(text);
     }
+    ImGui::EndFrame();
+    ImGui::SFML::Render(*window_);
     window_->display();
+	
     circleShapes_.clear();
     rectangleShapes_.clear();
     vertex_arrays_.clear();
@@ -100,5 +110,6 @@ void Graphics::Draw(sf::VertexArray& vertexArray)
 void Graphics::Destroy()
 {
     window_->close();
+    ImGui::SFML::Shutdown();
 }
 }

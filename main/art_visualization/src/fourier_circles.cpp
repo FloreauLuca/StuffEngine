@@ -1,5 +1,7 @@
 #include "fourier_circles.h"
 
+
+#include <imgui.h>
 #include <iostream>
 
 #include "math/color.h"
@@ -99,6 +101,9 @@ void FourierCircles::Update(float dt)
 	}
 	line_.append(sf::Vertex(center));
 	graphics_.Draw(line_);
+	ImGui::Begin("Test Window"); // Begin render definition after this you can define all your window controls
+	ImGui::SliderFloat("Speed", &speed_, 0.0f, 1.0f);
+	ImGui::End(); // End render definition
 }
 
 void FourierCircles::Destroy()

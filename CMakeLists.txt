@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.20)
 project(Stuff)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -20,6 +20,11 @@ set(BENCH_DIR "${CMAKE_SOURCE_DIR}/tests/benchmarks" CACHE INTERNAL "Benchmarks 
 set(SFML_DIR "${EXTERNAL_DIR}/SFML-2.5.1/lib/cmake/SFML" CACHE STRING "")
 set(SFML_STATIC_LIBRARIES TRUE)
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+
+set(IMGUI_DIR "${EXTERNAL_DIR}/imgui-1.87/" CACHE STRING "")
+set(IMGUI_SFML_DIR "${EXTERNAL_DIR}/imgui-sfml-2.5/" CACHE STRING "")
+add_subdirectory(${IMGUI_SFML_DIR})
+set_target_properties(ImGui-SFML PROPERTIES FOLDER Externals)
 
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "")
 set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "")

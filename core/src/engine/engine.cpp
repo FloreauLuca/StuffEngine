@@ -2,6 +2,8 @@
 #include "engine/engine.h"
 
 #include <chrono>
+#include <imconfig.h>
+#include <imgui.h>
 #include <iostream>
 
 #include <Tracy.hpp>
@@ -15,7 +17,6 @@ void Engine::StartEngine()
 {
 	RegisterSystem(*this);
 	RegisterSystem(graphics_);
-	RegisterSystem(window_);
 	initAction_.Execute();
 	EngineLoop();
 }
@@ -27,6 +28,7 @@ void Engine::EngineLoop()
 
     isRunning_ = true;
     std::chrono::system_clock::time_point clock = std::chrono::system_clock::now();
+    sf::Clock update_clock;
 
     while (isRunning_)
     {
@@ -34,6 +36,7 @@ void Engine::EngineLoop()
         std::chrono::duration<float> elapsed_seconds = end - clock;
         const float dt = elapsed_seconds.count();
         clock = end;
+        ImGui::SFML::Update(*graphics_.GetWindow(), update_clock.restart());
         updateAction_.Execute(dt);
         FrameMark
     }

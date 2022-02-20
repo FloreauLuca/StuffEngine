@@ -63,5 +63,7 @@ private:
 	std::vector<Circles> circles_;
 
 	sf::VertexArray line_;
+
+	float speed_ = 0.0f;
 };
 }
