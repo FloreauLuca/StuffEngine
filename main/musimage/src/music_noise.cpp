@@ -30,7 +30,7 @@ namespace stuff
 		pianoSound_.setBuffer(pianoSoundBuffer_);
 		pianoSound_.setLoop(false);
 		pianoSounds_.resize(COUNT, sf::Sound(pianoSoundBuffer_));
-
+		
 		windowSize_ = graphics_.GetWindowSize();
 
 		float thickness_ = 10.0f;
@@ -67,9 +67,6 @@ namespace stuff
 				int colorIndex = std::round((perlinNoise_.IntNoise(y, x) * 0.5f + 0.5f) * 5.0f);
 				sf::Color color = HSLtoRGB(((float)colorIndex / COUNT) * 360.0f, 100.0f, 50.0f);
 				backGroundCircle_.setFillColor(color);
-				for (auto color_timer : colorTimer_)
-				{
-				}
 				float translation = std::max(0.0f, sin(std::clamp(colorTimer_[colorIndex] - y / 100.0f, 0.0f, PI)));
 				backGroundCircle_.setRadius(backCirSize_ + perlinNoise_.IntNoise(x, y) + translation * COUNT);
 				
@@ -96,7 +93,7 @@ namespace stuff
 			if (std::fmod(timer, rythm_) < speed * dt)
 			{
 				pianoSounds_[i].setPitch(speed * 4.0f);
-				pianoSounds_[i].play();
+				//pianoSounds_[i].play();
 				sf::Color color = HSLtoRGB(((float)i / COUNT) * 360.0f, 100.0f, 50.0f);
 				colorTimer_[i] = 0.0f;
 				//switch (i)

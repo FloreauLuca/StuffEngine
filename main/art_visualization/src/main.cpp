@@ -5,6 +5,7 @@
 
 #include "color_palette.h"
 #include "fire_particles.h"
+#include "fourier_circles.h"
 #include "rotating_line.h"
 #include "point_wave.h"
 #include "moving_stars.h"
@@ -19,6 +20,9 @@ int main()
 	//engine.GetGraphics().SetWindowSize({ 900, 900 });
 	engine.GetGraphics().SetWindowSize({ 450, 800 });
 	//engine.GetGraphics().SetWindowSize({ 750, 750 });
+	stuff::FourierCircles fourier_circles(engine);
+	engine.RegisterSystem(fourier_circles);
+	engine.StartEngine();
 	stuff::FireParticles fire_particles(engine);
 	engine.RegisterSystem(fire_particles);
 	engine.StartEngine();
