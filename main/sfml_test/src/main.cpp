@@ -6,6 +6,7 @@
 
 #include "color_test.h"
 #include "image_drawing.h"
+#include "midi_test.h"
 #include "engine/engine.h"
 #include "sfml_test.h"
 #include "mouse_simulation.h"
@@ -17,6 +18,9 @@ int main()
 {
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
+	stuff::MidiTest midi_test(engine);
+	engine.RegisterSystem(midi_test);
+	engine.StartEngine();
 	stuff::ColorTest color_test(engine);
 	engine.RegisterSystem(color_test);
 	engine.StartEngine();
