@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE MIDIFile PUBLIC
+  "-//Recordare//DTD MusicXML 0.9 MIDI//EN"
+  "http://www.musicxml.org/dtds/midixml.dtd">
+<MIDIFile>
+<HeaderChunk>
+Format Type: 1
+Track Number: 4
+DeltaTime: 960
+</HeaderChunk>
+<TrackChunk TrackNumber="0" >
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="6"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="6"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="6"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="6"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="7"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="7"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="7"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="7"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="8"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="8"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="8"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="8"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="9"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="9"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="9"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="9"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="10"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="10"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="10"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="10"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="11"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="11"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="11"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="11"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="12"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="12"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="12"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="12"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="13"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="13"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="13"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="13"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="14"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="14"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="14"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="14"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="15"  Name="Control Change"  control="101"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="15"  Name="Control Change"  control="100"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="15"  Name="Control Change"  control="6"  value="12" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="15"  Name="Control Change"  control="38"  value="0" ></MidiEvent>
+	<MetaEvent deltaTime="0"  Name="TimeSignature"  Numerator="4"  LogDenominator="2"  MIDIClocksPerMetronomeClick="24"  ThirtySecondsPer24Clocks="8" ></MetaEvent>
+	<MetaEvent deltaTime="0"  Name="SetTempo"  MicrosecondsPerQuarterNote="500000"  BeatsPerMinute="120" ></MetaEvent>
+	<MetaEvent deltaTime="0"  Name="EndOfTrack" ></MetaEvent>
+</TrackChunk>
+<TrackChunk TrackNumber="1" >
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="PitchWheelChange"  BottomValue="0"  TopValue="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="10"  value="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="93"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="91"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="95"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="92"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="11"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Program Change"  NewProgramNumber="25" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="10"  value="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="93"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="91"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="95"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="92"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Control Change"  control="11"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="1"  Name="Program Change"  NewProgramNumber="25" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note On"  pitch="62"  note="5d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="62"  note="5d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note On"  pitch="64"  note="5e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="64"  note="5e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="0"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="0"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="0"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MetaEvent deltaTime="0"  Name="EndOfTrack" ></MetaEvent>
+</TrackChunk>
+<TrackChunk TrackNumber="2" >
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="PitchWheelChange"  BottomValue="0"  TopValue="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="10"  value="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="93"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="91"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="95"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="92"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Control Change"  control="11"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Program Change"  NewProgramNumber="25" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="10"  value="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="93"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="91"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="95"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="92"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Control Change"  control="11"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="3"  Name="Program Change"  NewProgramNumber="25" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="45"  note="3a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="47"  note="3b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="47"  note="3b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="2"  Name="Note Off"  pitch="57"  note="4a"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="55"  note="4g"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="50"  note="4d"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note On"  pitch="47"  note="3b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="2"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="2"  Name="Note Off"  pitch="47"  note="3b"  velocity="95" ></MidiEvent>
+	<MetaEvent deltaTime="0"  Name="EndOfTrack" ></MetaEvent>
+</TrackChunk>
+<TrackChunk TrackNumber="3" >
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="PitchWheelChange"  BottomValue="0"  TopValue="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="10"  value="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="93"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="91"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="95"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="92"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Control Change"  control="11"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Program Change"  NewProgramNumber="25" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="10"  value="64" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="93"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="91"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="95"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="92"  value="0" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Control Change"  control="11"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="5"  Name="Program Change"  NewProgramNumber="25" ></MidiEvent>
+	<MidiEvent deltaTime="3840"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1440"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1440"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1440"  ChannelNumber="4"  Name="Note On"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="53"  note="4f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1440"  ChannelNumber="4"  Name="Note Off"  pitch="48"  note="4c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1440"  ChannelNumber="4"  Name="Note On"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="59"  note="4b"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="60"  note="5c"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="65"  note="5f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="4"  Name="Note Off"  pitch="65"  note="5f"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="1920"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="960"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="4"  Name="Note On"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MidiEvent deltaTime="480"  ChannelNumber="4"  Name="Note Off"  pitch="52"  note="4e"  velocity="95" ></MidiEvent>
+	<MetaEvent deltaTime="0"  Name="EndOfTrack" ></MetaEvent>
+</TrackChunk>
+</MIDIFile>

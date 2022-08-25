@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE MIDIFile PUBLIC
+  "-//Recordare//DTD MusicXML 0.9 MIDI//EN"
+  "http://www.musicxml.org/dtds/midixml.dtd">
+<MIDIFile>
+<HeaderChunk>
+Format Type: 0
+Track Number: 1
+DeltaTime: 960
+</HeaderChunk>
+<TrackChunk TrackNumber="0" >
+	<MetaEvent deltaTime="0"  Name="SetTempo"  MicrosecondsPerQuarterNote="120"  BeatsPerMinute="500000" ></MetaEvent>
+	<MetaEvent deltaTime="0"  Name="TimeSignature"  Numerator="4"  LogDenominator="2"  MIDIClocksPerMetronomeClick="31250"  ThirtySecondsPer24Clocks="10416" ></MetaEvent>
+	<MetaEvent deltaTime="0"  Name="KeySignature"  Fifths="3Sharp"  Mode="MinorKey" ></MetaEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Program Change"  NewProgramNumber="33" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Control Change"  control="7"  value="127" ></MidiEvent>
+	<MidiEvent deltaTime="0"  ChannelNumber="0"  Name="Note On"  pitch="45"  note="3a"  velocity="78" ></MidiEvent>
+	<MidiEvent deltaTime="129"  ChannelNumber="0"  Name="Note Off"  pitch="45"  note="3a"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="231"  ChannelNumber="0"  Name="Note On"  pitch="48"  note="4c"  velocity="81" ></MidiEvent>
+	<MidiEvent deltaTime="120"  ChannelNumber="0"  Name="Note On"  pitch="50"  note="4d"  velocity="79" ></MidiEvent>
+	<MidiEvent deltaTime="3"  ChannelNumber="0"  Name="Note Off"  pitch="48"  note="4c"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="117"  ChannelNumber="0"  Name="Note On"  pitch="52"  note="4e"  velocity="68" ></MidiEvent>
+	<MidiEvent deltaTime="9"  ChannelNumber="0"  Name="Note Off"  pitch="50"  note="4d"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="55"  ChannelNumber="0"  Name="Note Off"  pitch="52"  note="4e"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="176"  ChannelNumber="0"  Name="Note On"  pitch="45"  note="3a"  velocity="82" ></MidiEvent>
+	<MidiEvent deltaTime="352"  ChannelNumber="0"  Name="Note Off"  pitch="45"  note="3a"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="8"  ChannelNumber="0"  Name="Note On"  pitch="43"  note="3g"  velocity="62" ></MidiEvent>
+	<MidiEvent deltaTime="230"  ChannelNumber="0"  Name="Note Off"  pitch="43"  note="3g"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="10"  ChannelNumber="0"  Name="Note On"  pitch="45"  note="3a"  velocity="80" ></MidiEvent>
+	<MidiEvent deltaTime="135"  ChannelNumber="0"  Name="Note Off"  pitch="45"  note="3a"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="345"  ChannelNumber="0"  Name="Note On"  pitch="45"  note="3a"  velocity="88" ></MidiEvent>
+	<MidiEvent deltaTime="77"  ChannelNumber="0"  Name="Note Off"  pitch="45"  note="3a"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="283"  ChannelNumber="0"  Name="Note On"  pitch="48"  note="4c"  velocity="77" ></MidiEvent>
+	<MidiEvent deltaTime="77"  ChannelNumber="0"  Name="Note Off"  pitch="48"  note="4c"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="43"  ChannelNumber="0"  Name="Note On"  pitch="50"  note="4d"  velocity="90" ></MidiEvent>
+	<MidiEvent deltaTime="120"  ChannelNumber="0"  Name="Note On"  pitch="52"  note="4e"  velocity="75" ></MidiEvent>
+	<MidiEvent deltaTime="2"  ChannelNumber="0"  Name="Note Off"  pitch="50"  note="4d"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="95"  ChannelNumber="0"  Name="Note Off"  pitch="52"  note="4e"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="143"  ChannelNumber="0"  Name="Note On"  pitch="45"  note="3a"  velocity="75" ></MidiEvent>
+	<MidiEvent deltaTime="360"  ChannelNumber="0"  Name="Note On"  pitch="48"  note="4c"  velocity="77" ></MidiEvent>
+	<MidiEvent deltaTime="5"  ChannelNumber="0"  Name="Note Off"  pitch="45"  note="3a"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="225"  ChannelNumber="0"  Name="Note Off"  pitch="48"  note="4c"  velocity="64" ></MidiEvent>
+	<MidiEvent deltaTime="10"  ChannelNumber="0"  Name="Note On"  pitch="45"  note="3a"  velocity="78" ></MidiEvent>
+	<MidiEvent deltaTime="90"  ChannelNumber="0"  Name="Note Off"  pitch="45"  note="3a"  velocity="64" ></MidiEvent>
+</TrackChunk>
+</MIDIFile>

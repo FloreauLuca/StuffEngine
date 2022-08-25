@@ -26,6 +26,10 @@ set(IMGUI_SFML_DIR "${EXTERNAL_DIR}/imgui-sfml-2.5/" CACHE STRING "")
 add_subdirectory(${IMGUI_SFML_DIR})
 set_target_properties(ImGui-SFML PROPERTIES FOLDER Externals)
 
+set(MIDI_PARSER_DIR "${EXTERNAL_DIR}/Midi-Parser/lib" CACHE STRING "")
+add_subdirectory(${MIDI_PARSER_DIR})
+set_target_properties(libParser PROPERTIES FOLDER Externals)
+
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "")
 set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "")
 set(GOOGLE_BENCH_DIR "${EXTERNAL_DIR}/benchmark-1.5.4" CACHE STRING "")
