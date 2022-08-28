@@ -10,18 +10,19 @@
 
 namespace stuff
 {
-	class SoundModule : public SystemInterface
+	class SoundModule
 	{
 	public:
 		SoundModule()
 		{
 		}
 
-		void Init() override;
-		void Update(float dt) override;
+		void Init();
+		void Update(float dt);
+		void Destroy();
+
 		void PlayNote(int noteIndex);
 		void StopNote(int noteIndex);
-		void Destroy() override;
 
 		void PlayMidiInfo(MidiInfo midiInfo, int channel = -1)
 		{

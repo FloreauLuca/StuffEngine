@@ -1,34 +1,40 @@
-#pragma once
-#include <SFML/Audio.hpp>
-
-#include "engine/engine.h"
-#include "engine/system.h"
-#include <MetaEvent.h>
-#include <Midi.h>
-
-namespace stuff
-{
-	class MidiReader : public SystemInterface
-	{
-	public:
-		MidiReader(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
-		{
-		}
-
-		void Init() override;
-		void Update(float dt) override;
-		void Destroy() override;
-
-	private:
-
-		Engine& engine_;
-		Graphics& graphics_;
-
-		float timer_ = 0.0f;
-		int cumulateTime_ = 0;
-
-		std::vector<TrackChunk> tracks;
-		int currentIndex = 0;
-		int trackIndex = 0;
-	};
-}
+//#pragma once
+//#include <SFML/Audio.hpp>
+//
+//#include "engine/engine.h"
+//#include "engine/system.h"
+//#include <MetaEvent.h>
+//#include <Midi.h>
+//
+//#include "midi_info.h"
+//#include "piano_viewer.h"
+//#include "sound_module.h"
+//
+//namespace stuff
+//{
+//	class IMidiReader
+//	{
+//	public:
+//		IMidiReader(MidiInfo midiInfo, SoundModule& soundModule, PianoViewer& pianoViewer) : midiInfo_(midiInfo), soundModule_(soundModule), pianoViewer_(pianoViewer)
+//		{
+//		}
+//
+//		void Init() override;
+//		void Update(float dt) override;
+//		void Destroy() override;
+//		
+//	private:
+//		MidiInfo midiInfo_;
+//		SoundModule& soundModule_;
+//		PianoViewer& pianoViewer_;
+//		
+//		float timer_ = 0;
+//		
+//		bool play = false;
+//
+//		int cumulateTime_ = 0;
+//		int currentIndex = 0;
+//		int trackIndex = 0;
+//		int speed_ = 0;
+//	};
+//}
