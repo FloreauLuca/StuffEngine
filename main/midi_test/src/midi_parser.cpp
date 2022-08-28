@@ -45,7 +45,7 @@ namespace stuff
 
 			if (time > timer_)
 			{
-				break;
+				//break;
 			}
 			std::cout << "\t\t" << "Length : " << events[i].getDeltaTime().getData() << std::dec << std::endl;
 			cumulateTime_ += events[i].getDeltaTime().getData();
@@ -125,13 +125,19 @@ namespace stuff
 		auto tracks = std::vector<TrackChunk>(tracksList.begin(), tracksList.end());
 		
 		MidiInfo midiInfo = MidiInfo(header.getNTracks(), header.getDivision());
-		std::map<int, MidiInfoEvent*> currentEvents = std::map<int, MidiInfoEvent*>();
+		std::cout << "Parsing of file : " << path << std::endl;
+		std::cout << "Header : " << std::endl;
+		std::cout << "\tTracks Count : " << midiInfo.trackCount_ << " Time Div : " << midiInfo.timeDivision_ << std::endl;
+
+		std::map<std::pair<int, int>, MidiInfoEvent*> currentEvents = std::map<std::pair<int, int>, MidiInfoEvent*>();
 		int timer = 0;
 		for (int trackIndex = 0; trackIndex < header.getNTracks(); ++trackIndex)
 		{
+			std::map<int, int> channelEventsCount = std::map<int, int>();
 			auto& eventsList = tracks[trackIndex].getEvents();
 			std::vector<MTrkEvent> events(eventsList.begin(), eventsList.end());
 			midiInfo.ReserveVectorSize(trackIndex, eventsList.size());
+			std::cout << "Track : " << trackIndex << " Size : " << eventsList.size() << std::endl;
 			for (int eventIndex = 0; eventIndex < eventsList.size(); eventIndex++) {
 				auto* event = events[eventIndex].getEvent();
 				timer += events[eventIndex].getDeltaTime().getData();
@@ -142,6 +148,7 @@ namespace stuff
 					if (status == MidiType::MidiMessageStatus::NoteOn || status == MidiType::MidiMessageStatus::NoteOff) {
 						MidiInfoEvent storedEvent;
 						storedEvent.channelNb = (int)midiEvent->getChannel();
+						channelEventsCount[storedEvent.channelNb]++;
 						midiInfo.channelCount_ = std::max(midiInfo.channelCount_, storedEvent.channelNb);
 						storedEvent.startTime = timer;
 						storedEvent.noteIndex = (int)midiEvent->getNote();
@@ -150,19 +157,48 @@ namespace stuff
 						MidiInfoEvent* midiEventPtr = midiInfo.AddEvent(trackIndex, storedEvent);
 						if (storedEvent.on)
 						{
-							if (currentEvents[storedEvent.noteIndex] != nullptr)
+							if (currentEvents[std::pair<int, int>( storedEvent.channelNb, storedEvent.noteIndex)] != nullptr)
 							{
-								std::cout << storedEvent.noteIndex << currentEvents[storedEvent.noteIndex]->startTime << std::endl;
+								std::cout << storedEvent.noteIndex << currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)]->startTime << std::endl;
 							}
-							currentEvents[storedEvent.noteIndex] = midiEventPtr;
+							currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)] = midiEventPtr;
 						}
-						else if (currentEvents[storedEvent.noteIndex] != nullptr)
+						else if (currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)] != nullptr)
 						{
-							currentEvents[storedEvent.noteIndex]->length = timer - currentEvents[storedEvent.noteIndex]->startTime;
-							currentEvents[storedEvent.noteIndex] = nullptr;
+							currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)]->length = timer - currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)]->startTime;
+							currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)] = nullptr;
 						}
+						if (storedEvent.channelNb == 1)
+						{
+							std::cout << "\t" << eventIndex << std::endl;
+							std::cout << "\t\t On " << storedEvent.on << std::endl;
+							std::cout << "\t\t Note " << storedEvent.noteIndex << std::endl;
+							std::cout << "\t\t Start " << storedEvent.startTime << std::endl;
+							std::cout << "\t\t Delay " << storedEvent.delay << std::endl;
+							std::cout << "\t\t Channel " << storedEvent.channelNb << std::endl;
+							std::cout << "\t\t Track " << trackIndex << std::endl;
+						}
+					} else
+					{
+						//std::cout << "\t" << eventIndex <<" Unknow Midi event" << std::endl;
+						//std::cout << "\t\t Start " << timer << std::endl;
+						//std::cout << "\t\t Delay " << events[eventIndex].getDeltaTime().getData() << std::endl;
+						//std::cout << "\t\t Track " << trackIndex << std::endl;
 					}
 				}
+				else
+				{
+					//std::cout << "\t" << eventIndex << " Unknow Meta event" << std::endl;
+					//std::cout << "\t\t Start " << timer << std::endl;
+					//std::cout << "\t\t Delay " << events[eventIndex].getDeltaTime().getData() << std::endl;
+					//std::cout << "\t\t Track " << trackIndex << std::endl;
+				}
+			}
+			timer = 0;
+			std::cout << "Track " << trackIndex << " / " << midiInfo.trackCount_ << std::endl;
+			for (int i = 0; i < midiInfo.channelCount_; ++i)
+			{
+				std::cout << "\t Channel " << i << " : " << channelEventsCount[i] << std::endl;
 			}
 		}
 

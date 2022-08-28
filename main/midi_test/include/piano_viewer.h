@@ -14,19 +14,26 @@ namespace stuff
 	class PianoViewer : public SystemInterface
 	{
 	public:
-		PianoViewer(Engine& engine, MidiInfo midiInfo) : engine_(engine), graphics_(engine.GetGraphics()), midiInfo_(midiInfo)
+		PianoViewer(Engine& engine, MidiInfo midiInfo, int channel = -1) : engine_(engine), graphics_(engine.GetGraphics()), midiInfo_(midiInfo), channel_(channel)
 		{
 		}
 
 		void Init() override;
 		void Update(float dt) override;
 		void Destroy() override;
-		void SpawnNote(int noteIndex, float length);
+		void SpawnNote(int noteIndex, float length, int channel);
 		void DrawPiano();
 
 	private:
 		float GetKeyPosition(int noteIndex);
 		bool IsKeyBlack(int noteIndex);
+		void Next()
+		{
+			timer_ = 0;
+			currentIndex = 0;
+			cumulateTime_ = 0;
+			channel_++;
+		}
 		Engine& engine_;
 		Graphics& graphics_;
 
@@ -39,7 +46,7 @@ namespace stuff
 		std::vector<sf::RectangleShape> keyboards_;
 		std::vector<sf::RectangleShape> notes_;
 
-		int gammeCount_ = 3;
+		int gammeCount_ = 6;
 		const sf::Vector2f offset_ = sf::Vector2f(5, 5);
 		sf::Vector2f rectSize_;
 		sf::RectangleShape noteRect_ = sf::RectangleShape();
@@ -54,10 +61,12 @@ namespace stuff
 		};
 		
 		bool play = false;
+		bool isPressed_ = false;
 
 		int cumulateTime_ = 0;
 		int currentIndex = 0;
 		int trackIndex = 0;
 		int speed_ = 0;
+		int channel_ = 0;
 	};
 }

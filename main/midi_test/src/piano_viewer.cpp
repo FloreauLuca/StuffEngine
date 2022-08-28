@@ -44,6 +44,20 @@ namespace stuff
 	void PianoViewer::Update(float dt)
 	{
 		timer_ += dt * speed_ * 2;
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		{
+			if (isPressed_ == false)
+			{
+				Next();
+			}
+			isPressed_ = true;
+			return;
+		}
+		else
+		{
+			isPressed_ = false;
+		}
 		if (trackIndex < midiInfo_.trackCount_)
 		{
 			if (midiInfo_.GetTrackEvents()[trackIndex].size() > 0)
@@ -54,19 +68,21 @@ namespace stuff
 				while (time < timer_)
 				{
 					cumulateTime_ = time;
-					if (currentEvent.on)
+					if (channel_ == -1 || currentEvent.channelNb == channel_)
 					{
-						SpawnNote(currentEvent.noteIndex - 36, currentEvent.length);
-					}
-					else
-					{
+						if (currentEvent.on)
+						{
+							SpawnNote(currentEvent.noteIndex - 24, currentEvent.length, currentEvent.channelNb);
+						}
+						else
+						{
+						}
 					}
 					currentIndex++;
 
 					if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
 					{
-						currentIndex = 0;
-						trackIndex++;
+						Next();
 						break;
 					}
 
@@ -76,8 +92,7 @@ namespace stuff
 			}
 			else
 			{
-				currentIndex = 0;
-				trackIndex++;
+				Next();
 			}
 		}
 		
@@ -180,9 +195,9 @@ namespace stuff
 		return false;
 	}
 
-	void PianoViewer::SpawnNote(int noteIndex, float length)
+	void PianoViewer::SpawnNote(int noteIndex, float length, int channel)
 	{
-		noteRect_.setFillColor(lgbtColors_[noteIndex/2 % lgbtColors_.size()]);
+		noteRect_.setFillColor(lgbtColors_[channel % lgbtColors_.size()]);
 		noteRect_.setSize(sf::Vector2f(noteRect_.getSize().x, length));
 		noteRect_.setPosition(GetKeyPosition(noteIndex), 0-length);
 		notes_.push_back(noteRect_);

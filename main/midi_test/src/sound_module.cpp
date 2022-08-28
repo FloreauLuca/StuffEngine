@@ -1,4 +1,4 @@
-#include "virtual_piano.h"
+#include "sound_module.h"
 #include <iostream>
 
 #include "utility/data_location.h"
@@ -27,39 +27,46 @@ namespace stuff
 		if (play)
 		{
 			timer_ += dt * speed_;
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+			{
+				if (isPressed_ == false)
+				{
+					Next();
+				}
+				isPressed_ = true;
+				return;
+			}
+			else
+			{
+				isPressed_ = false;
+			}
+			
 			if (midiInfo_.GetTrackEvents()[trackIndex].size() > 0)
 			{
 				MidiInfoEvent currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-				while(channel_ != -1 && currentEvent.channelNb != channel_)
-				{
-					currentIndex++;
-					if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
-					{
-						currentIndex = 0;
-						trackIndex++;
-						break;
-					}
-					currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-				}
+
 				int time = cumulateTime_ + currentEvent.delay;
 
 				while (time < timer_)
 				{
 					cumulateTime_ = time;
-					if (currentEvent.on)
+					if (channel_ == -1 || currentEvent.channelNb == channel_)
 					{
-						PlayNote(currentEvent.noteIndex);
-					}
-					else
-					{
-						StopNote(currentEvent.noteIndex);
+						if (currentEvent.on)
+						{
+							PlayNote(currentEvent.noteIndex);
+						}
+						else
+						{
+							StopNote(currentEvent.noteIndex);
+						}
 					}
 					currentIndex++;
 
 					if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
 					{
-						currentIndex = 0;
-						trackIndex++;
+						Next();
 						break;
 					}
 
@@ -68,7 +75,7 @@ namespace stuff
 				}
 			} else
 			{
-				trackIndex++;
+				Next();
 			}
 			
 			if (trackIndex >= midiInfo_.trackCount_)

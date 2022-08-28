@@ -6,7 +6,7 @@
 
 #include "midi_parser.h"
 #include "piano_viewer.h"
-#include "virtual_piano.h"
+#include "sound_module.h"
 #include "engine/engine.h"
 #include "utility/data_location.h"
 
@@ -15,14 +15,14 @@ int main()
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
 	engine.GetGraphics().SetWindowSize({ 450, 800 });
-	stuff::MidiInfo midiInfo = stuff::MidiParser::ProcessMidiInfo(stuff::dataPath + "midi_test/wii.mid");
+	stuff::MidiInfo midiInfo = stuff::MidiParser::ProcessMidiInfo(stuff::dataPath + "midi_test/dua_lipa.mid");
 	stuff::PianoViewer pianoViewer(engine, midiInfo);
 	engine.RegisterSystem(pianoViewer);
 	stuff::SoundModule soundModule;
 	soundModule.PlayMidiInfo(midiInfo);
 	engine.RegisterSystem(soundModule);
-	stuff::MidiParser midiReader(engine, stuff::dataPath + "midi_test/wii.mid");
-	engine.RegisterSystem(midiReader);
+	stuff::MidiParser midiReader(engine, stuff::dataPath + "midi_test/dua_lipa.mid");
+	//engine.RegisterSystem(midiReader);
 	engine.StartEngine();
 	//{
 	//	stuff::MidiInfo midiInfo = stuff::MidiParser::ProcessMidiInfo(stuff::dataPath + "midi_test/queen.mid");
