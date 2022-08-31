@@ -38,6 +38,7 @@ namespace stuff
 
 		int trackCount_ = 0;
 		int timeDivision_ = 0;
+		float bpm_ = 0;
 		int channelCount_ = 0;
 		std::vector<std::vector<MidiInfoEvent>> trackEvents_;
 	private:

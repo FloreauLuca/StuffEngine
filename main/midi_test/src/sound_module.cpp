@@ -7,6 +7,9 @@ namespace stuff
 {
 	void SoundModule::Init()
 	{
+		MidiReader::Init();
+		std::cout << "Sound to create : " << NOTE_COUNT * channels_.size() << std::endl;
+		
 		std::vector<sf::Sound> keyboard = std::vector<sf::Sound>(NOTE_COUNT);
 		soundBuffer_.resize(NOTE_COUNT);
 
@@ -26,101 +29,20 @@ namespace stuff
 		} else
 		{
 			keyboardSounds_ = std::vector<std::vector<sf::Sound>>(channels_.size(), keyboard);
-			std::cout << "Sound count : " << keyboard.size() * channels_.size() << std::endl;
 		}
-
-		for (auto channel : channels_)
-		{
-			if (std::ranges::find(trackList_, channel.first) == trackList_.end())
-			{
-				trackList_.push_back(channel.first);
-			}
-		}
-
-		currentIndex_.resize(trackList_.size());
-		cumulateTime_.resize(trackList_.size());
 	}
 
 	void SoundModule::Update(float dt)
 	{
-		if (play)
-		{
-			timer_ += dt * speed_;
-
-			//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-			//{
-			//	if (isPressed_ == false)
-			//	{
-			//		Next();
-			//	}
-			//	isPressed_ = true;
-			//	return;
-			//}
-			//else
-			//{
-			//	isPressed_ = false;
-			//}
-			for (int trackI = 0; trackI < trackList_.size(); ++trackI)
-			{
-				int& trackIndex = trackList_[trackI];
-				int& currentIndex = currentIndex_[trackI];
-				int& cumulateTime = cumulateTime_[trackI];
-				if (midiInfo_.GetTrackEvents()[trackIndex].size() > currentIndex)
-				{
-					MidiInfoEvent currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-
-					int time = cumulateTime + currentEvent.delay;
-
-					while (time < timer_)
-					{
-						cumulateTime = time;
-						if (channels_.empty())
-						{
-							if (currentEvent.on)
-							{
-								PlayNote(currentEvent.noteIndex);
-							}
-							else
-							{
-								StopNote(currentEvent.noteIndex);
-							}
-						} else
-						{
-							for (int channelIndex = 0; channelIndex < channels_.size(); ++channelIndex)
-							{
-								if (channels_[channelIndex].second == currentEvent.channelNb && channels_[channelIndex].first == trackIndex)
-								{
-									if (currentEvent.on)
-									{
-										PlayNote(currentEvent.noteIndex, channelIndex);
-									}
-									else
-									{
-										StopNote(currentEvent.noteIndex, channelIndex);
-									}
-								}
-							}
-						}
-						currentIndex++;
-
-						if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
-						{
-							break;
-						}
-
-						currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-						time = cumulateTime + currentEvent.delay;
-					}
-				}
-			}
-		}
+		MidiReader::Update(dt);
 	}
 
 	void SoundModule::Destroy()
 	{
+		MidiReader::Destroy();
 	}
 	
-	void SoundModule::PlayNote(int noteIndex, int channel)
+	void SoundModule::OnPlayEvent(int noteIndex, float length, int channel)
 	{
 		if (noteIndex >= FIRST_NOTE && noteIndex < FIRST_NOTE + NOTE_COUNT)
 		{
@@ -132,7 +54,7 @@ namespace stuff
 		}
 	}
 
-	void SoundModule::StopNote(int noteIndex, int channel)
+	void SoundModule::OnStopEvent(int noteIndex, int channel)
 	{
 		if (noteIndex >= FIRST_NOTE && noteIndex < FIRST_NOTE + NOTE_COUNT)
 		{

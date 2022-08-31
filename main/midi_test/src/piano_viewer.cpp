@@ -2,12 +2,15 @@
 
 #include <iostream>
 
+
+#include "math/color.h"
 #include "utility/data_location.h"
 
 namespace stuff
 {
 	void PianoViewer::Init()
 	{
+		MidiReader::Init();
 		//Init Rect
 		sf::RectangleShape standardRect = sf::RectangleShape();
 		rectSize_ = sf::Vector2f((windowSize_.x - 2 * offset_.x) / (gammeCount_ * 7.0f) - offset_.x,
@@ -39,85 +42,10 @@ namespace stuff
 		noteRect_ = sf::RectangleShape();
 		noteRect_.setSize(sf::Vector2f(rectSize_.x, 0));
 		notes_ = std::vector<sf::RectangleShape>();
-		speed_ = midiInfo_.timeDivision_*2;
-
-		for (auto channel : channels_)
-		{
-			if (std::ranges::find(trackList_, channel.first) == trackList_.end())
-			{
-				trackList_.push_back(channel.first);
-			}
-		}
-
-		currentIndex_.resize(trackList_.size());
-		cumulateTime_.resize(trackList_.size());
 	}
 	void PianoViewer::Update(float dt)
 	{
-		timer_ += dt * speed_;
-
-		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-		//{
-		//	if (isPressed_ == false)
-		//	{
-		//		Next();
-		//	}
-		//	isPressed_ = true;
-		//	return;
-		//}
-		//else
-		//{
-		//	isPressed_ = false;
-		//}
-		for (int trackI = 0; trackI < trackList_.size(); ++trackI)
-		{
-			int& trackIndex = trackList_[trackI];
-			int& currentIndex = currentIndex_[trackI];
-			int& cumulateTime = cumulateTime_[trackI];
-			if (trackIndex < midiInfo_.trackCount_)
-			{
-				if (midiInfo_.GetTrackEvents()[trackIndex].size() > currentIndex)
-				{
-					MidiInfoEvent currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-					int time = cumulateTime + currentEvent.delay;
-
-					while (time < timer_)
-					{
-						cumulateTime = time;
-						if (channels_.size() == 0)
-						{
-							if (currentEvent.on)
-							{
-								SpawnNote(currentEvent.noteIndex - 24, currentEvent.length/2, currentEvent.channelNb);
-							}
-						}
-						else
-						{
-							for (int channelIndex = 0; channelIndex < channels_.size(); ++channelIndex)
-							{
-								if (channels_[channelIndex].second == currentEvent.channelNb && channels_[channelIndex].first == trackIndex)
-								{
-									if (currentEvent.on)
-									{
-										SpawnNote(currentEvent.noteIndex - 24, currentEvent.length / 2, currentEvent.channelNb);
-									}
-								}
-							}
-						}
-						currentIndex++;
-
-						if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
-						{
-							break;
-						}
-
-						currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-						time = cumulateTime + currentEvent.delay;
-					}
-				}
-			}
-		}
-		
+		MidiReader::Update(dt);
 		//Draw all rect
 		for (unsigned i = 0; i < keyboards_.size(); i++)
 		{
@@ -126,20 +54,24 @@ namespace stuff
 		
 		for (unsigned i = 0; i < notes_.size(); i++)
 		{
-			notes_[i].setPosition(notes_[i].getPosition() + sf::Vector2f(0, dt * speed_));
+			notes_[i].setPosition(notes_[i].getPosition() + sf::Vector2f(0, dt * musicSpeed_ * noteSpeed_));
 			graphics_.Draw(notes_[i]);
+		}
+		for (int i = 0; i < notes_.size(); ++i)
+		{
+			if (notes_[i].getPosition().y > windowSize_.y)
+			{
+				notes_.erase(notes_.begin()+i);
+				i--;
+			}
 		}
 	}
 
 	void PianoViewer::Destroy()
 	{
+		MidiReader::Destroy();
 	}
-
-	void PianoViewer::DrawPiano()
-	{
-		
-	}
-
+	
 	float PianoViewer::GetKeyPosition(int noteIndex)
 	{
 		float keyPos = (noteIndex / 12)*7;
@@ -217,11 +149,12 @@ namespace stuff
 		return false;
 	}
 
-	void PianoViewer::SpawnNote(int noteIndex, float length, int channel)
+	void PianoViewer::OnPlayEvent(int noteIndex, float length, int channel)
 	{
-		noteRect_.setFillColor(lgbtColors_[channel % lgbtColors_.size()]);
-		noteRect_.setSize(sf::Vector2f(noteRect_.getSize().x, length));
-		noteRect_.setPosition(GetKeyPosition(noteIndex), 0-length);
+		noteRect_.setFillColor(HSLtoRGB((channel / (float)channels_.size()) * 360.0f , 100.0f, 50.0f));
+		//noteRect_.setFillColor(colors_[channel % colors_.size()]);
+		noteRect_.setSize(sf::Vector2f(noteRect_.getSize().x, length * noteSpeed_));
+		noteRect_.setPosition(GetKeyPosition(noteIndex - firstNote_), 0-length * noteSpeed_);
 		notes_.push_back(noteRect_);
 	}
 }

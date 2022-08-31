@@ -185,10 +185,23 @@ namespace stuff
 				}
 				else
 				{
+					auto* midiEvent = (MetaEvent*)event;
+					if (midiEvent->getStatus() == MidiType::SetTempo)
+					{
+						uint8_t length = midiEvent->getLength();
+						uint32_t data = midiEvent->getData()[0];
+						for (int i = 1; i < length; i++)
+						{
+							data = data << 8 | midiEvent->getData()[i];
+						}
+						midiInfo.bpm_ = 60000000.0f / data;
+						std::cout << "Tempo : "<< data  << " " << midiInfo.bpm_ << std::endl;
+					}
 					//std::cout << "\t" << eventIndex << " Unknow Meta event" << std::endl;
 					//std::cout << "\t\t Start " << timer << std::endl;
 					//std::cout << "\t\t Delay " << events[eventIndex].getDeltaTime().getData() << std::endl;
 					//std::cout << "\t\t Track " << trackIndex << std::endl;
+					
 				}
 			}
 			timer = 0;
