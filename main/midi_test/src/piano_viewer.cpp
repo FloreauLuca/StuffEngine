@@ -39,60 +39,82 @@ namespace stuff
 		noteRect_ = sf::RectangleShape();
 		noteRect_.setSize(sf::Vector2f(rectSize_.x, 0));
 		notes_ = std::vector<sf::RectangleShape>();
-		speed_ = midiInfo_.timeDivision_;
+		speed_ = midiInfo_.timeDivision_*2;
+
+		for (auto channel : channels_)
+		{
+			if (std::ranges::find(trackList_, channel.first) == trackList_.end())
+			{
+				trackList_.push_back(channel.first);
+			}
+		}
+
+		currentIndex_.resize(trackList_.size());
+		cumulateTime_.resize(trackList_.size());
 	}
 	void PianoViewer::Update(float dt)
 	{
-		timer_ += dt * speed_ * 2;
+		timer_ += dt * speed_;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		//{
+		//	if (isPressed_ == false)
+		//	{
+		//		Next();
+		//	}
+		//	isPressed_ = true;
+		//	return;
+		//}
+		//else
+		//{
+		//	isPressed_ = false;
+		//}
+		for (int trackI = 0; trackI < trackList_.size(); ++trackI)
 		{
-			if (isPressed_ == false)
+			int& trackIndex = trackList_[trackI];
+			int& currentIndex = currentIndex_[trackI];
+			int& cumulateTime = cumulateTime_[trackI];
+			if (trackIndex < midiInfo_.trackCount_)
 			{
-				Next();
-			}
-			isPressed_ = true;
-			return;
-		}
-		else
-		{
-			isPressed_ = false;
-		}
-		if (trackIndex < midiInfo_.trackCount_)
-		{
-			if (midiInfo_.GetTrackEvents()[trackIndex].size() > 0)
-			{
-				MidiInfoEvent currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-				int time = cumulateTime_ + currentEvent.delay;
-
-				while (time < timer_)
+				if (midiInfo_.GetTrackEvents()[trackIndex].size() > currentIndex)
 				{
-					cumulateTime_ = time;
-					if (channel_ == -1 || currentEvent.channelNb == channel_)
+					MidiInfoEvent currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
+					int time = cumulateTime + currentEvent.delay;
+
+					while (time < timer_)
 					{
-						if (currentEvent.on)
+						cumulateTime = time;
+						if (channels_.size() == 0)
 						{
-							SpawnNote(currentEvent.noteIndex - 24, currentEvent.length, currentEvent.channelNb);
+							if (currentEvent.on)
+							{
+								SpawnNote(currentEvent.noteIndex - 24, currentEvent.length/2, currentEvent.channelNb);
+							}
 						}
 						else
 						{
+							for (int channelIndex = 0; channelIndex < channels_.size(); ++channelIndex)
+							{
+								if (channels_[channelIndex].second == currentEvent.channelNb && channels_[channelIndex].first == trackIndex)
+								{
+									if (currentEvent.on)
+									{
+										SpawnNote(currentEvent.noteIndex - 24, currentEvent.length / 2, currentEvent.channelNb);
+									}
+								}
+							}
 						}
-					}
-					currentIndex++;
+						currentIndex++;
 
-					if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
-					{
-						Next();
-						break;
-					}
+						if (currentIndex >= midiInfo_.GetTrackEvents()[trackIndex].size())
+						{
+							break;
+						}
 
-					currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
-					time = cumulateTime_ + currentEvent.delay;
+						currentEvent = midiInfo_.GetTrackEvents()[trackIndex][currentIndex];
+						time = cumulateTime + currentEvent.delay;
+					}
 				}
-			}
-			else
-			{
-				Next();
 			}
 		}
 		
@@ -104,7 +126,7 @@ namespace stuff
 		
 		for (unsigned i = 0; i < notes_.size(); i++)
 		{
-			notes_[i].setPosition(notes_[i].getPosition() + sf::Vector2f(0, dt * speed_*2));
+			notes_[i].setPosition(notes_[i].getPosition() + sf::Vector2f(0, dt * speed_));
 			graphics_.Draw(notes_[i]);
 		}
 	}

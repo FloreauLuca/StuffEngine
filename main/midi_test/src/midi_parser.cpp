@@ -149,18 +149,14 @@ namespace stuff
 						MidiInfoEvent storedEvent;
 						storedEvent.channelNb = (int)midiEvent->getChannel();
 						channelEventsCount[storedEvent.channelNb]++;
-						midiInfo.channelCount_ = std::max(midiInfo.channelCount_, storedEvent.channelNb);
+						midiInfo.channelCount_ = std::max(midiInfo.channelCount_, storedEvent.channelNb+1);
 						storedEvent.startTime = timer;
 						storedEvent.noteIndex = (int)midiEvent->getNote();
-						storedEvent.on = status == MidiType::MidiMessageStatus::NoteOn;
+						storedEvent.on = status == MidiType::MidiMessageStatus::NoteOn && (int)midiEvent->getVelocity() != 0;
 						storedEvent.delay = events[eventIndex].getDeltaTime().getData();
 						MidiInfoEvent* midiEventPtr = midiInfo.AddEvent(trackIndex, storedEvent);
 						if (storedEvent.on)
 						{
-							if (currentEvents[std::pair<int, int>( storedEvent.channelNb, storedEvent.noteIndex)] != nullptr)
-							{
-								std::cout << storedEvent.noteIndex << currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)]->startTime << std::endl;
-							}
 							currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)] = midiEventPtr;
 						}
 						else if (currentEvents[std::pair<int, int>(storedEvent.channelNb, storedEvent.noteIndex)] != nullptr)
@@ -170,13 +166,14 @@ namespace stuff
 						}
 						if (storedEvent.channelNb == 1)
 						{
-							std::cout << "\t" << eventIndex << std::endl;
-							std::cout << "\t\t On " << storedEvent.on << std::endl;
-							std::cout << "\t\t Note " << storedEvent.noteIndex << std::endl;
-							std::cout << "\t\t Start " << storedEvent.startTime << std::endl;
-							std::cout << "\t\t Delay " << storedEvent.delay << std::endl;
-							std::cout << "\t\t Channel " << storedEvent.channelNb << std::endl;
-							std::cout << "\t\t Track " << trackIndex << std::endl;
+							//std::cout << "\t" << eventIndex << std::endl;
+							//std::cout << "\t\t On " << storedEvent.on << std::endl;
+							//std::cout << "\t\t Note " << storedEvent.noteIndex << std::endl;
+							//std::cout << "\t\t Start " << storedEvent.startTime << std::endl;
+							//std::cout << "\t\t Delay " << storedEvent.delay << std::endl;
+							//std::cout << "\t\t Velocity " << (int)midiEvent->getVelocity() << std::endl;
+							//std::cout << "\t\t Channel " << storedEvent.channelNb << std::endl;
+							//std::cout << "\t\t Track " << trackIndex << std::endl;
 						}
 					} else
 					{

@@ -14,7 +14,7 @@ namespace stuff
 	class PianoViewer : public SystemInterface
 	{
 	public:
-		PianoViewer(Engine& engine, MidiInfo midiInfo, int channel = -1) : engine_(engine), graphics_(engine.GetGraphics()), midiInfo_(midiInfo), channel_(channel)
+		PianoViewer(Engine& engine, MidiInfo midiInfo, std::vector<std::pair<int, int>> channels = std::vector<std::pair<int, int>>()) : engine_(engine), graphics_(engine.GetGraphics()), midiInfo_(midiInfo), channels_(channels)
 		{
 		}
 
@@ -27,13 +27,6 @@ namespace stuff
 	private:
 		float GetKeyPosition(int noteIndex);
 		bool IsKeyBlack(int noteIndex);
-		void Next()
-		{
-			timer_ = 0;
-			currentIndex = 0;
-			cumulateTime_ = 0;
-			channel_++;
-		}
 		Engine& engine_;
 		Graphics& graphics_;
 
@@ -46,27 +39,24 @@ namespace stuff
 		std::vector<sf::RectangleShape> keyboards_;
 		std::vector<sf::RectangleShape> notes_;
 
-		int gammeCount_ = 6;
+		int gammeCount_ = 4;
 		const sf::Vector2f offset_ = sf::Vector2f(5, 5);
 		sf::Vector2f rectSize_;
 		sf::RectangleShape noteRect_ = sf::RectangleShape();
 
 		const std::array<sf::Color, 6> lgbtColors_ = {
-			sf::Color(255, 0, 24),
-			sf::Color(255, 165, 44),
-			sf::Color(255, 255, 65),
-			sf::Color(0, 128, 24),
-			sf::Color(0, 0, 249),
-			sf::Color(134, 0, 125)
+			sf::Color(5, 98, 1),
+			sf::Color(153, 183, 24),
+			sf::Color(122, 56, 9),
 		};
 		
 		bool play = false;
 		bool isPressed_ = false;
-
-		int cumulateTime_ = 0;
-		int currentIndex = 0;
-		int trackIndex = 0;
 		int speed_ = 0;
-		int channel_ = 0;
+
+		std::vector<int> currentIndex_;
+		std::vector<int> cumulateTime_;
+		std::vector<int> trackList_;
+		std::vector<std::pair<int, int>> channels_;
 	};
 }

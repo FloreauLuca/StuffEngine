@@ -15,13 +15,13 @@ int main()
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
 	engine.GetGraphics().SetWindowSize({ 450, 800 });
-	stuff::MidiInfo midiInfo = stuff::MidiParser::ProcessMidiInfo(stuff::dataPath + "midi_test/dua_lipa.mid");
-	stuff::PianoViewer pianoViewer(engine, midiInfo);
+	stuff::MidiInfo midiInfo = stuff::MidiParser::ProcessMidiInfo(stuff::dataPath + "midi_test/all_star.mid");
+	std::vector<std::pair<int, int>> channels = std::vector<std::pair<int, int>>{ {1, 0} , {4, 1} , {5, 2} };
+	stuff::PianoViewer pianoViewer(engine, midiInfo, channels);
 	engine.RegisterSystem(pianoViewer);
-	stuff::SoundModule soundModule;
-	soundModule.PlayMidiInfo(midiInfo);
+	stuff::SoundModule soundModule(midiInfo, channels);
 	engine.RegisterSystem(soundModule);
-	stuff::MidiParser midiReader(engine, stuff::dataPath + "midi_test/dua_lipa.mid");
+	stuff::MidiParser midiReader(engine, stuff::dataPath + "midi_test/all_star.mid");
 	//engine.RegisterSystem(midiReader);
 	engine.StartEngine();
 	//{
