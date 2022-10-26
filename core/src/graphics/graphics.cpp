@@ -47,6 +47,7 @@ void Graphics::Update(float dt)
             std::cout << "Window resized : " << windowSize_.x << ", " << windowSize_.y << std::endl;
     	}
         engine_.GetInputSystem().OnEvent(event);
+        engine_.EventAction.Execute(event);
         ImGui::SFML::ProcessEvent(event);
     }
 	

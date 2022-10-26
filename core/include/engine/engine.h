@@ -26,6 +26,7 @@ public:
 	void Destroy() override;
 	InputSystem& GetInputSystem() { return inputSystem_; };
 	Graphics& GetGraphics() { return graphics_; };
+	Action<sf::Event> EventAction;
 private:
 	Action<> initAction_;
 	Action<float> updateAction_;
