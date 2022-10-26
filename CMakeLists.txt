@@ -14,7 +14,7 @@ set(EXTERNAL_DIR "${CMAKE_SOURCE_DIR}/externals" CACHE INTERNAL "Externals folde
 set(MAIN_DIR "${CMAKE_SOURCE_DIR}/main" CACHE INTERNAL "Main folder")
 set(GTEST_DIR "${CMAKE_SOURCE_DIR}/tests/gtests" CACHE INTERNAL "GTests folder")
 set(BENCH_DIR "${CMAKE_SOURCE_DIR}/tests/benchmarks" CACHE INTERNAL "Benchmarks folder")
-
+set(DATA_DIR "${CMAKE_SOURCE_DIR}/data" CACHE INTERNAL "Benchmarks folder")
 
 # Librairies implementations
 set(SFML_DIR "${EXTERNAL_DIR}/SFML-2.5.1/lib/cmake/SFML" CACHE STRING "")
@@ -61,6 +61,7 @@ add_subdirectory(${CORE_DIR})
 #Common libs
 add_subdirectory("common/algo_lib")
 add_subdirectory("common/keyword_lib")
+add_subdirectory("common/kernel_lib")
 
 # GTests files
 include(CTest)
