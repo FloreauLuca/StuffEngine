@@ -6,6 +6,7 @@
 
 #include "engine/engine.h"
 #include "engine/system.h"
+#include <fractal.h>
 
 namespace stuff
 {
@@ -15,7 +16,7 @@ namespace stuff
 	class FractalVisualization : public SystemInterface
 	{
 	public:
-		FractalVisualization(Engine& engine) : engine_(engine), graphics_(engine.GetGraphics())
+		FractalVisualization(Engine& engine, Fractal& fractal) : engine_(engine), graphics_(engine.GetGraphics()), fractal_(fractal)
 		{
 			engine_.EventAction.RegisterCallback([this](sf::Event event) { this->OnEvent(event); });
 		}
@@ -40,12 +41,15 @@ namespace stuff
 
 		Engine& engine_;
 		Graphics& graphics_; 
+
+		Fractal& fractal_;
+
 		cl::Buffer buffer;
 		std::vector<sf::Uint8> data;
 
 		float timer_ = 0.0f;
 
-		const sf::Vector2u squareCount_ = sf::Vector2u(1000, 1000);
+		const sf::Vector2u squareCount_ = sf::Vector2u(750, 750);
 		sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
 		sf::Texture texture_;
@@ -53,10 +57,10 @@ namespace stuff
 
 		sf::Text text_;
 
-		sf::Vector2<double> _center = sf::Vector2<double>(0, 0);
-		sf::Vector2<double> _scale = sf::Vector2<double>(1, 1);
+		sf::Vector2<double> center_ = sf::Vector2<double>(0, 0);
+		sf::Vector2<double> scale_ = sf::Vector2<double>(1, 1);
 
-		sf::Vector2i _lastMousePosition = sf::Vector2i(0, 0);
+		sf::Vector2i lastMousePosition_ = sf::Vector2i(0, 0);
 
 		const std::array<sf::Color, 6> lgbtColors_ = {
 			sf::Color(255, 0, 24),
