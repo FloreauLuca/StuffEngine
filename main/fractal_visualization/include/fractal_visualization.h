@@ -7,6 +7,7 @@
 #include "engine/engine.h"
 #include "engine/system.h"
 #include <fractal.h>
+#include <sound_module.h>
 
 namespace stuff
 {
@@ -70,6 +71,8 @@ namespace stuff
 			sf::Color(134, 0, 125)
 		};
 
-		bool displayParameters_ = true;
+		bool displayParameters_ = false;
+
+		SoundModule soundModule_;
 	};
 }

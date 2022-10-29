@@ -12,6 +12,16 @@ namespace stuff
 {
 	void JuliaFractal::Init()
 	{
+		//Init text
+		if (!font_.loadFromFile(dataPath + "kepler.otf"))
+		{
+			std::cout << "Error font not loaded" << std::endl;
+		}
+		text_.setFont(font_);
+		text_.setFillColor(sf::Color::White);
+		text_.setCharacterSize(textSize_);
+		text_.setPosition(5, 15);
+
 	}
 
 	void JuliaFractal::Update(float dt)
@@ -20,11 +30,16 @@ namespace stuff
 		if (autoMoving_)
 		{
 			timer_ += dt;
-			coeff_.x = sin(timer_ * 0.5f);
-			coeff_.y = cos(timer_ * 0.4f);
+			coeff_.x = sin(timer_ * 0.6f) * 0.75;
+			coeff_.y = cos(timer_* 0.2f) * 0.75;
 		}
-		formulaText_ = "F = z² + %.2f + %.2fi";
-		std::sprintf(&formulaText_[0], "F = z² + %.2f + %.2fi", coeff_.x, coeff_.y);
+
+		formulaText_.resize(30);
+		formulaText_.resize(std::sprintf(&formulaText_[0], "F = z² + %.2f + %.2fi", abs(coeff_.x), abs(coeff_.y)));
+		std::sprintf(&formulaText_[0], std::string("F = z² %c %.2f %c %.2fi").c_str(), coeff_.x >= 0 ? '+' : '-', abs(coeff_.x), coeff_.y >= 0 ? '+' : '-',  abs(coeff_.y));
+		formulaText_ = "Julia Fractal\n" + formulaText_;
+		text_.setString(std::string(formulaText_.begin(), formulaText_.end()));
+		graphics_.Draw(text_);
 	}
 
 	void JuliaFractal::UpdateGUI()

@@ -107,7 +107,10 @@ __kernel void color(__global uchar4* pixels, float time)
 	pixels[index] = color;
 }
 
-__kernel void julia(__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom, int max_iterations, double2 coeff)
+__kernel void julia(
+	__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom,
+	int max_iterations, double2 coeff
+	)
 {
 	uchar4 black = (uchar4)(0, 0, 0, 255);
 	uchar4 white = (uchar4)(255, 255, 255, 255);
@@ -130,7 +133,7 @@ __kernel void julia(__global uchar4* pixels, __global uchar4* colors, double2 ce
 		i++;
 	}
 
-	if (i >= max_iterations)
+	if (i >= max_iterations || i < 3)
 	{
 		color = black;
 	}
@@ -143,7 +146,10 @@ __kernel void julia(__global uchar4* pixels, __global uchar4* colors, double2 ce
 	pixels[index] = color;
 }
 
-__kernel void mandelbrot(__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom, int max_iterations)
+__kernel void mandelbrot(
+	__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom,
+	int max_iterations
+	)
 {
 	uchar4 black = (uchar4)(0, 0, 0, 255);
 	uchar4 white = (uchar4)(255, 255, 255, 255);
@@ -173,14 +179,17 @@ __kernel void mandelbrot(__global uchar4* pixels, __global uchar4* colors, doubl
 	else
 	{
 		// color = (uchar4)(i * 15, i * 15, i * 15, 255);
-		color = evaluate_gradient(colors, i/5.0);
+		color = evaluate_gradient(colors, log2((double)i+60) * 10);
 	}
 
 	size_t index = (get_global_id(1) * get_global_size(0)) + get_global_id(0);
 	pixels[index] = color;
 }
 
-__kernel void newton_N(__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom, int max_iterations, __global double2* roots, int nb_roots, int display_grid)
+__kernel void newton_N(
+	__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom,
+	int max_iterations, __global double2* roots, int nb_roots, int display_grid
+	)
 {
 	uchar4 black = (uchar4)(0, 0, 0, 255);
 	uchar4 white = (uchar4)(255, 255, 255, 255);

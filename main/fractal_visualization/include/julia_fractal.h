@@ -16,7 +16,7 @@ namespace stuff
 	class JuliaFractal : public Fractal
 	{
 	public:
-		JuliaFractal(Engine& engine) : Fractal(engine)
+		JuliaFractal(Engine& engine) : Fractal(engine), graphics_(engine.GetGraphics())
 		{
 		}
 
@@ -28,6 +28,12 @@ namespace stuff
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "julia"; }
 	private:
+		std::string formulaText_ = "";
+		Graphics& graphics_;
+
+		sf::Text text_;
+		sf::Font font_;
+		const unsigned textSize_ = 30;
 		bool autoMoving_ = true;
 
 		int maxInteractions_ = 100;

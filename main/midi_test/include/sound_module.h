@@ -29,8 +29,8 @@ namespace stuff
 	private:
 		std::string ConvertIndexToNote(int noteIndex) const;
 		
-		const size_t NOTE_COUNT = 48;
-		const size_t FIRST_NOTE = 36;
+		const size_t NOTE_COUNT = 36;
+		const size_t FIRST_NOTE = 48;
 
 		std::vector<sf::SoundBuffer> soundBuffer_;
 		std::vector<std::vector<sf::Sound>> keyboardSounds_;

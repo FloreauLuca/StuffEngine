@@ -26,5 +26,6 @@ private:
 	float timer_ = 0.0f;
 	sf::Texture penguinHead_;
 	sf::Texture penguinLogo_;
+	sf::Font font_;
 };
 }

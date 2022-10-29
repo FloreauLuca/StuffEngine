@@ -22,10 +22,15 @@ namespace stuff
 		if (autoMoving_)
 		{
 			timer_ += dt;
+			//for (int i = 0; i < nbRoots_; i++)
+			//{
+			//	roots_[i].x = cos(timer_ + (i * PI / 2)) * 0.25 + sin(i * 2 * PI / nbRoots_);
+			//	roots_[i].y = sin(timer_ + (i * PI / 2)) * 0.25 + cos(i * 2 * PI / nbRoots_);
+			//}
 			for (int i = 0; i < nbRoots_; i++)
 			{
 				roots_[i].x = cos(timer_ + (i * PI / 2)) * 0.25 + sin(i * 2 * PI / nbRoots_);
-				roots_[i].y = sin(timer_ + (i * PI / 2)) * 0.25 + cos(i * 2 * PI / nbRoots_);
+				roots_[i].y = cos(timer_ + (i * PI / 2)) * 0.25 + cos(i * 2 * PI / nbRoots_);
 			}
 		}
 	}

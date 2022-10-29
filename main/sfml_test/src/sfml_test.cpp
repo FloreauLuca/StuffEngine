@@ -18,11 +18,25 @@ void SfmlTest::Init()
 	{
 		std::cout << "Sprite fail to load" << std::endl;
 	}
-	
+	if (!font_.loadFromFile(dataPath + "Insanibu.ttf"))
+	{
+		std::cout << "Error font not loaded" << std::endl;
+	}
+	std::cout << font_.getInfo().family << " " << font_.getLineSpacing(30) << " " << font_.getUnderlineThickness(30) << std::endl;
+	std::cout << font_.getGlyph('1', 30, false).advance << std::endl;
 }
 
 void SfmlTest::Update(float dt)
 {
+	//Init text
+	sf::Text text;
+	text.setFillColor(sf::Color::White);
+	text.setPosition(5, 15);
+	text.setStyle(sf::Text::Bold);
+	text.setString(L"F = z² + 1.23 - 0.67i");
+	text.setFont(font_);
+	graphics_.Draw(text);
+
 	sf::Vector2f center(sf::Vector2f(graphics_.GetWindowSize()) / 2.0f);
 	timer_ += dt*2;
 	sf::CircleShape circle1(300.0f);

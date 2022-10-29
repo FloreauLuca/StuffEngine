@@ -23,6 +23,8 @@ namespace stuff
 		buffer = ComputeShader::Buffer(data, Permissions::Write);
 
 		fractal_.Init();
+
+		soundModule_.Init();
 	}
 
 	void FractalVisualization::Update(float dt)
@@ -43,8 +45,28 @@ namespace stuff
 		ComputeShader::get_data(buffer, data);
 		texture_.update(data.data());
 		graphics_.Draw(sprite_);
+		//sf::Color centerColor;
+		//centerColor.r = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 0];
+		//centerColor.g = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 1];
+		//centerColor.b = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 2];
+		//centerColor.a = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 3];
+		//if (centerColor == sf::Color::Black)
+		//{
+		//	soundModule_.PlayNote(-1);
+		//}
+		//else
+		//{
+		//	for (size_t i = 0; i < lgbtColors_.size(); i++)
+		//	{
+		//		if (lgbtColors_[i] == centerColor)
+		//		{
+		//			soundModule_.PlayNote(i * 6);
+		//			break;
+		//		}
+		//	}
+		//}
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && engine_.GetGraphics().GetWindow()->hasFocus())
 		{
 			sf::Vector2i delta = lastMousePosition_ - sf::Mouse::getPosition();
 			center_ += sf::Vector2d((double)delta.x * scale_ / windowSize_.x, (double)delta.y * scale_ / windowSize_.y);
@@ -59,6 +81,7 @@ namespace stuff
 		{
 			scale_ *= 1 + (0.02 * dt * 60);
 		}
+
 
 		if (displayParameters_)
 		{

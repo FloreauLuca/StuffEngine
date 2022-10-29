@@ -30,7 +30,7 @@ namespace stuff
 	private:
 		bool autoMoving_ = true;
 		bool displayGrid_ = true;
-		int nbRoots_ = 4;
+		int nbRoots_ = 6;
 		int maxInteractions_ = 80;
 		std::vector<sf::Vector2d> roots_ = std::vector<sf::Vector2d>();
 		cl::Buffer rootsBuffer_;

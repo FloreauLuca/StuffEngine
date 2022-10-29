@@ -23,10 +23,6 @@ void Graphics::Init()
     }
     window_ = std::make_unique<sf::RenderWindow>(sf::VideoMode(windowSize_.x, windowSize_.y), "StuffEngine");
     window_->setIcon(penguinLogo_.getSize().x, penguinLogo_.getSize().y, penguinLogo_.copyToImage().getPixelsPtr());
-    if (!font_.loadFromFile(dataPath + "sansation.ttf"))
-    {
-        std::cout << "Error file not loaded" << std::endl;
-    }
     ImGui::SFML::Init(*window_);
 }
 
@@ -70,7 +66,6 @@ void Graphics::Update(float dt)
     }
     for (auto& text : texts_)
     {
-        text.setFont(font_);
         window_->draw(text);
     }
     ImGui::EndFrame();
