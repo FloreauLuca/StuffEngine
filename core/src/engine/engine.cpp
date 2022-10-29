@@ -63,6 +63,7 @@ void stuff::Engine::RegisterSystem(SystemInterface& system)
     destroyAction_.RegisterCallback([&system] {
         system.Destroy();
         });
+    EventAction.RegisterCallback([&system](sf::Event event) { system.OnEvent(event); });
 }
 
 void Engine::Init()
@@ -74,19 +75,40 @@ void Engine::Init()
 }
 void Engine::Update(float dt)
 {
-
-    sf::Text text;
-    text.setString(std::to_string(dt));
-    text.setFillColor(sf::Color::White);
-    text.setCharacterSize(14);
-    graphics_.Draw(text);
+    if (showFPS_)
+    {
+        sf::Text text;
+        text.setString(std::to_string(1.0f / dt));
+        text.setFillColor(sf::Color::White);
+        text.setCharacterSize(14);
+        graphics_.Draw(text);
+    }
     sf::Sprite spriteLogo(penguinLogo_);
     spriteLogo.setPosition(graphics_.GetWindowSize().x - 60, graphics_.GetWindowSize().y - 60);
     spriteLogo.setScale(50.0f / penguinLogo_.getSize().x, 50.0f / penguinLogo_.getSize().y);
     graphics_.Draw(spriteLogo);
     //std::cout << 1.0f / dt << " FPS" << std::endl;
-	
+    if (showDebugImgui_)
+    {
+        ImGui::ShowDemoWindow();
+    }
 }
+
+void Engine::OnEvent(sf::Event event)
+{
+    if (event.type == sf::Event::EventType::KeyPressed)
+    {
+        if (event.key.code == sf::Keyboard::P)
+        {
+            showFPS_ = !showFPS_;
+        }
+        if (event.key.code == sf::Keyboard::M)
+        {
+            showDebugImgui_ = !showDebugImgui_;
+        }
+    }
+}
+
 void Engine::Destroy()
 {
 	

@@ -7,16 +7,34 @@
 #include <iostream>
 #include <numeric>
 #include <iomanip>
+#include <imgui.h>
 
 namespace stuff
 {
 	void NewtonFractal::Init()
 	{
+		roots_.resize(nbRoots_);
 	}
 
 	void NewtonFractal::Update(float dt)
 	{
 		Fractal::Update(dt);
+		if (autoMoving_)
+		{
+			timer_ += dt;
+			for (int i = 0; i < nbRoots_; i++)
+			{
+				roots_[i].x = cos(timer_ + (i * PI / 2)) * 0.25 + sin(i * 2 * PI / nbRoots_);
+				roots_[i].y = sin(timer_ + (i * PI / 2)) * 0.25 + cos(i * 2 * PI / nbRoots_);
+			}
+		}
+	}
+
+	void NewtonFractal::UpdateGUI()
+	{
+		Fractal::UpdateGUI();
+		ImGui::Checkbox("Auto Move", &autoMoving_);
+		ImGui::SliderInt("Iterations", &maxInteractions_, 1, 10000);
 	}
 
 	void NewtonFractal::Destroy()
@@ -29,10 +47,10 @@ namespace stuff
 
 	void NewtonFractal::UpdateArgument()
 	{
-		ComputeShader::add_argument(200);
-		ComputeShader::add_argument(std::array<double, 2>{cos(timer_) * 0.25 - 0.5, sin(timer_) * 0.25 - 0.5});
-		ComputeShader::add_argument(std::array<double, 2>{cos(timer_ + PI / 2) * 0.25 - 0.5, sin(timer_ + PI / 2) * 0.25 + 0.5});
-		ComputeShader::add_argument(std::array<double, 2>{cos(timer_ + 2 * PI / 2) * 0.25 + 0.5, sin(timer_ + 2 * PI / 2) * 0.25 + 0.5});
-		ComputeShader::add_argument(std::array<double, 2>{cos(timer_ + 3 * PI / 2) * 0.25 + 0.5, sin(timer_ + 3 * PI / 2) * 0.25 - 0.5});
+		ComputeShader::add_argument(maxInteractions_);
+		for (int i = 0; i < nbRoots_; i++)
+		{
+			ComputeShader::add_argument(roots_[i]);
+		}
 	}
 }

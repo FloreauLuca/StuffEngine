@@ -53,6 +53,11 @@ void ComputeShader::init(const std::string& path)
 	program = cl::Program(context, sources);
 
 	auto err = program.build();
+	if (!program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device).empty())
+	{
+		std::cout << "Build Log:\t " << program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device) << std::endl;
+	}
+
 	if(err != CL_BUILD_SUCCESS)
 	{
 		std::cout << "Error!\nBuild Status: " << program.getBuildInfo<CL_PROGRAM_BUILD_STATUS>(device)

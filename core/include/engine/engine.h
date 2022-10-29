@@ -24,6 +24,7 @@ public:
 	void Init() override;
 	void Update(float dt) override;
 	void Destroy() override;
+	void OnEvent(sf::Event event) override;
 	InputSystem& GetInputSystem() { return inputSystem_; };
 	Graphics& GetGraphics() { return graphics_; };
 	Action<sf::Event> EventAction;
@@ -37,5 +38,8 @@ private:
 	InputSystem inputSystem_;
 	bool isRunning_ = true;
 	sf::Texture penguinLogo_;
+
+	bool showFPS_ = true;
+	bool showDebugImgui_ = false;
 };
 }

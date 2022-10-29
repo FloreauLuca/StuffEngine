@@ -6,6 +6,7 @@
 #include <iostream>
 #include <numeric>
 #include <iomanip>
+#include <imgui.h>
 
 namespace stuff
 {
@@ -16,6 +17,13 @@ namespace stuff
 	void MandelbrotFractal::Update(float dt)
 	{
 		Fractal::Update(dt);
+		timer_ += dt;
+	}
+
+	void MandelbrotFractal::UpdateGUI()
+	{
+		Fractal::UpdateGUI();
+		ImGui::SliderInt("Iterations", &maxInteractions_, 1, 10000);
 	}
 
 	void MandelbrotFractal::Destroy()
@@ -28,6 +36,6 @@ namespace stuff
 
 	void MandelbrotFractal::UpdateArgument()
 	{
-		ComputeShader::add_argument(100);
+		ComputeShader::add_argument(maxInteractions_);
 	}
 }

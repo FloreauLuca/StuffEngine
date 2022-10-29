@@ -22,10 +22,16 @@ namespace stuff
 
 		void Init() override;
 		void Update(float dt) override;
+		void UpdateGUI() override;
 		void Destroy() override;
 		void OnEvent(sf::Event event) override;
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "julia"; }
 	private:
+		bool autoMoving_ = true;
+
+		int maxInteractions_ = 100;
+
+		sf::Vector2d coeff_ = sf::Vector2d(0, 0);
 	};
 }

@@ -18,7 +18,6 @@ namespace stuff
 	public:
 		FractalVisualization(Engine& engine, Fractal& fractal) : engine_(engine), graphics_(engine.GetGraphics()), fractal_(fractal)
 		{
-			engine_.EventAction.RegisterCallback([this](sf::Event event) { this->OnEvent(event); });
 		}
 
 		void Init() override;
@@ -49,7 +48,7 @@ namespace stuff
 
 		float timer_ = 0.0f;
 
-		const sf::Vector2u squareCount_ = sf::Vector2u(750, 750);
+		sf::Vector2u squareCount_ = sf::Vector2u(750, 750);
 		sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
 		sf::Texture texture_;
@@ -57,8 +56,8 @@ namespace stuff
 
 		sf::Text text_;
 
-		sf::Vector2<double> center_ = sf::Vector2<double>(0, 0);
-		sf::Vector2<double> scale_ = sf::Vector2<double>(1, 1);
+		sf::Vector2d center_ = sf::Vector2d(0, 0);
+		double scale_ = 1.0;
 
 		sf::Vector2i lastMousePosition_ = sf::Vector2i(0, 0);
 
@@ -70,5 +69,7 @@ namespace stuff
 			sf::Color(0, 0, 249),
 			sf::Color(134, 0, 125)
 		};
+
+		bool displayParameters_ = true;
 	};
 }

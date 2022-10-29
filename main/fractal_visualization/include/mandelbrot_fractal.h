@@ -22,10 +22,12 @@ namespace stuff
 
 		void Init() override;
 		void Update(float dt) override;
+		void UpdateGUI() override;
 		void Destroy() override;
 		void OnEvent(sf::Event event) override;
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "mandelbrot"; }
 	private:
+		int maxInteractions_ = 5000;
 	};
 }
