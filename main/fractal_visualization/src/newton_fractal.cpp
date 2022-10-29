@@ -34,7 +34,8 @@ namespace stuff
 	{
 		Fractal::UpdateGUI();
 		ImGui::Checkbox("Auto Move", &autoMoving_);
-		ImGui::SliderInt("Iterations", &maxInteractions_, 1, 10000);
+		ImGui::Checkbox("Display Grid", &displayGrid_);
+		ImGui::SliderInt("Iterations", &maxInteractions_, 1, 100);
 	}
 
 	void NewtonFractal::Destroy()
@@ -48,9 +49,15 @@ namespace stuff
 	void NewtonFractal::UpdateArgument()
 	{
 		ComputeShader::add_argument(maxInteractions_);
-		for (int i = 0; i < nbRoots_; i++)
+		std::vector<double> roots = std::vector<double>(nbRoots_ * 2);
+		for (size_t i = 0; i < nbRoots_; i++)
 		{
-			ComputeShader::add_argument(roots_[i]);
+			roots[i * 2] = roots_[i].x;
+			roots[i * 2+1] = roots_[i].y;
 		}
+		rootsBuffer_ = ComputeShader::Buffer(roots_, Permissions::Read);
+		ComputeShader::add_argument(rootsBuffer_);
+		ComputeShader::add_argument(nbRoots_);
+		ComputeShader::add_argument(displayGrid_);
 	}
 }

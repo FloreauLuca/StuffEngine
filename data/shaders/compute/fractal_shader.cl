@@ -180,7 +180,7 @@ __kernel void mandelbrot(__global uchar4* pixels, __global uchar4* colors, doubl
 	pixels[index] = color;
 }
 
-__kernel void newton_3(__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom, int max_iterations, double2 r_1, double2 r_2, double2 r_3)
+__kernel void newton_N(__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom, int max_iterations, __global double2* roots, int nb_roots, int display_grid)
 {
 	uchar4 black = (uchar4)(0, 0, 0, 255);
 	uchar4 white = (uchar4)(255, 255, 255, 255);
@@ -190,114 +190,78 @@ __kernel void newton_3(__global uchar4* pixels, __global uchar4* colors, double2
 
 	int i = 0;
 	double2 number = coord;
-	double d_1 = (double)(sqr_distance(number, r_1));
-	double d_2 = (double)(sqr_distance(number, r_2));
-	double d_3 = (double)(sqr_distance(number, r_3));
-	double d_min = (double)(min(min(d_1, d_2), d_3));
+	double2 r_1 = roots[0];
+	double2 r_2 = roots[1];
+	double2 r_3 = roots[2];
+	double2 r_4 = roots[3];
+	double d_min = DBL_MAX;
+	for (int i = 0; i < nb_roots; i++)
+	{
+		double d_N = (double)(sqr_distance(number, roots[i]));
+		d_min = (double)(min(d_min, d_N));
+	}
 	double threshold = 0.001;
 	while(d_min > threshold && i < max_iterations)
 	{
-		double2 num = complex_multiply(complex_multiply(number - r_1, number - r_2), number - r_3);
-		double2 denom = complex_multiply(number - r_1, number - r_2) + complex_multiply(number - r_1, number - r_3) + complex_multiply(number - r_2, number - r_3);
+		double2 num = number - roots[0];
+		for (int i = 1; i < nb_roots; i++)
+		{
+			num = complex_multiply(num, number - roots[i]);
+		}
+		//double2 num = complex_multiply(complex_multiply(complex_multiply(number - r_1, number - r_2), number - r_3), number - r_4);
+		double2 denom = 0;
+		for (int i = 0; i < nb_roots; i++)
+		{
+			double2 denom_j = 0;
+			for (int j = 0; j < nb_roots; j++)
+			{
+				if(j != i)
+				{
+					if (denom_j.x == 0.0 && denom_j.y == 0.0)
+					{
+						denom_j = number - roots[j];
+					}
+					else
+					{
+						denom_j = complex_multiply(denom_j, number - roots[j]);
+					}
+				}
+			}
+			denom += denom_j;
+		}
 		number = number - complex_divide(num, denom);
-		d_1 = (double)(sqr_distance(number, r_1));
-		d_2 = (double)(sqr_distance(number, r_2));
-		d_3 = (double)(sqr_distance(number, r_3));
-		d_min = (double)(min(min(d_1, d_2), d_3));
+		for (int i = 0; i < nb_roots; i++)
+		{
+			double d_N = (double)(sqr_distance(number, roots[i]));
+			d_min = (double)(min(d_min, d_N));
+		}
 		i++;
 	}
 
-	// if (i >= max_iterations)
-	// {
-	// 	color = black;
-	// }
-	// else
-	if (d_1 < d_2 && d_1 < d_3)
+	for (int i = 0; i < nb_roots; i++)
 	{
-		color = colors[1];
-	}
-	else if (d_2 < d_1 && d_2 < d_3)
-	{
-		color = colors[3];
-	}
-	else
-	{
-		color = colors[5];
+		double d_N = (double)(sqr_distance(number, roots[i]));
+		if (d_N <= d_min)
+		{
+			color = colors[i % 6];
+		}
 	}
 
-	if (fabs(fmod(coord.x, 0.5)) < 0.005 || fabs(fmod(coord.y, 0.5)) < 0.005)
+	if (display_grid == 1)
 	{
-		color.w -= 100;
+		if (fabs(fmod(coord.x, 0.5)) < 0.005 || fabs(fmod(coord.y, 0.5)) < 0.005)
+		{
+			color.w -= 100;
+		}
 	}
 	
-	if (sqr_distance(coord, r_1) < 0.01 || sqr_distance(coord, r_2) < 0.01 || sqr_distance(coord, r_3) < 0.01)
+	for (int i = 0; i < nb_roots; i++)
 	{
-		color = white;
-	}
-
-	size_t index = (get_global_id(1) * get_global_size(0)) + get_global_id(0);
-	pixels[index] = color;
-}
-
-
-__kernel void newton_4(__global uchar4* pixels, __global uchar4* colors, double2 center, double2 screen, double zoom, int max_iterations, double2 r_1, double2 r_2, double2 r_3, double2 r_4)
-{
-	uchar4 black = (uchar4)(0, 0, 0, 255);
-	uchar4 white = (uchar4)(255, 255, 255, 255);
-
-	double2 coord = get_coord(center, screen, zoom);
-	uchar4 color = black;
-
-	int i = 0;
-	double2 number = coord;
-	double d_1 = (double)(sqr_distance(number, r_1));
-	double d_2 = (double)(sqr_distance(number, r_2));
-	double d_3 = (double)(sqr_distance(number, r_3));
-	double d_4 = (double)(sqr_distance(number, r_4));
-	double d_min = (double)(min(min(d_1, d_2), min(d_3, d_4)));
-	double threshold = 0.001;
-	while(d_min > threshold && i < max_iterations)
-	{
-		double2 num = complex_multiply(complex_multiply(complex_multiply(number - r_1, number - r_2), number - r_3), number - r_4);
-		double2 denom = 
-			complex_multiply(complex_multiply(number - r_1, number - r_2), number - r_3) +
-			complex_multiply(complex_multiply(number - r_1, number - r_2), number - r_4) +
-			complex_multiply(complex_multiply(number - r_1, number - r_3), number - r_4) +
-			complex_multiply(complex_multiply(number - r_2, number - r_3), number - r_4);
-		number = number - complex_divide(num, denom);
-		d_1 = (double)(sqr_distance(number, r_1));
-		d_2 = (double)(sqr_distance(number, r_2));
-		d_3 = (double)(sqr_distance(number, r_3));
-		d_4 = (double)(sqr_distance(number, r_4));
-		d_min = (double)(min(min(d_1, d_2), min(d_3, d_4)));
-		i++;
-	}
-
-	if (d_1 < d_2 && d_1 < d_3 && d_1 < d_4)
-	{
-		color = colors[1];
-	}
-	else if (d_2 < d_1 && d_2 < d_3 && d_2 < d_4)
-	{
-		color = colors[3];
-	}
-	else if (d_3 < d_1 && d_3 < d_2 && d_3 < d_4)
-	{
-		color = colors[4];
-	}
-	else
-	{
-		color = colors[5];
-	}
-
-	if (fabs(fmod(coord.x, 0.5)) < 0.005 || fabs(fmod(coord.y, 0.5)) < 0.005)
-	{
-		color.w -= 100;
-	}
-	
-	if (sqr_distance(coord, r_1) < 0.001 || sqr_distance(coord, r_2) < 0.001 || sqr_distance(coord, r_3) < 0.001 || sqr_distance(coord, r_4) < 0.001)
-	{
-		color = white;
+		if (sqr_distance(coord, roots[i]) < 0.0005)
+		{
+			color = white;
+			break;
+		}
 	}
 
 	size_t index = (get_global_id(1) * get_global_size(0)) + get_global_id(0);

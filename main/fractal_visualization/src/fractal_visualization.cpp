@@ -44,13 +44,6 @@ namespace stuff
 		texture_.update(data.data());
 		graphics_.Draw(sprite_);
 
-		std::string str = "Center : " + std::to_string(center_.x) + ", " + std::to_string(center_.y) + " Scale : " + std::to_string(scale_) + "\n";
-		text_.setString(str);
-		text_.setPosition(5, 15);
-		text_.setColor(sf::Color::White);
-		text_.setCharacterSize(15);
-		graphics_.Draw(text_);
-
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
 			sf::Vector2i delta = lastMousePosition_ - sf::Mouse::getPosition();
@@ -69,6 +62,13 @@ namespace stuff
 
 		if (displayParameters_)
 		{
+			std::string str = "Center : " + std::to_string(center_.x) + ", " + std::to_string(center_.y) + " Scale : " + std::to_string(scale_) + "\n";
+			text_.setString(str);
+			text_.setPosition(5, 15);
+			text_.setColor(sf::Color::White);
+			text_.setCharacterSize(15);
+			graphics_.Draw(text_);
+
 			ImGui::Begin("Parameters");
 			fractal_.UpdateGUI();
 			ImGui::End();
