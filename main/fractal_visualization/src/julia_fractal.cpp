@@ -30,8 +30,8 @@ namespace stuff
 		if (autoMoving_)
 		{
 			timer_ += dt;
-			coeff_.x = sin(timer_ * 0.6f) * 0.75;
-			coeff_.y = cos(timer_* 0.2f) * 0.75;
+			coeff_.x = sin(timer_ * 0.5f) * 0.75;
+			coeff_.y = cos(timer_* 0.1f) * 0.75;
 		}
 
 		formulaText_.resize(30);

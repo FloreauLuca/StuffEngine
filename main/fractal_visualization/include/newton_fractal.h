@@ -29,9 +29,9 @@ namespace stuff
 		std::string GetFunctionName() override { return "newton_N"; }
 	private:
 		bool autoMoving_ = true;
-		bool displayGrid_ = true;
+		bool displayGrid_ = false;
 		int nbRoots_ = 6;
-		int maxInteractions_ = 80;
+		int maxInteractions_ = 20;
 		std::vector<sf::Vector2d> roots_ = std::vector<sf::Vector2d>();
 		cl::Buffer rootsBuffer_;
 	};

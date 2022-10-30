@@ -69,7 +69,7 @@ namespace stuff
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && engine_.GetGraphics().GetWindow()->hasFocus())
 		{
 			sf::Vector2i delta = lastMousePosition_ - sf::Mouse::getPosition();
-			center_ += sf::Vector2d((double)delta.x * scale_ / windowSize_.x, (double)delta.y * scale_ / windowSize_.y);
+			//center_ += sf::Vector2d((double)delta.x * scale_ / windowSize_.x, (double)delta.y * scale_ / windowSize_.y);
 		}
 		lastMousePosition_ = sf::Mouse::getPosition();
 

@@ -72,12 +72,17 @@ void Engine::Init()
     {
         std::cout << "Sprite fail to load" << std::endl;
     }
+    if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
+    {
+        std::cout << "FOnt fail to load" << std::endl;
+    }
 }
 void Engine::Update(float dt)
 {
     if (showFPS_)
     {
         sf::Text text;
+        text.setFont(font_);
         text.setString(std::to_string(1.0f / dt));
         text.setFillColor(sf::Color::White);
         text.setCharacterSize(14);

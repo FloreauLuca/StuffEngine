@@ -13,7 +13,6 @@ namespace stuff
 {
 	void NewtonFractal::Init()
 	{
-		roots_.resize(nbRoots_);
 	}
 
 	void NewtonFractal::Update(float dt)
@@ -21,16 +20,13 @@ namespace stuff
 		Fractal::Update(dt);
 		if (autoMoving_)
 		{
-			timer_ += dt;
-			//for (int i = 0; i < nbRoots_; i++)
-			//{
-			//	roots_[i].x = cos(timer_ + (i * PI / 2)) * 0.25 + sin(i * 2 * PI / nbRoots_);
-			//	roots_[i].y = sin(timer_ + (i * PI / 2)) * 0.25 + cos(i * 2 * PI / nbRoots_);
-			//}
+			timer_ += dt * 0.5f;
+			//nbRoots_ = std::round((sin(timer_ * 0.25f) * 0.5f + 0.5f) * 4 + 2);
+			roots_.resize(nbRoots_);
 			for (int i = 0; i < nbRoots_; i++)
 			{
-				roots_[i].x = cos(timer_ + (i * PI / 2)) * 0.25 + sin(i * 2 * PI / nbRoots_);
-				roots_[i].y = cos(timer_ + (i * PI / 2)) * 0.25 + cos(i * 2 * PI / nbRoots_);
+				roots_[i].x = cos(timer_ + (2 * i * PI / nbRoots_)) * 0.25 + sin(i * 2 * PI / nbRoots_);
+				roots_[i].y = cos(timer_ + (2 * i * PI / nbRoots_)) * 0.25 + cos(i * 2 * PI / nbRoots_);
 			}
 		}
 	}
@@ -41,6 +37,7 @@ namespace stuff
 		ImGui::Checkbox("Auto Move", &autoMoving_);
 		ImGui::Checkbox("Display Grid", &displayGrid_);
 		ImGui::SliderInt("Iterations", &maxInteractions_, 1, 100);
+		ImGui::SliderInt("Nb Roots", &nbRoots_, 1, 12);
 	}
 
 	void NewtonFractal::Destroy()

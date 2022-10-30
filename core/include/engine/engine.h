@@ -5,6 +5,8 @@
 #include "graphics/window.h"
 #include "utility/input.h"
 
+#include <SFML\Graphics.hpp>
+
 
 namespace stuff
 {
@@ -38,6 +40,7 @@ private:
 	InputSystem inputSystem_;
 	bool isRunning_ = true;
 	sf::Texture penguinLogo_;
+	sf::Font font_;
 
 	bool showFPS_ = true;
 	bool showDebugImgui_ = false;

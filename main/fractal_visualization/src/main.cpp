@@ -13,7 +13,8 @@ int main()
 {
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 567 , 1008 });
+	engine.GetGraphics().SetWindowSize({ (unsigned)(567 * 1.0f) ,  (unsigned)(1008 * 1.0f) });
+	std::cout << engine.GetGraphics().GetWindowSize().x << engine.GetGraphics().GetWindowSize().y << std::endl;
 	//engine.GetGraphics().SetWindowSize({ 750, 750 });
 	stuff::JuliaFractal julia_fractal = stuff::JuliaFractal(engine);
 	stuff::FractalVisualization julia_fractal_visualization(engine, julia_fractal);
