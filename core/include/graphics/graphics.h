@@ -23,6 +23,7 @@ public:
 private:
 	sf::Vector2u windowSize_ = sf::Vector2u(600, 600);
 	sf::Texture penguinLogo_;
+	sf::Font font_;
 	
 	Engine& engine_;
 	std::unique_ptr<sf::RenderWindow> window_;

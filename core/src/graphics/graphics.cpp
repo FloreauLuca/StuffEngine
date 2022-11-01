@@ -21,6 +21,10 @@ void Graphics::Init()
     {
         std::cout << "Sprite fail to load" << std::endl;
     }
+    if (!font_.loadFromFile(dataPath + "Montserrat-ExtraBold.ttf"))
+    {
+        std::cout << "FOnt fail to load" << std::endl;
+    }
     window_ = std::make_unique<sf::RenderWindow>(sf::VideoMode(windowSize_.x, windowSize_.y), "StuffEngine");
     window_->setIcon(penguinLogo_.getSize().x, penguinLogo_.getSize().y, penguinLogo_.copyToImage().getPixelsPtr());
     ImGui::SFML::Init(*window_);
@@ -66,6 +70,10 @@ void Graphics::Update(float dt)
     }
     for (auto& text : texts_)
     {
+        if (text.getFont() == nullptr)
+        {
+            text.setFont(font_);
+        }
         window_->draw(text);
     }
     ImGui::EndFrame();

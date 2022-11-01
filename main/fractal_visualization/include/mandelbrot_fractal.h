@@ -28,6 +28,6 @@ namespace stuff
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "mandelbrot"; }
 	private:
-		int maxInteractions_ = 5000;
+		int maxInteractions_ = 1000;
 	};
 }

@@ -12,12 +12,14 @@ namespace stuff
 {
 	void MandelbrotFractal::Init()
 	{
+		Fractal::Init();
 	}
 
 	void MandelbrotFractal::Update(float dt)
 	{
-		Fractal::Update(dt);
 		timer_ += dt;
+		formulaText_ = "Mandelbrot Fractal";
+		Fractal::Update(dt);
 	}
 
 	void MandelbrotFractal::UpdateGUI()

@@ -45,9 +45,14 @@ inline float lerp(const float val1, const float val2, const float time)
 	return val1 + (val2 - val1) * clamp(time, 0, 1);
 }
 
+inline float inverselerp(const float val1, const float val2, const float time)
+{
+	return (time - val1) / (val2 - val1);
+}
+
 inline float smoothstep(float edge0, float edge1, float x) {
-	float v1 = std::max(edge0, edge1);
-	float v2 = std::max(edge0, edge1);
+	float v1 = edge0;
+	float v2 = edge1;
 	x = clamp((x - v1) / (v2 - v1), 0.0, 1.0);
 	return x * x * (3 - 2 * x);
 }

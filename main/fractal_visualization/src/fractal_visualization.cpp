@@ -31,6 +31,12 @@ namespace stuff
 	{
 		timer_ += dt;
 		fractal_.Update(dt);
+		if (camera_ != nullptr && autoCamera_)
+		{
+			camera_->Update(dt);
+			center_ = camera_->GetPosition();
+			scale_ = camera_->GetZoom();
+		}
 
 		ComputeShader::choose_function(fractal_.GetFunctionName());
 		ComputeShader::add_argument(buffer);
@@ -69,7 +75,7 @@ namespace stuff
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && engine_.GetGraphics().GetWindow()->hasFocus())
 		{
 			sf::Vector2i delta = lastMousePosition_ - sf::Mouse::getPosition();
-			//center_ += sf::Vector2d((double)delta.x * scale_ / windowSize_.x, (double)delta.y * scale_ / windowSize_.y);
+			center_ += sf::Vector2d((double)delta.x * scale_ / windowSize_.x, (double)delta.y * scale_ / windowSize_.y);
 		}
 		lastMousePosition_ = sf::Mouse::getPosition();
 
@@ -82,17 +88,30 @@ namespace stuff
 			scale_ *= 1 + (0.02 * dt * 60);
 		}
 
-
 		if (displayParameters_)
 		{
-			std::string str = "Center : " + std::to_string(center_.x) + ", " + std::to_string(center_.y) + " Scale : " + std::to_string(scale_) + "\n";
-			text_.setString(str);
-			text_.setPosition(5, 15);
-			text_.setColor(sf::Color::White);
-			text_.setCharacterSize(15);
-			graphics_.Draw(text_);
-
 			ImGui::Begin("Parameters");
+
+			std::string str;
+			str.resize(64);
+			str.resize(std::sprintf(&str[0], "Center  : %.15f , %.15f \n Zoom : %.15f", center_.x, center_.y, scale_));
+			std::sprintf(&str[0], "Center  : %.15f , %.15f \n Zoom : %.15f", center_.x, center_.y, scale_);
+			ImGui::Text(str.c_str());
+			if (ImGui::Button("Print pos"))
+			{
+				std::cout << str << std::endl;
+			}
+			if (ImGui::Button("Reset Position"))
+			{
+				center_ = sf::Vector2d(0.0, 0.0);
+				scale_ = 1.0;
+				if (camera_)
+				{
+					camera_->Reset();
+				}
+			}
+			ImGui::Checkbox("Update Camera", &autoCamera_);
+
 			fractal_.UpdateGUI();
 			ImGui::End();
 		}

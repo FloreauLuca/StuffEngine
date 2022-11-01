@@ -8,6 +8,7 @@
 #include "engine/system.h"
 #include <fractal.h>
 #include <sound_module.h>
+#include <camera.h>
 
 namespace stuff
 {
@@ -17,7 +18,7 @@ namespace stuff
 	class FractalVisualization : public SystemInterface
 	{
 	public:
-		FractalVisualization(Engine& engine, Fractal& fractal) : engine_(engine), graphics_(engine.GetGraphics()), fractal_(fractal)
+		FractalVisualization(Engine& engine, Fractal& fractal, Camera* camera = nullptr) : engine_(engine), graphics_(engine.GetGraphics()), fractal_(fractal), camera_(camera)
 		{
 		}
 
@@ -43,6 +44,8 @@ namespace stuff
 		Graphics& graphics_; 
 
 		Fractal& fractal_;
+
+		Camera* camera_;
 
 		cl::Buffer buffer;
 		std::vector<sf::Uint8> data;
@@ -71,7 +74,8 @@ namespace stuff
 			sf::Color(134, 0, 125)
 		};
 
-		bool displayParameters_ = false;
+		bool displayParameters_ = true;
+		bool autoCamera_ = false;
 
 		SoundModule soundModule_;
 	};

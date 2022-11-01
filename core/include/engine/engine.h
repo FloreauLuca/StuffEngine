@@ -40,7 +40,6 @@ private:
 	InputSystem inputSystem_;
 	bool isRunning_ = true;
 	sf::Texture penguinLogo_;
-	sf::Font font_;
 
 	bool showFPS_ = true;
 	bool showDebugImgui_ = false;
