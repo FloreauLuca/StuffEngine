@@ -27,6 +27,7 @@ namespace stuff
 		void OnEvent(sf::Event event) override;
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "mandelbrot"; }
+		std::string GetFractalName() override { return "Mandelbrot Fractal"; }
 	private:
 		int maxInteractions_ = 1000;
 	};

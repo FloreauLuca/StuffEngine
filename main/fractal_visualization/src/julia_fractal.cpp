@@ -12,7 +12,6 @@ namespace stuff
 {
 	void JuliaFractal::Init()
 	{
-		Fractal::Init();
 	}
 
 	void JuliaFractal::Update(float dt)
@@ -25,10 +24,10 @@ namespace stuff
 		}
 
 		formulaText_.resize(30);
-		formulaText_.resize(std::sprintf(&formulaText_[0], "F = z² + %.2f + %.2fi", abs(coeff_.x), abs(coeff_.y)));
-		std::sprintf(&formulaText_[0], std::string("F = z² %c %.2f %c %.2fi").c_str(), coeff_.x >= 0 ? '+' : '-', abs(coeff_.x), coeff_.y >= 0 ? '+' : '-',  abs(coeff_.y));
-		formulaText_ = "Julia Fractal\n" + formulaText_;
-		Fractal::Update(dt);
+		std::string doublePrecision = "%.4f";
+		std::string format = "F = z² %c " + doublePrecision + " %c " + doublePrecision;
+		formulaText_.resize(std::sprintf(&formulaText_[0], format.c_str(), '+', abs(coeff_.x), '+', abs(coeff_.y)));
+		std::sprintf(&formulaText_[0], format.c_str(), coeff_.x >= 0 ? '+' : '-', abs(coeff_.x), coeff_.y >= 0 ? '+' : '-',  abs(coeff_.y));
 	}
 
 	void JuliaFractal::UpdateGUI()
@@ -37,7 +36,7 @@ namespace stuff
 		ImGui::Checkbox("Auto Move", &autoMoving_);
 		ImGui::SliderInt("Iterations", &maxInteractions_, 1, 10000);
 		float* coeffValue = &ImVec2(sf::Vector2f(coeff_))[0];
-		ImGui::SliderFloat2("Coeff", coeffValue,-1.0, 1.0);
+		ImGui::DragFloat2("Coeff", coeffValue,0.0001f,-1.0, 1.0,"%.4f");
 		coeff_ = sf::Vector2d(coeffValue[0], coeffValue[1]);
 	}
 	

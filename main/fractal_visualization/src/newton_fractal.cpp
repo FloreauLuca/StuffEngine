@@ -13,7 +13,6 @@ namespace stuff
 {
 	void NewtonFractal::Init()
 	{
-		Fractal::Init();
 	}
 
 	void NewtonFractal::Update(float dt)
@@ -29,8 +28,6 @@ namespace stuff
 				roots_[i].y = cos(timer_ + (2 * i * PI / nbRoots_)) * 0.25 + cos(i * 2 * PI / nbRoots_);
 			}
 		}
-		formulaText_ = "Newton Fractal";
-		Fractal::Update(dt);
 	}
 
 	void NewtonFractal::UpdateGUI()

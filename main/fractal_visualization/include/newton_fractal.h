@@ -27,6 +27,7 @@ namespace stuff
 		void OnEvent(sf::Event event) override;
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "newton_N"; }
+		std::string GetFractalName() override { return "Newton Fractal"; }
 	private:
 		bool autoMoving_ = true;
 		bool displayGrid_ = false;

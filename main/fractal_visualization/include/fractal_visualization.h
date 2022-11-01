@@ -58,8 +58,6 @@ namespace stuff
 		sf::Texture texture_;
 		sf::Sprite sprite_;
 
-		sf::Text text_;
-
 		sf::Vector2d center_ = sf::Vector2d(0, 0);
 		double scale_ = 1.0;
 
@@ -74,9 +72,13 @@ namespace stuff
 			sf::Color(134, 0, 125)
 		};
 
-		bool displayParameters_ = true;
-		bool autoCamera_ = false;
+		bool displayParameters_ = false;
+		bool autoCamera_ = true;
 
 		SoundModule soundModule_;
+
+		const unsigned textSize_ = 30;
+		sf::Text text_;
+		sf::Font font_;
 	};
 }

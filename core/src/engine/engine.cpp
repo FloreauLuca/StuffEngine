@@ -49,6 +49,7 @@ void Engine::DestroyEngine()
     initAction_.ClearAction();
     updateAction_.ClearAction();
     destroyAction_.ClearAction();
+    EventAction.ClearAction();
 }
 
 void Engine::StopEngine()

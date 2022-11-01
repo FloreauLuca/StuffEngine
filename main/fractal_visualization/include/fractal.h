@@ -19,24 +19,19 @@ namespace stuff
 		{
 		}
 
-		void Init() override;
-
-		void Update(float dt) override;
-
 		virtual void UpdateGUI() {
 		}
 
 		virtual void UpdateArgument(){}
 		virtual std::string GetFunctionName() { return ""; }
+		virtual std::string GetFractalName() { return ""; }
+
+		std::string GetFormulaText() { return formulaText_; }
 	protected:
 		float timer_ = 0.0f;
-
-		const unsigned textSize_ = 30;
-		sf::Font font_;
 		std::string formulaText_ = "";
 	private:
 		Engine& engine_;
 		Graphics& graphics_;
-		sf::Text text_;
 	};
 }

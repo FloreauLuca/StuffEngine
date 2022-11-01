@@ -1,5 +1,5 @@
 #pragma OPENCL EXTENSION cl_khr_fp64 : enable
-//#define DOUBLE_SUPPORT_AVAILABLE
+#define DOUBLE_SUPPORT_AVAILABLE
 
 #if defined(DOUBLE_SUPPORT_AVAILABLE)
 

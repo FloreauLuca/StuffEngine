@@ -27,6 +27,7 @@ namespace stuff
 		void OnEvent(sf::Event event) override;
 		void UpdateArgument() override;
 		std::string GetFunctionName() override { return "julia"; }
+		std::string GetFractalName() override { return "Julia Fractal"; }
 	private:
 		Graphics& graphics_;
 

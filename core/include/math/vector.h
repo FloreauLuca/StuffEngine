@@ -38,10 +38,25 @@ inline float clamp(float x, float lowerlimit, float upperlimit) {
 	return x;
 }
 
+inline double clamp(double x, double lowerlimit, double upperlimit) {
+	if (x < lowerlimit)
+		x = lowerlimit;
+	if (x > upperlimit)
+		x = upperlimit;
+	return x;
+}
+
 inline float lerp(const float val1, const float val2, const float time)
 {
 	float v1 = std::max(val1, val2);
 	float v2 = std::max(val1, val2);
+	return val1 + (val2 - val1) * clamp(time, 0, 1);
+}
+
+inline double lerp(const double val1, const double val2, const double time)
+{
+	double v1 = std::max(val1, val2);
+	double v2 = std::max(val1, val2);
 	return val1 + (val2 - val1) * clamp(time, 0, 1);
 }
 
@@ -50,9 +65,21 @@ inline float inverselerp(const float val1, const float val2, const float time)
 	return (time - val1) / (val2 - val1);
 }
 
+inline double inverselerp(const double val1, const double val2, const double time)
+{
+	return (time - val1) / (val2 - val1);
+}
+
 inline float smoothstep(float edge0, float edge1, float x) {
 	float v1 = edge0;
 	float v2 = edge1;
+	x = clamp((x - v1) / (v2 - v1), 0.0f, 1.0f);
+	return x * x * (3 - 2 * x);
+}
+
+inline double smoothstep(double edge0, double edge1, double x) {
+	double v1 = edge0;
+	double v2 = edge1;
 	x = clamp((x - v1) / (v2 - v1), 0.0, 1.0);
 	return x * x * (3 - 2 * x);
 }

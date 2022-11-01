@@ -25,6 +25,14 @@ namespace stuff
 		fractal_.Init();
 
 		soundModule_.Init();
+
+		//Init text
+		if (!font_.loadFromFile(dataPath + "Sono-ExtraBold.ttf"))
+		{
+			std::cout << "Error font not loaded" << std::endl;
+		}
+		text_.setFont(font_);
+		text_.setFillColor(sf::Color::White);
 	}
 
 	void FractalVisualization::Update(float dt)
@@ -88,18 +96,22 @@ namespace stuff
 			scale_ *= 1 + (0.02 * dt * 60);
 		}
 
+		std::string positionText;
+		positionText.resize(64);
+		std::string doublePrecision = "%.15f";
+		std::string format = "Pos  : " + doublePrecision + " , " + doublePrecision + " \nZoom : " + "%.15f";
+		positionText.resize(std::sprintf(&positionText[0], format.c_str(), center_.x, center_.y, scale_));
+		std::sprintf(&positionText[0], format.c_str(), center_.x, center_.y, scale_);
+
 		if (displayParameters_)
 		{
 			ImGui::Begin("Parameters");
 
-			std::string str;
-			str.resize(64);
-			str.resize(std::sprintf(&str[0], "Center  : %.15f , %.15f \n Zoom : %.15f", center_.x, center_.y, scale_));
-			std::sprintf(&str[0], "Center  : %.15f , %.15f \n Zoom : %.15f", center_.x, center_.y, scale_);
-			ImGui::Text(str.c_str());
+			ImGui::Text(positionText.c_str());
 			if (ImGui::Button("Print pos"))
 			{
-				std::cout << str << std::endl;
+				std::cout << positionText << std::endl;
+				std::cout << fractal_.GetFormulaText() << std::endl;
 			}
 			if (ImGui::Button("Reset Position"))
 			{
@@ -115,6 +127,32 @@ namespace stuff
 			fractal_.UpdateGUI();
 			ImGui::End();
 		}
+		int posY = 15;
+		int fractalNameSize = 30;
+		text_.setCharacterSize(textSize_);
+		text_.setPosition(5, posY);
+		text_.setCharacterSize(fractalNameSize);
+		text_.setString(fractal_.GetFractalName());
+		graphics_.Draw(text_);
+		posY += font_.getLineSpacing(fractalNameSize);
+
+		if (!fractal_.GetFormulaText().empty())
+		{
+			int formulaSize = 30;
+			text_.setCharacterSize(textSize_);
+			text_.setPosition(5, posY);
+			text_.setCharacterSize(formulaSize);
+			text_.setString(fractal_.GetFormulaText());
+			graphics_.Draw(text_);
+			posY += font_.getLineSpacing(formulaSize);
+		}
+
+		int positionSize = 20;
+		text_.setCharacterSize(textSize_);
+		text_.setPosition(5, posY);
+		text_.setCharacterSize(positionSize);
+		text_.setString(positionText);
+		graphics_.Draw(text_);
 	}
 
 	void FractalVisualization::Destroy()
