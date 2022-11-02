@@ -39,7 +39,7 @@ namespace stuff
 			}
 			return data;
 		}
-
+		
 		Engine& engine_;
 		Graphics& graphics_; 
 

@@ -56,6 +56,10 @@ void Graphics::Update(float dt)
     {
         window_->draw(rectangle_shape);
     }
+    for (auto& sprite : sprites_)
+    {
+        window_->draw(sprite);
+    }
     for (auto& circle_shape : circleShapes_)
     {
         window_->draw(circle_shape);
@@ -63,10 +67,6 @@ void Graphics::Update(float dt)
     for (auto& vertex_array : vertex_arrays_)
     {
         window_->draw(vertex_array);
-    }
-    for (auto& sprite : sprites_)
-    {
-        window_->draw(sprite);
     }
     for (auto& text : texts_)
     {

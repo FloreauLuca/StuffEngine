@@ -22,6 +22,13 @@ private:
 
 	float timer_ = 0.0f;
 	sf::SoundBuffer waveSoundBuffer_;
-	sf::Sound waveSound_;
+	sf::Sound waveSound_ = sf::Sound();
+	sf::Sound waveSound2_ = sf::Sound();
+
+	sf::Vector2f windowSize_;
+
+	float frequency1_ = 0.0f;
+	float frequency2_ = 0.0f;
+	float ratio = 1.0f;
 };
 }

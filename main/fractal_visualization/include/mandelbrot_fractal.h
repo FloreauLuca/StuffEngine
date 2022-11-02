@@ -26,6 +26,8 @@ namespace stuff
 		void Destroy() override;
 		void OnEvent(sf::Event event) override;
 		void UpdateArgument() override;
+		sf::Vector2d FractalFunction(sf::Vector2d z, sf::Vector2d c) override;
+		void DrawLine(sf::Vector2d coord, double scale, sf::Vector2f startPos) override;
 		std::string GetFunctionName() override { return "mandelbrot"; }
 		std::string GetFractalName() override { return "Mandelbrot Fractal"; }
 	private:

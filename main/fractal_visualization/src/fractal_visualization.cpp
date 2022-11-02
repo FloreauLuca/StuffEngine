@@ -7,6 +7,7 @@
 #include <iostream>
 #include <numeric>
 #include <iomanip>
+#include <math\vector.h>
 
 namespace stuff
 {
@@ -59,11 +60,24 @@ namespace stuff
 		ComputeShader::get_data(buffer, data);
 		texture_.update(data.data());
 		graphics_.Draw(sprite_);
+
+		sf::Vector2f mousePos = sf::Vector2f(sf::Mouse::getPosition(*graphics_.GetWindow()));
+		sf::Vector2d coord = sf::Vector2d(mousePos);
+		coord.x = coord.x / (windowSize_.x / 2.0) - 1;
+		coord.y = coord.y / (windowSize_.y / 2.0) - 1;
+		coord *= scale_;
+		coord += center_;
 		//sf::Color centerColor;
-		//centerColor.r = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 0];
-		//centerColor.g = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 1];
-		//centerColor.b = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 2];
-		//centerColor.a = data[(squareCount_.x / 2 + squareCount_.y / 2 * squareCount_.x) * 4 + 3];
+		//sf::Vector2f readPos = sf::Vector2f(clamp(mousePos.x, 0, windowSize_.x), clamp(mousePos.y, 0, windowSize_.y));
+		//centerColor.r = data[(readPos.x + readPos.y * squareCount_.x) * 4 + 0];
+		//centerColor.g = data[(readPos.x + readPos.y * squareCount_.x) * 4 + 1];
+		//centerColor.b = data[(readPos.x + readPos.y * squareCount_.x) * 4 + 2];
+		//centerColor.a = data[(readPos.x + readPos.y * squareCount_.x) * 4 + 3];
+		//sf::CircleShape circle(20.0f);
+		//circle.setFillColor(centerColor);
+		//circle.setOutlineColor(sf::Color::White);
+		//circle.setPosition(mousePos + sf::Vector2f(50.0f, 50.0f));
+		//graphics_.Draw(circle);
 		//if (centerColor == sf::Color::Black)
 		//{
 		//	soundModule_.PlayNote(-1);
@@ -128,30 +142,37 @@ namespace stuff
 			ImGui::End();
 		}
 		int posY = 15;
-		int fractalNameSize = 30;
-		text_.setCharacterSize(textSize_);
+		int textSize = 30;
 		text_.setPosition(5, posY);
-		text_.setCharacterSize(fractalNameSize);
+		text_.setCharacterSize(textSize);
 		text_.setString(fractal_.GetFractalName());
 		graphics_.Draw(text_);
-		posY += font_.getLineSpacing(fractalNameSize);
+		posY += font_.getLineSpacing(textSize);
 
 		if (!fractal_.GetFormulaText().empty())
 		{
-			int formulaSize = 30;
-			text_.setCharacterSize(textSize_);
+			textSize = 30;
 			text_.setPosition(5, posY);
-			text_.setCharacterSize(formulaSize);
+			text_.setCharacterSize(textSize);
 			text_.setString(fractal_.GetFormulaText());
 			graphics_.Draw(text_);
-			posY += font_.getLineSpacing(formulaSize);
+			posY += font_.getLineSpacing(textSize);
 		}
 
-		int positionSize = 20;
-		text_.setCharacterSize(textSize_);
+		textSize = 20;
 		text_.setPosition(5, posY);
-		text_.setCharacterSize(positionSize);
+		text_.setCharacterSize(textSize);
 		text_.setString(positionText);
+		graphics_.Draw(text_);
+		posY += font_.getLineSpacing(textSize);
+		posY += font_.getLineSpacing(textSize);
+
+		fractal_.DrawLine(coord, scale_, mousePos);
+
+		textSize = 20;
+		text_.setPosition(5, posY);
+		text_.setCharacterSize(textSize);
+		text_.setString(std::to_string(coord.x) + " " + std::to_string(coord.y));
 		graphics_.Draw(text_);
 	}
 
