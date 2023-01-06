@@ -24,14 +24,17 @@
 #include "day21_dice.h"
 #include "day22_cuboid.h"
 #include "day13_origami.h"
+#include "y2022_day9.h"
 
 
 int main()
 {
 	stuff::Engine engine;
 	engine.GetGraphics().SetWindowSize({ 500, 800 });
-	stuff::advent::Day13Origami day(engine);
-	day.ReadFromName("day13_1");
-	std::cout << day.FindAnswer();
+	stuff::advent::Day9 day(engine);
+	day.ReadFromName("y2022_day9_test");
+	//std::cout << day.FindAnswer();
+	engine.RegisterSystem(day);
+	engine.StartEngine();
 	return 0;
 }
