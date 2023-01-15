@@ -83,3 +83,8 @@ inline double smoothstep(double edge0, double edge1, double x) {
 	x = clamp((x - v1) / (v2 - v1), 0.0, 1.0);
 	return x * x * (3 - 2 * x);
 }
+
+inline sf::Vector2f lerp(const sf::Vector2f& vec1, const sf::Vector2f& vec2, const float time)
+{
+	return vec1 + (vec2 - vec1) * clamp(time, 0, 1);
+}
