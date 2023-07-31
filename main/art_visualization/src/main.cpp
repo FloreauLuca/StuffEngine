@@ -18,12 +18,12 @@ int main()
 {
 	std::cout << "Salut" << std::endl;
 	stuff::Engine engine;
-	//engine.GetGraphics().SetWindowSize({ 900, 900 });
-	engine.GetGraphics().SetWindowSize({ 450, 800 });
+	engine.GetGraphics().SetWindowSize({ 900, 900 });
+	//engine.GetGraphics().SetWindowSize({ 450, 800 });
 	//engine.GetGraphics().SetWindowSize({ 750, 750 });
-	stuff::PavageVisualization pavage_visualization(engine);
-	engine.RegisterSystem(pavage_visualization);
-	engine.StartEngine();
+	//stuff::PavageVisualization pavage_visualization(engine);
+	//engine.RegisterSystem(pavage_visualization);
+	//engine.StartEngine();
 	//stuff::FourierCircles fourier_circles(engine);
 	//engine.RegisterSystem(fourier_circles);
 	//engine.StartEngine();
@@ -39,9 +39,9 @@ int main()
 	//stuff::MovingStars moving_stars(engine);
 	//engine.RegisterSystem(moving_stars);
 	//engine.StartEngine(); 
-	//stuff::PointWave point_wave(engine);
-	//engine.RegisterSystem(point_wave);
-	//engine.StartEngine();
+	stuff::PointWave point_wave(engine);
+	engine.RegisterSystem(point_wave);
+	engine.StartEngine();
 	//stuff::RotatingLine rotating_line(engine);
 	//engine.RegisterSystem(rotating_line);
 	//engine.StartEngine();

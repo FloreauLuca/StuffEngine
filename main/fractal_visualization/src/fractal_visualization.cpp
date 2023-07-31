@@ -60,7 +60,7 @@ namespace stuff
 		ComputeShader::get_data(buffer, data);
 		texture_.update(data.data());
 		graphics_.Draw(sprite_);
-
+		return;
 		sf::Vector2f mousePos = sf::Vector2f(sf::Mouse::getPosition(*graphics_.GetWindow()));
 		sf::Vector2d coord = sf::Vector2d(mousePos);
 		coord.x = coord.x / (windowSize_.x / 2.0) - 1;
@@ -167,7 +167,7 @@ namespace stuff
 		posY += font_.getLineSpacing(textSize);
 		posY += font_.getLineSpacing(textSize);
 
-		fractal_.DrawLine(coord, scale_, mousePos);
+		//fractal_.DrawLine(coord, scale_, mousePos);
 
 		textSize = 20;
 		text_.setPosition(5, posY);

@@ -34,9 +34,9 @@ namespace stuff
 		Graphics& graphics_;
 
 		sf::Text text_;
-		bool autoMoving_ = false;
+		bool autoMoving_ = true;
 
-		int maxInteractions_ = 100;
+		int maxInteractions_ = 50;
 
 		sf::Vector2d coeff_ = sf::Vector2d(0, 0);
 	};

@@ -30,7 +30,7 @@ private:
 
 	sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
-	const float shipSize_ = 10.0f;
+	const float shipSize_ = 20.0f;
 	const unsigned boidNb_ = 75;
 	std::vector<Boid> boids_;
 

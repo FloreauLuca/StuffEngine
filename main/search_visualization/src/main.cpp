@@ -9,7 +9,7 @@
 int main()
 {
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 600, 600 });
+	engine.GetGraphics().SetWindowSize({ 900, 900 });
 	stuff::SearchVisualization bubble_sort_visualization(engine);
 	engine.RegisterSystem(bubble_sort_visualization);
 	engine.StartEngine();

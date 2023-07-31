@@ -23,9 +23,9 @@ namespace stuff
 		void Update(float dt) override;
 		void Destroy() override;
 	private:
-		void DrawPavage(sf::Vector2f position, sf::Color color);
-		void AddHorizontalLine(sf::VertexArray* vertices, sf::Vector2f start, sf::Vector2f end, bool reverse);
-		void AddVerticalLine(sf::VertexArray* vertices, sf::Vector2f start, sf::Vector2f end, bool reverse);
+		void DrawPavage(sf::Vector2f position, sf::Color color, float tilling);
+		void AddHorizontalLine(sf::VertexArray* vertices, sf::Vector2f start, sf::Vector2f end, bool reverse, float tilling);
+		void AddVerticalLine(sf::VertexArray* vertices, sf::Vector2f start, sf::Vector2f end, bool reverse, float tilling);
 
 		Engine& engine_;
 		Graphics& graphics_;

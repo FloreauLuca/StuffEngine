@@ -24,7 +24,8 @@
 int main()
 {
 	stuff::Engine engine;
-	engine.GetGraphics().SetWindowSize({ 450, 800 });
+	engine.GetGraphics().SetWindowSize({ 900, 900 });
+	//engine.GetGraphics().SetWindowSize({ 450, 800 });
 	stuff::BogoSortVisualization bogo_sort_visualization(engine);
 	bogo_sort_visualization.SetListSize(6);
 	engine.RegisterSystem(bogo_sort_visualization);
