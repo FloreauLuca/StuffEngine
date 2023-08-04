@@ -2,9 +2,9 @@
 #include <SFML/Graphics.hpp>
 
 #include "water_particle.h"
-#include "water_physics.h"
 #include "engine/engine.h"
 #include "engine/system.h"
+#include "config.h"
 
 //https://github.com/AlexandreSajus/Unity-Fluid-Simulation
 //https://github.com/AlexandreSajus/Python-Fluid-Simulation/tree/master
@@ -34,8 +34,6 @@ namespace stuff
 
 		std::vector<WaterParticle> particles_;
 
-		const float particleSize_ = 25.0f;
-		const unsigned particleCount_ = 10;
 
 	};
 }
