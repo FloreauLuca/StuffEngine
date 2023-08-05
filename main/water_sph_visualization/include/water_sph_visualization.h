@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-#include "water_particle.h"
+#include "water_simulation.h"
 #include "engine/engine.h"
 #include "engine/system.h"
 #include "config.h"
@@ -32,7 +32,8 @@ namespace stuff
 
 		sf::Vector2u windowSize_ = sf::Vector2u(1, 1);
 
-		std::vector<WaterParticle> particles_;
+		std::vector<WaterParticle> particles_ = std::vector<WaterParticle>();
+		WaterSimulation waterSimulation_;
 
 
 	};

@@ -13,20 +13,20 @@ namespace stuff
 		timer_ = 0;
 		windowSize_ = graphics_.GetWindowSize();
 		float radius =  0.25f;
+		waterSimulation_ = WaterSimulation();
+		particles_ = std::vector<WaterParticle>(Config::PARTICLE_COUNT);
 		for (unsigned i = 0; i < Config::PARTICLE_COUNT; ++i)
 		{
 			sf::Vector2f pos = { (sinf(i) * radius) + 0.5f, (cosf(i) * radius) + 0.5f };
-			particles_.push_back(WaterParticle(pos, Config::PARTICLE_SIZE));
+			particles_[i] = WaterParticle(pos, Config::PARTICLE_SIZE);
+			waterSimulation_.AddParticle(&particles_[i]);
 		}
 	}
 	
 	void WaterSphVisualization::Update(float dt)
 	{
 		timer_ += dt;
-		for (unsigned i = 0; i < Config::PARTICLE_COUNT; ++i)
-		{
-			particles_[i].Update(dt);
-		}
+		waterSimulation_.Update(dt * 2);
 
 		for (unsigned i = 0; i < Config::PARTICLE_COUNT; ++i)
 		{
@@ -45,6 +45,7 @@ namespace stuff
 			right.setPosition(windowSize_.x/2.0f, Config::MAX_Y * windowSize_.y);
 			graphics_.Draw(right);
 		}
+		waterSimulation_.Draw(graphics_);
 	}
 
 	void WaterSphVisualization::Destroy()

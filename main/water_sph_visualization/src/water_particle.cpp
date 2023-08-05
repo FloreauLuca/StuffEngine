@@ -19,7 +19,7 @@ namespace stuff
 			SurfaceBounce(normal, sf::Vector2f(position_.x, Config::MAX_Y - size_));
 		}
 		
-		if (position_.x + size_ < Config::MIN_X )
+		if (position_.x - size_ < Config::MIN_X)
 		{
 			sf::Vector2f normal = sf::Vector2f(1, 0);
 			SurfaceBounce(normal, sf::Vector2f(Config::MIN_X + size_, position_.y));
@@ -57,11 +57,11 @@ namespace stuff
 		neighbor_.clear();
 	}
 
-	//void WaterParticle::CalculatePressure()
-	//{
-	//	press_ = K * (rho - REST_DENSITY);
-	//	press_near = K_NEAR * rho_near;
-	//}
+	void WaterParticle::CalculatePressure()
+	{
+		press_ = Config::K * (rho_ - Config::REST_DENSITY);
+		press_near_ = Config::K_NEAR * rho_near_;
+	}
 	
 	void WaterParticle::SurfaceBounce(sf::Vector2f normal, sf::Vector2f wallPos)
 	{
@@ -72,7 +72,7 @@ namespace stuff
 		}
 
 		sf::Vector2f vel_tangent = velocity_ - normal * vel_normal;
-		velocity_ = vel_tangent - normal * vel_normal * 0.2f;
+		velocity_ = vel_tangent - normal * vel_normal * Config::WALL_DAMP;
 		position_ = wallPos + normal * 0.000f;
 	}
 
@@ -82,7 +82,16 @@ namespace stuff
 		sf::CircleShape circle(size_ * windowSize.x);
 		circle.setOrigin(size_ * windowSize.x, size_ * windowSize.y);
 		circle.setPosition(position_ * windowSize);
-		circle.setFillColor(sf::Color(100, 100, 255, 255));
+		circle.setFillColor(sf::Color(200 * (1.0f-position_.y), 200 * (1.0f - position_.y), 255, 255));
 		graphics.Draw(circle);
+
+		for (WaterParticle* neighbor : neighbor_)
+		{
+			sf::VertexArray line;
+			line.setPrimitiveType(sf::Lines);
+			line.append(sf::Vertex(position_ * windowSize, sf::Color(255, 255, 255, 5)));
+			line.append(sf::Vertex(neighbor->position_ * windowSize, sf::Color(255, 255, 255, 5)));
+			graphics.Draw(line);
+		}
 	}
 }

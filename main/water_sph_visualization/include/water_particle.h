@@ -8,6 +8,7 @@ namespace stuff
 	class WaterParticle
 	{
 	public:
+		WaterParticle() {}
 		WaterParticle(sf::Vector2f position, float size);
 
 		void Update(float dt);
@@ -23,7 +24,7 @@ namespace stuff
 		sf::Vector2f velocity_;
 		sf::Vector2f force_;
 		float speed_;
-		std::vector<WaterParticle> neighbor_;
+		std::vector<WaterParticle*> neighbor_ = std::vector<WaterParticle*>();
 		float rho_;
 		float rho_near_;
 		float press_;
