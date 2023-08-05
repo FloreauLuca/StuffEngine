@@ -73,7 +73,7 @@ namespace stuff
 
 		sf::Vector2f vel_tangent = velocity_ - normal * vel_normal;
 		velocity_ = vel_tangent - normal * vel_normal * Config::WALL_DAMP;
-		position_ = wallPos + normal * 0.000f;
+		position_ = wallPos + normal * 0.0008f;
 	}
 
 	void WaterParticle::Draw(Graphics& graphics)
